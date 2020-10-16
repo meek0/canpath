@@ -1,0 +1,36 @@
+<#macro samplesAvailableModel>
+  <p>
+    CanPath takes the power of the cohort study a step further with its large biological samples collection. The availability of these biological samples will allow wider and deeper investigations into the causes of cancer and chronic diseases, and may help uncover new means of detection and treatment.
+  </p>
+  <h2 class="mt-5">The CanPath Biosamples Collection</h2>
+  <table class="table table-striped" style="width:600px;">
+    <thead>
+    <tr>
+      <th scope="col">Number of participants who provided biosample</th>
+      <th scope="col">Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Venous blood</td>
+      <td>145,760</td>
+    </tr>
+    <tr>
+      <td>Urine</td>
+      <td>99,500</td>
+    </tr>
+    <tr>
+      <td>Blood Spots</td>
+      <td>10,642</td>
+    </tr>
+    <tr>
+      <td>Saliva</td>
+      <td>18,799</td>
+    </tr>
+    <tr>
+      <td>DNA source material</td>
+      <td>159,266</td>
+    </tr>
+    </tbody>
+  </table>
+</#macro>

@@ -1,0 +1,108 @@
+
+.jumbotron {
+  background-image: url('/assets/images/labo-overlay.jpg');
+  background-size: 100% auto;
+  color: #231f20;
+  padding: 2rem 1rem;
+}
+
+.jumbotron h1 {
+  margin: 25px 0;
+  color: #fff;
+}
+
+.jumbotron .lead {
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.jumbotron .logo-canpath img {
+  z-index: 500;
+  position: absolute;
+  width: auto;
+  height: 100px;
+}
+
+/*
+ * Content
+ */
+
+#harmonization-studies-callout,
+#data-access-process-callout,
+#projects-page .callout {
+  display: none;
+}
+
+#individual-studies-card, #harmonization-studies-card, #projects-card {
+  box-shadow: none;
+  margin-top: 2em;
+}
+
+#individual-studies-card.card-info.card-outline,
+#harmonization-studies-card.card-info.card-outline,
+#projects-card.card-info.card-outline {
+  border-top: 0;
+}
+
+#individual-studies-card .card-title,
+#harmonization-studies-card .card-title,
+#projects-card .card-title {
+  display: none;
+}
+
+#individual-studies-card .card-body,
+#harmonization-studies-card .card-body,
+#projects-card .card-body {
+  padding: 0;
+}
+
+#individual-studies-card .card-header,
+#harmonization-studies-card .card-header,
+#projects-card .card-header {
+  border-bottom: 0;
+}
+
+#study-page .content-header h1 .text-white-50, #study-page .content-header small,
+#dataset-page .content-header h1 .text-white-50, #dataset-page .content-header small,
+#project-page .content-header h1 .text-white-50, #project-page .content-header small,
+#dataschema-variable-page .content-header h1 .text-white-50, #variable-page .content-header small,
+#harmonized-variable-page .content-header h1 .text-white-50, #variable-page .content-header small {
+  display: none;
+}
+
+/*
+ * Data Access
+ */
+
+#data-access-page .content-header h1,
+#data-access-amendment-form-page .content-header h1,
+#data-access-form-page .content-header h1,
+#data-access-feasibility-page .content-header h1,
+#data-access-documents-page .content-header h1,
+#data-access-comments-page .content-header h1,
+#data-access-history-page .content-header h1,
+#data-access-private-comments-page .content-header h1 {
+  margin-top: 0.2em !important;
+}
+
+#data-access-page .content-header h1 .text-white-50,
+#data-access-amendment-form-page .content-header h1 .text-white-50,
+#data-access-form-page .content-header h1 .text-white-50,
+#data-access-feasibility-page .content-header h1 .text-white-50,
+#data-access-documents-page .content-header h1 .text-white-50,
+#data-access-comments-page .content-header h1 .text-white-50,
+#data-access-history-page .content-header h1 .text-white-50,
+#data-access-private-comments-page .content-header h1 .text-white-50 {
+  color: #6c757d !important;
+}
+
+/*
+ * Search
+ */
+
+#graphics-tab {
+  display: none;
+}

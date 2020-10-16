@@ -1,0 +1,241 @@
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-ExtraBold.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-ExtraBold.woff') format('woff'),
+  url('/assets/fonts/GothicA1-ExtraBold.ttf') format('ttf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Black.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Black.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Black.ttf') format('ttf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Bold.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Bold.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-ExtraLight.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-ExtraLight.woff') format('woff'),
+  url('/assets/fonts/GothicA1-ExtraLight.ttf') format('ttf');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Medium.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Medium.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Light.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Light.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Regular.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Regular.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-SemiBold.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-SemiBold.woff') format('woff'),
+  url('/assets/fonts/GothicA1-SemiBold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Thin.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Thin.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Thin.ttf') format('ttf');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Gothic A1", "Helvetica";
+  font-size: 14px;
+  color: #231f20;
+}
+
+/*.container {
+  width: 80% !important;
+  max-width: 1500px !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}*/
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 800;
+  color: #002554;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #002554;
+}
+
+a, a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.alert a:hover {
+  color: #fff;
+}
+
+p a {
+  font-weight: 600;
+}
+
+.text-white a, .text-white a:hover {
+  color: #fff !important;
+}
+
+.text-dark a {
+  color: #000 !important;
+}
+
+.main-header .brand-image {
+  margin-top: -.5rem;
+  margin-right: .2rem;
+  height: 33px;
+}
+
+.navbar-yellow {
+  background-color: #FFCE01 !important;
+  padding: 0;
+  font-weight: 500;
+}
+
+.navbar-navy {
+  background-color: #002554 !important;
+  padding: .6rem 0;
+}
+
+.navbar-navy .nav-item {
+  font-size: 20px;
+}
+
+.navbar-navy .nav-item a, .navbar-navy .nav-item a:hover {
+  color: #fff;
+}
+
+.navbar-navy .nav-item a.btn, .navbar-navy .nav-item a.btn:hover {
+  color: #000;
+}
+
+.nav-item.active, .dropdown-item.active {
+  font-weight: 900;
+  background-color: transparent;
+}
+
+.nav-item .dropdown-item:focus, .nav-item .dropdown-item:hover {
+  background-color: transparent;
+}
+
+.navbar-nav a, .login-logo a, a.nav-link, .sidebar a, a.brand-link, a.btn, .info-box a {
+  text-decoration: none;
+}
+
+.layout-navbar-fixed .wrapper .content-wrapper {
+  margin-top: 6rem;
+}
+
+.brand-link.bg-white {
+  display: none;
+}
+
+.sidebar .user-panel {
+  padding-top: 1.8em;
+  padding-bottom: 1.8em !important;
+}
+
+/*
+ * Content
+ */
+
+.content-header .breadcrumb {
+  display: none;
+}
+
+.content-header h1 {
+  margin-top: 1em !important;
+}
+
+.content-header.bg-info {
+  background: none !important;
+  color: #000 !important;
+}
+
+.wrapper {
+  background: #fff;
+}
+
+.content-wrapper {
+  background-color: #fff;
+}
+
+/*
+ * Footer
+ */
+
+footer.main-footer h1, footer.main-footer .h1, footer.main-footer h2, footer.main-footer .h2, footer.main-footer h3,
+footer.main-footer .h3, footer.main-footer h4, footer.main-footer .h4, footer.main-footer h5, footer.main-footer .h5,
+footer.main-footer h6, footer.main-footer .h6 {
+  font-weight: 600;
+  color: #002F65;
+}
+
+.main-footer {
+  padding: 0;
+  margin-top: 5em;
+}
+
+.can_path_footer {
+  background-color: #f8f8f8;
+}

@@ -1,0 +1,207 @@
+<!-- Data access process page macros -->
+
+<!-- Data access process model template -->
+<#macro dataAccessProcessModel>
+  <p>
+    Les demandes d'accès et d’informations sur les ensembles de données de CanPath sont reçues par le <strong>bureau d'accès de CanPath</strong>.
+    Les demandes limitées aux <a href="/harmonization-studies">données harmonisées</a> sont admissibles à un examen d’accès accéléré. Toutes
+    autres demandes, incluant, mais sans s’y limiter, aux <a href="/page/samples">échantillons biologiques</a> et au couplage avec des données
+    administratives de santé nécessite un examen détaillé par le comité d’accès. Les <a href="#review_process">dates limites de soumission sont indiquées ici</a>.
+  </p>
+
+  <div class="card card-info card-outline mt-5 mb-5">
+    <div class="card-header">
+      <h3 class="card-title">Processus de demande d'accès à CanPath
+      </h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <h5><span class="subheading">ÉTAPE 1. <br/></span>Créer un compte d'utilisateur</h5>
+          <p>
+            Avant de commencer une demande d'accès, tous les chercheurs doivent créer un <strong>compte d'utilisateur sur le Portail de CanPath</strong>.
+          </p>
+          <p>
+            <a class="btn btn-outline-primary" href="${contextPath}/signup"><@message "sign-up"/> <i class="fas fa-user-plus"></i></a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5><span class="subheading">ÉTAPE 2. <br/></span>Compléter et soumettre votre formulaire de demande d'accès</h5>
+          <p>
+            Les chercheurs sont encouragés à <strong>communiquer avec le bureau d'accès</strong> pour comprendre les exigences
+            impliquées avant d'envoyer une demande.
+          </p>
+          <p>
+            <a href="${contextPath}/contact" class="btn btn-outline-info"><@message "contact-menu"/> <i class="fas fa-info-circle"></i></a>
+          </p>
+          <p>
+            Lorsque les chercheurs sont prêts à remplir et à envoyer une demande d'accès, ils doivent remplir et soumettre un
+            formulaire de demande d'accès en ligne et joindre tous les documents d'accès à CanPath requis en se connectant
+            à leur compte d'utilisateur de CanPath et en créant une <strong><@message "new-data-access-request"/></strong>.
+          </p>
+          <p>
+            <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5><span class="subheading">ÉTAPE 3. <br/></span>Suivre votre demande</h5>
+          <p>
+            Les chercheurs seront en mesure de suivre les progrès et l'historique de leur demande d'accès en ligne en se
+            connectant à leur compte d'utilisateur du portail de CanPath et en consultant <strong><@message "my-data-access-requests"/></strong>.
+          </p>
+          <p>
+            <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5><a id="required" name="required"></a> Documentation requise pour l’accès à CanPath</h5>
+  <p>Toutes les demandes d'accès doivent inclure les éléments suivants :</p>
+  <ul>
+    <li><p>Formulaire de demande d'accès rempli</p></li>
+    <li>
+      <p>
+        Protocole de recherche détaillé contenant une question / objectif de recherche spécifique (ayant reçu l'approbation éthique)
+      </p>
+      <ul>
+        <li>
+          <p>Le protocole doit inclure la justification des variables demandées, une analyse statistique, etc.</p>
+        </li>
+      </ul>
+    </li>
+    <li><p>Preuve de l'examen scientifique ou de l'examen par les pairs du protocole de recherche, tel qu'un examen par une agence de financement, le cas échéant</p></li>
+    <li><p>Lettre d'approbation d'un comité d'éthique de la recherche pour le protocole de recherche soumis</p></li>
+    <li><p>Preuve de financement, le cas échéant</p></li>
+    <li><p>CV de deux pages du demandeur principal</p></li>
+  </ul>
+
+  <h5>
+    <a id="submission_process" name="submission_process"></a> Soumettez une de demande d'accès
+  </h5>
+  <p style="text-align:center;"><img alt="" src="/assets/images/submission_process_fr.png" style="width: 750px; height: 498px;"></p>
+  <p>
+    Les demandes d’accès aux données et aux échantillons biologiques de CanPath sont acceptées tout au long de l’année.
+    Les demandes répondant aux critères d’examen accéléré sont examinées de façon continue, tandis que les demandes nécessitant
+    un examen détaillé par le comité d’accès sont examinées tous les trimestres. Les exigences de chaque processus d’examen
+    sont décrites ci-dessous.
+  </p>
+  <p>
+    Les demandes d’accès répondant aux critères d’examen accéléré sont acceptées sur une base continue et leur examen sera
+    complété dans un délai d’environ 3 semaines (ce délai dépend de la rapidité de réponse du candidat tout au long du processus).
+  </p>
+
+  <h6><a id="review_process" name="review_process">Processus d'examen CanPath</a></h6>
+  <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Examen accéléré</th>
+          <th>Examen détaillé par le Comité d’accès</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>Type de demande</strong></td>
+          <td>Ensembles de données harmonisées seulement</td>
+          <td>Demandes pour :
+            <ul>
+              <li>Ensembles de données non harmonisées</li>
+              <li>Échantillons biologiques</li>
+              <li>Données administratives couplées</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Chronologie de l’examen</strong></td>
+          <td>Acceptées sur une base continue. Examen dans un délai d’environ trois semaines</td>
+          <td>Réunion trimestrielle du Comité d’accès</td>
+        </tr>
+        </tbody>
+      </table>
+      <p>Plus d'informations peuvent être trouvées dans la section <a href="#access_policies">Politique d'accès de CanPath</a>.</p>
+
+    </div>
+    <div class="col-sm-6">
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>Date limite pour le dépôt d’une demande nécessitant un examen détaillé par le Comité d’accès</th>
+          <th>Date prévue de l’avis de décision*</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>23 octobre 2020</td>
+          <td>Décembre 2020</td>
+        </tr>
+        <tr>
+          <td>22 janvier 2021</td>
+          <td>Mars 2021</td>
+        </tr>
+        <tr>
+          <td>23 avril 2021</td>
+          <td>Juin 2021</td>
+        </tr>
+        <tr>
+          <td>30 juillet 2021</td>
+          <td>Septembre 2021</td>
+        </tr>
+        </tbody>
+      </table>
+      <p>
+        * Veuillez noter que la date prévue de l’avis de décision anticipée signifie la date approximative à laquelle vous
+        serez informé/e de l’état d’approbation de votre projet, et non la date à laquelle vous aurez accès aux données.
+      </p>
+    </div>
+  </div>
+
+  <h6><a id="access_criteria_requ" name="access_criteria_requ">Critères et exigences d’accès</a></h6>
+  <p>
+    Tous les critères et exigences d'accès sont décrits dans le document sur
+     <a href="/assets/files/Access_Policy_Approved_July_29_2020_final.pdf" target="_blank">la Politique d'accès de CanPath</a>.
+  </p>
+  <h6><a id="access_cost" name="access_cost">Coût d’accès</a>
+  </h6>
+  <p>
+    CanPath a un modèle de tarification à plusieurs niveaux adapté aux différents budgets des stagiaires, des chercheurs en
+    début de carrière et des chercheurs établis. Les candidats sont invités à remplir un <a
+            href="/assets/files/CanPath%20Request%20for%20LoS%20Form.docx">formulaire d’estimation des coûts</a> et
+    à le soumettre via <a href="mailto:access@canpath.ca">access@canpath.ca</a>.
+  </p>
+  <h6><a id="access_committee" name="access_committee">Comité d’accès</a>
+  </h6>
+    <p>
+      Le comité d’accès examine et prend les décisions relatives à l’approbation des demandes des projets de recherche visant
+      à obtenir l’accès à des données et / ou à des échantillons biologiques de CanPath. Le comité est composé de membres
+      indépendants au Canada possédant une expertise dans des domaines pertinents comme la biostatistique, l’épidémiologie
+      et la génomique. Le comité d’accès se réunit formellement 4 fois par an.
+    </p>
+
+  <h5>Besoin d’aide?</h5>
+  <p>Toute question sur l’accès à CanPath peut être adressée à Asha Mohamed, responsable de l’accès. Courriel : <a
+        href="mailto:access@canpath.ca">access@canpath.ca</a></p>
+
+  <h5><a id="access_policies" name="access_policies"></a>Politiques &amp; lignes directrices de CanPath</h5>
+  <p>Avant de soumettre un formulaire de demande d'accès, nous vous recommandons fortement de consulter les documents suivants (disponibles en anglais seulement) :</p>
+  <ul>
+    <li>
+      <a href="/assets/files/Access_Policy_Approved_July_29_2020_final.pdf"
+         target="_blank">Politique d'accès de CanPath</a></li>
+    <li>
+      <a href="/assets/files/CanPath%20Publications%20Policy%20PDF%20Version.pdf"
+         target="_blank">Politique des publications</a></li>
+    <li>
+      <a href="/assets/files/CanPath%20Intellectual%20Property%20Policy_v1.1_2020-07-22.pdf"
+         target="_blank">Politique de propriété intellectuelle</a></li>
+    <li>
+      <a href="/assets/files/CanPath%20Guidelines%20For%20Biosample%20Access_June2020.pdf"
+         target="_blank">Lignes directrices pour l’accès aux échantillons biologiques</a></li>
+    <li>
+      <a href="/assets/files/CanPath%20Biosample%20Feasiblity%20Review_June2020.pdf"
+         target="_blank">Revue de la faisabilité pour les échantillons biologiques</a></li>
+  </ul>
+</#macro>
