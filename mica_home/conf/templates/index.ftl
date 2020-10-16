@@ -31,11 +31,14 @@
           </div>
           <div class="col-lg-2">
             <div class="logo-canpath">
-              <a href="/" title="Home">
+              <#if config??>
+                <a href="${portalLink}" class="navbar-brand order-3">
+                  <img src="/assets/images/logo_${.lang}.png" alt="CanPath Portal">
+                </a>
+              <#else>
                 <img src="/assets/images/logo_${.lang}.png" alt="CanPath Portal">
-              </a>
+              </#if>
             </div>
-
           </div>
         </div>
       </div>
