@@ -21,7 +21,7 @@
           <p>
             Avant de commencer une demande d'accès, tous les chercheurs doivent créer un <strong>compte d'utilisateur sur le Portail de CanPath</strong>.
           </p>
-          <p>
+          <p class="mb-3">
             <a class="btn btn-outline-primary" href="${contextPath}/signup"><@message "sign-up"/> <i class="fas fa-user-plus"></i></a>
           </p>
         </div>
@@ -39,7 +39,7 @@
             formulaire de demande d'accès en ligne et joindre tous les documents d'accès à CanPath requis en se connectant
             à leur compte d'utilisateur de CanPath et en créant une <strong><@message "new-data-access-request"/></strong>.
           </p>
-          <p>
+          <p class="mb-3">
             <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
           </p>
         </div>

@@ -18,7 +18,7 @@
         <div class="col-md-4">
           <h5><span class="subheading">Step 1. <br/></span>Create an account</h5>
           <p> Before initiating a request for access, all researchers must create a <strong>CanPath Portal User account</strong>.</p>
-          <p>
+          <p class="mb-3">
             <a class="btn btn-outline-primary" href="${contextPath}/signup"><@message "sign-up"/> <i class="fas fa-user-plus"></i></a>
           </p>
         </div>
@@ -36,7 +36,7 @@
             application form online and attach all of the required CanPath access documentation by logging
             into their CanPath Portal User account, and creating a <strong><@message "new-data-access-request"/></strong>.
           </p>
-          <p>
+          <p class="mb-3">
             <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
           </p>
         </div>

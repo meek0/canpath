@@ -26,8 +26,8 @@
 
       <!-- Latest -->
       <div class="col-md-4 md-margin-bottom-40">
-        <h6><@message "contact-information"/></h6>
-        <p><@message "contact-name"/><br>
+        <h6><@message "footer-contact-information"/></h6>
+        <p><@message "footer-contact-name"/><br>
           c/o Dalla Lana School of Public Health<br>
           155 College St, Suite 532<br>
           Toronto, ON M5T 3M7</p>

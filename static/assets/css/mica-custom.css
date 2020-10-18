@@ -74,6 +74,10 @@
   display: none;
 }
 
+#individual-study-page .info-box {
+  display: none;
+}
+
 /*
  * Data Access
  */
