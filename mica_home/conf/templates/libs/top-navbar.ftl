@@ -13,7 +13,7 @@
       <button class="navbar-toggler order-1 ml-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse order-2 pl-2" id="navbarCollapse">
+      <div class="collapse navbar-collapse pl-0 order-2" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <@leftmenus></@leftmenus>

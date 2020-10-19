@@ -1,6 +1,6 @@
 <#macro leftmenus>
   <li id="homeMenu" class="nav-item <#if rc.requestUri == "/">active</#if>">
-    <a href="${portalUrl}/" class="nav-link"><@message "home"/></a>
+    <a href="${portalUrl}/" class="nav-link pl-0"><@message "home"/></a>
   </li>
   <li id="cohortMenu" class="nav-item <#if rc.requestUri?ends_with("/individual-studies")>active</#if>">
     <a href="${portalUrl}/individual-studies" class="nav-link"><@message "cohort"/></a>
