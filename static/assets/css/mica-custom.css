@@ -108,6 +108,10 @@
  * Search
  */
 
+#search-page .content-header h1 {
+  margin-top: 0 !important;
+}
+
 #graphics-tab {
   display: none;
 }
