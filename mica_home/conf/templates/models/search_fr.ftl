@@ -1,4 +1,4 @@
-<div class="alert alert-info alert-dismissible fade show">
+<div class="alert alert-info alert-dismissible mb-4 fade show">
   <div>
     <p>
       Pour consulter des données filtrées selon plusieurs variables, veuillez <a href="/contact">contacter le Bureau d’accès</a> pour obtenir de l’aide.
