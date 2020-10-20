@@ -21,7 +21,7 @@
       </div>
       <#if rc.requestUri != "/">
         <#if config??>
-          <a href="${portalLink}/${.lang}" class="navbar-brand ml-3 order-3">
+          <a href="${portalLink}${.lang}" class="navbar-brand ml-3 order-3">
             <img src="${brandImageSrc}" alt="Logo" class="brand-image ${brandImageClass}">
           </a>
         <#else>
