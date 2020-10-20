@@ -11,9 +11,9 @@
   <div class="navbar navbar-expand-md navbar-navy">
     <div class="container">
       <button class="navbar-toggler order-1 ml-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="fas fa-bars"></span>
       </button>
-      <div class="collapse navbar-collapse pl-0 order-2" id="navbarCollapse">
+      <div class="collapse navbar-collapse ml-3 pl-0 order-2" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <@leftmenus></@leftmenus>
@@ -21,7 +21,7 @@
       </div>
       <#if rc.requestUri != "/">
         <#if config??>
-          <a href="${portalLink}" class="navbar-brand order-3">
+          <a href="${portalLink}/${.lang}" class="navbar-brand ml-3 order-3">
             <img src="${brandImageSrc}" alt="Logo" class="brand-image ${brandImageClass}">
           </a>
         <#else>
