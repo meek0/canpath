@@ -25,7 +25,7 @@
               <li>
                 <#assign text = "study_taxonomy.vocabulary.access.term." + type + ".title"/>
                 <@message text/>
-                <#if type == "other" && study.model.access??>
+                <#if type == "other" && study.model.otherAccess??>
                   : ${localize(study.model.otherAccess)}
                 </#if>
               </li>
