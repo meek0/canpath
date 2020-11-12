@@ -227,6 +227,20 @@ p a {
   z-index: 1040;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: #002554;
+}
+
+.page-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.page-item.active .page-link {
+    background-color: #002554;
+    border-color: #002554;
+}
+
 /*
  * Footer
  */
