@@ -112,6 +112,10 @@
   margin-top: 0 !important;
 }
 
+#search-page [class*=sidebar-dark-] {
+  background-color: #fff;
+}
+
 #graphics-tab {
   display: none;
 }

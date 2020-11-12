@@ -10,7 +10,7 @@
           $(this).html(msg);
       }
     });
+    $('#search-page aside.sidebar-dark-primary').removeClass('sidebar-dark-primary').addClass('sidebar-light-primary');
   });
 </script>
 <script src="/assets/js/custom.js"></script>
-
