@@ -1,0 +1,69 @@
+{
+  "type": "object",
+  "properties": {
+    "infoDarModification": {
+      "title": "t(data-access-amendment.custom.info-dar-modification)",
+      "type": "boolean",
+      "default": false
+    },
+    "titleResearchProject": {
+      "title": "t(data-access-amendment.custom.title-research-project)",
+      "type": "string"
+    },
+    "namePrincipalApplicant": {
+      "title": "t(data-access-amendment.custom.name-principal-applicant)",
+      "type": "string"
+    },
+    "position": {
+      "title": "t(data-access-amendment.custom.position)",
+      "type": "string"
+    },
+    "primaryInstitution": {
+      "title": "t(data-access-amendment.custom.primary-institution)",
+      "type": "string"
+    },
+    "institutionalEmailAddress": {
+      "title": "t(data-access-amendment.custom.institutional-email-address)",
+      "type": "string",
+      "pattern": "^\\\\S+@\\\\S+$",
+      "required": true,
+      "validationMessage": {
+        "202": "t(data-access-request.default.email-validation-message)"
+      }
+    },
+    "telephoneNumber": {
+      "title": "t(data-access-amendment.custom.telephone-number)",
+      "type": "string"
+    },
+    "institutionalMailingAddress": {
+      "title": "t(data-access-amendment.custom.institutional-mailing-address)",
+      "type": "string"
+    },
+    "startResearchProjectTimeTable": {
+      "title": "t(data-access-amendment.custom.start-research-project-time-table)",
+      "type": "string",
+      "format": "datepicker"
+    },
+    "endResearchProjectTimeTable": {
+      "title": "t(data-access-amendment.custom.end-research-project-time-table)",
+      "type": "string",
+      "format": "datepicker"
+    },
+    "unanticipatedEventChangeRequestAddendum": {
+      "title": "t(data-access-amendment.custom.unanticipated-event-change-request-addendum)",
+      "type": "string"
+    },
+    "currentStateProjectDescription": {
+      "title": "t(data-access-amendment.custom.current-state-project-description)",
+      "type": "string"
+    },
+    "requestedChangesApprovedProtocolDescription": {
+      "title": "t(data-access-amendment.custom.requested-changes-approved-protocol-description)",
+      "type": "string"
+    },
+    "reasonsRelatedRequestDescription": {
+      "title": "t(data-access-amendment.custom.reasons-related-request-description)",
+      "type": "string"
+    }
+  }
+}

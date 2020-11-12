@@ -1,0 +1,78 @@
+[
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h2 class='text-center'>t(data-access-amendment.custom.form-title)</h2>"
+      },
+      { "type": "help", "helpvalue": "<hr>" },
+      {
+        "key": "titleResearchProject",
+        "readonly": true,
+        "condition": "model.titleResearchProject"
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      "infoDarModification",
+      {
+        "type": "section",
+        "items": [
+          "titleResearchProject",
+          "namePrincipalApplicant",
+          "position",
+          "primaryInstitution",
+          "institutionalEmailAddress",
+          "telephoneNumber",
+          "institutionalMailingAddress"
+        ],
+        "condition": "model.infoDarModification"
+      },
+      { "type": "help", "helpvalue": "<hr>" },
+      {
+        "type": "section",
+        "items": [
+          {
+            "type": "help",
+            "helpvalue": "<h4>t(data-access-amendment.custom.research-project-time-table)</h4>"
+          },
+          {
+            "type": "section",
+            "htmlClass": "row",
+            "items": [
+              {
+                "type": "section",
+                "htmlClass": "col-md-6",
+                "items": ["startResearchProjectTimeTable"]
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-md-6",
+                "items": ["endResearchProjectTimeTable"]
+              }
+            ]
+          }
+        ]
+      },
+      { "type": "help", "helpvalue": "<hr>" },
+      {
+        "type": "section",
+        "items": [
+          {
+            "key": "unanticipatedEventChangeRequestAddendum",
+            "type": "textarea"
+          },
+          { "key": "currentStateProjectDescription", "type": "textarea" },
+          {
+            "key": "requestedChangesApprovedProtocolDescription",
+            "type": "textarea"
+          },
+          { "key": "reasonsRelatedRequestDescription", "type": "textarea" }
+        ]
+      }
+    ]
+  }
+]

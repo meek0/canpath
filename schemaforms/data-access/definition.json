@@ -1,0 +1,1496 @@
+[
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "section",
+        "items": [
+          {
+            "type": "help",
+            "helpvalue": "<h2 class='text-center'>t(data-access-request.custom.intro-title)</h2><p class='h4 text-center'>t(data-access-request.custom.intro-info)</p>"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "items": [
+          {
+            "type": "help",
+            "helpvalue": "t(data-access-request.custom.intro-description)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "help",
+    "helpvalue": "<h2>I - t(data-access-request.default.I.title)</h2>"
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>A. t(data-access-request.default.I.A.title)</h3><p class='help-block'>t(data-access-request.default.I.A.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "name",
+              "title",
+              "position",
+              "institution"
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "email",
+              "emailAlt",
+              "phone",
+              {
+                "key": "mailingAddress",
+                "type": "textarea"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>B. t(data-access-request.default.I.B.title)</h3><p class='help-block'>t(data-access-request.default.I.B.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "repName",
+              "repPosition",
+              "repInstitution"
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "repEmail",
+              "repPhone",
+              {
+                "key": "repMailingAddress",
+                "type": "textarea"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>C. t(data-access-request.default.I.C.title)</h3>"
+      },
+      {
+        "key": "projectTitle",
+        "notitle": true,
+        "type": "textarea"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "key": "projectWebsite"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": []
+          }
+        ]
+      },
+      {
+        "type": "help",
+        "helpvalue": "<h3>t(data-access-request.custom.I.C.project-time-table-help)</h3>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "key": "projectStartDate"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "key": "projectEndDate",
+                "dateOptions": {
+                  "minDate": "projectStartDate",
+                  "minDateIsRef": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>D1. t(data-access-request.custom.I.D.1.title)</h3><p class='help-block'>t(data-access-request.custom.I.D.1.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "key": "staff",
+                "add": "t(data-access-request.custom.array-add)",
+                "style": {
+                  "add": "btn-info"
+                },
+                "notitle": true,
+                "items": [
+                  "staff[].name",
+                  "staff[].position",
+                  "staff[].institution",
+                  "staff[].role",
+                  "staff[].email"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>D2. t(data-access-request.custom.I.D.2.title)</h3>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "hasInvestigatorOtherInstitution",
+              {
+                "key": "otherInstitution",
+                "add": "t(data-access-request.custom.array-add)",
+                "style": {
+                  "add": "btn-info"
+                },
+                "items": [
+                  {
+                    "type": "help",
+                    "helpvalue": "t(data-access-request.custom.other-institution.investigator.title)"
+                  },
+                  "otherInstitution[].invName",
+                  "otherInstitution[].invPosition",
+                  "otherInstitution[].invInstitution",
+                  "otherInstitution[].invRole",
+                  "otherInstitution[].invEmail",
+                  {
+                    "type": "help",
+                    "helpvalue": "<hr>"
+                  },
+                  {
+                    "type": "help",
+                    "helpvalue": "t(data-access-request.custom.other-institution.representative.title)"
+                  },
+                  "otherInstitution[].repName",
+                  "otherInstitution[].repPosition",
+                  "otherInstitution[].repInstitution",
+                  "otherInstitution[].repEmail",
+                  "otherInstitution[].repPhone",
+                  "otherInstitution[].repAddress"
+                ],
+                "condition": "model.hasInvestigatorOtherInstitution"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>D3. t(data-access-request.custom.I.D.3.title)"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "hasResearchStaffOtherInstitution",
+              {
+                "key": "otherStaff",
+                "add": "t(data-access-request.custom.array-add)",
+                "style": {
+                  "add": "btn-info"
+                },
+                "notitle": true,
+                "items": [
+                  "otherStaff[].name",
+                  "otherStaff[].position",
+                  "otherStaff[].institution",
+                  "otherStaff[].role",
+                  "otherStaff[].email"
+                ],
+                "condition": "model.hasResearchStaffOtherInstitution"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>E. t(data-access-request.default.I.E.title)</h3>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "hasServiceProvider",
+              {
+                "key": "serviceProvider",
+                "add": "t(data-access-request.custom.array-add)",
+                "style": {
+                  "add": "btn-info"
+                },
+                "notitle": true,
+                "items": [
+                  "serviceProvider[].name",
+                  "serviceProvider[].address",
+                  "serviceProvider[].contactName",
+                  "serviceProvider[].title",
+                  "serviceProvider[].email",
+                  "serviceProvider[].phone",
+                  "serviceProvider[].website"
+                ],
+                "condition": "model.hasServiceProvider"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>F. t(data-access-request.default.I.F.title)</h3><p class='help-block'>t(data-access-request.default.I.F.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "geneticAssStudy",
+              "genomeWideAssStudy",
+              "envAssStudy",
+              "geneInteractionStudy",
+              "genotypeCompStudy",
+              "caseControlStudy",
+              "descriptiveStudy",
+              "surveillanceStudy",
+              "biomarker",
+              "riskScore"
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "gisStudy",
+              "fundamentalStudy",
+              "dataPoolingStudy",
+              "prospectiveStudy",
+              "genealogicalStudy",
+              "multiStudy",
+              "otherResearch",
+              {
+                "key": "otherResearchSpecify",
+                "type": "textarea",
+                "notitle": true,
+                "condition": "model.otherResearch"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "fieldset",
+        "items": [
+          {
+            "type": "checkboxgroup",
+            "minChecked": 1,
+            "items": [
+              "geneticAssStudy",
+              "genomeWideAssStudy",
+              "envAssStudy",
+              "geneInteractionStudy",
+              "genotypeCompStudy",
+              "caseControlStudy",
+              "descriptiveStudy",
+              "surveillanceStudy",
+              "biomarker",
+              "riskScore",
+              "gisStudy",
+              "fundamentalStudy",
+              "dataPoolingStudy",
+              "prospectiveStudy",
+              "genealogicalStudy",
+              "multiStudy",
+              "otherResearch"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>G. t(data-access-request.default.I.G.title)</h3><p class='help-block'>t(data-access-request.default.I.G.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "key": "keywords",
+                "notitle": true,
+                "type": "textarea"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>H. t(data-access-request.custom.I.H.title)</h3><p class='help-block'>t(data-access-request.custom.I.H.info)</p>"
+      },
+      {
+        "key": "abstract",
+        "notitle": true,
+        "rows": 10,
+        "type": "textarea",
+        "wordLimit": 500,
+        "validationMessage": {
+          "wordLimitError": "t(data-access-request.custom.500-word-limit-error)"
+        }
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>I. t(data-access-request.custom.I.I.title)</h3><p class='help-block'>t(data-access-request.custom.I.I.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "totalNbParticipants",
+              "inclusionCriteria",
+              "exclusionCriteria",
+              "stratification"
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "htmlClass": "help-block",
+                "helpvalue": "t(data-access-request.custom.for-case-control-studies)"
+              },
+              "matchingCriteria",
+              "caseControlRatio"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>J. t(data-access-request.custom.I.J.title)</h3><p class='help-block'>t(data-access-request.custom.I.J.info)</p>"
+      },
+      {
+        "key": "summary",
+        "rows": 10,
+        "notitle": true,
+        "type": "textarea",
+        "wordLimit": 250,
+        "validationMessage": {
+          "wordLimitError": "t(data-access-request.custom.summary.word-limit-error)"
+        }
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>K. t(data-access-request.custom.I.K.title)</h3><p class='help-block'>t(data-access-request.custom.I.K.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.funding-check)</strong>"
+              },
+              {
+                "key": "funding",
+                "type": "radios-inline",
+                "notitle": true,
+                "titleMap": [
+                  {
+                    "value": true,
+                    "name": "t(data-access-request.custom.response.affirmative)"
+                  },
+                  {
+                    "value": false,
+                    "name": "t(data-access-request.custom.response.negative)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.funding-body-query)</strong>"
+              },
+              {
+                "key": "fundingBody",
+                "notitle": true
+              },
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.funding-date)</strong>"
+              },
+              {
+                "type": "section",
+                "htmlClass": "row",
+                "items": [
+                  {
+                    "type": "section",
+                    "htmlClass": "col-xs-6",
+                    "items": [
+                      {
+                        "key": "fundingStartDate"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "section",
+                    "htmlClass": "col-xs-6",
+                    "items": [
+                      {
+                        "key": "fundingEndDate",
+                        "dateOptions": {
+                          "minDate": "fundingStartDate",
+                          "minDateIsRef": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "condition": "model.funding==true"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.funding-details)</strong>"
+              },
+              {
+                "key": "noGrant",
+                "notitle": true,
+                "type": "textarea"
+              },
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.funding-approximate-date)</strong>"
+              },
+              {
+                "key": "fundingExpectedDate",
+                "notitle": true
+              }
+            ]
+          }
+        ],
+        "condition": "model.funding==false"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.project-evaluated-query)</strong>"
+              },
+              {
+                "key": "evaluation",
+                "type": "radios-inline",
+                "notitle": true,
+                "titleMap": [
+                  {
+                    "value": true,
+                    "name": "t(data-access-request.custom.response.affirmative)"
+                  },
+                  {
+                    "value": false,
+                    "name": "t(data-access-request.custom.response.negative)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.evaluated-by-who)</strong>"
+              },
+              {
+                "key": "peerReviewProcess",
+                "notitle": true
+              }
+            ]
+          }
+        ],
+        "condition": "model.evaluation==true"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.peer-review-plan)</strong>"
+              },
+              {
+                "key": "peerReviewPlan",
+                "type": "radios-inline",
+                "notitle": true,
+                "titleMap": [
+                  {
+                    "value": true,
+                    "name": "t(data-access-request.custom.response.affirmative)"
+                  },
+                  {
+                    "value": false,
+                    "name": "t(data-access-request.custom.response.negative)"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "condition": "model.evaluation==false"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.K.peer-review-expected-date)</strong>"
+              },
+              {
+                "key": "peerReviewDate",
+                "notitle": true
+              }
+            ]
+          }
+        ],
+        "condition": "model.peerReviewPlan"
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<strong>t(data-access-request.custom.I.K.documents-info)</strong>"
+      },
+      {
+        "key": "rdCV",
+        "type": "obibaFileUpload",
+        "validationMessage": {
+          "missingFiles": "t(missing-files)",
+          "minItems": "t(min-items)"
+        },
+        "emptyMessage": "t(data-access-request.no-documents)"
+      },
+      {
+        "key": "rdPeerReview",
+        "type": "obibaFileUpload",
+        "validationMessage": {
+          "missingFiles": "t(missing-files)",
+          "minItems": "t(min-items)"
+        },
+        "emptyMessage": "t(data-access-request.no-documents)"
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>L. t(data-access-request.custom.I.L.title)</h3>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              "ethicsApproval"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.L.title-documents-additional)</strong>"
+              },
+              {
+                "key": "rdRebResearchProtocol",
+                "type": "obibaFileUpload",
+                "validationMessage": {
+                  "missingFiles": "t(missing-files)",
+                  "minItems": "t(min-items)"
+                },
+                "emptyMessage": "t(data-access-request.no-documents)"
+              },
+              {
+                "key": "rdRebDecisionLetter",
+                "type": "obibaFileUpload",
+                "validationMessage": {
+                  "missingFiles": "t(missing-files)",
+                  "minItems": "t(min-items)"
+                },
+                "emptyMessage": "t(data-access-request.no-documents)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<div class='help-block'>t(data-access-request.custom.I.L.title-documents-caution)</div>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<p class='help-block'>t(data-access-request.custom.I.L.title-documents-note)</p>"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>M. t(data-access-request.custom.I.M.title)</h3><p class='help-block'>t(data-access-request.custom.I.M.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              "noBiologicalSample"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.biosamples-requested)</strong>"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "sst",
+                "type": "checkbox"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "sstNbParticipants",
+                  "sstNbAssays",
+                  "sstNbBiomarkers"
+                ],
+                "condition": "model.sst"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "sstAssayVolume",
+                  "sstDeadVolume",
+                  "sstTotalVolume"
+                ],
+                "condition": "model.sst"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "edtaPlasma",
+                "type": "checkbox"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "edtaPlasmaNbParticipants",
+                  "edtaPlasmaNbAssays",
+                  "edtaPlasmaBiomarkers"
+                ],
+                "condition": "model.edtaPlasma"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "edtaPlasmaAssayVolume",
+                  "edtaPlasmaDeadVolume",
+                  "edtaPlasmaTotalVolume"
+                ],
+                "condition": "model.edtaPlasma"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "edtaRbc",
+                "type": "checkbox"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "edtaRbcNbParticipants",
+                  "edtaRbcNbAssays",
+                  "edtaRbcBiomarkers"
+                ],
+                "condition": "model.edtaRbc"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "edtaRbcAssayVolume",
+                  "edtaRbcDeadVolume",
+                  "edtaRbcTotalVolume"
+                ],
+                "condition": "model.edtaRbc"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "urine",
+                "type": "checkbox"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "urineNbParticipants",
+                  "urineNbAssays",
+                  "urineBiomarkers"
+                ],
+                "condition": "model.urine"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "urineAssayVolume",
+                  "urineDeadVolume",
+                  "urineTotalVolume"
+                ],
+                "condition": "model.urine"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "acd",
+                "type": "checkbox"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "acdNbParticipants",
+                  "acdNbAssays",
+                  "acdBiomarkers"
+                ],
+                "condition": "model.acd"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "acdAssayVolume",
+                  "acdDeadVolume",
+                  "acdTotalVolume"
+                ],
+                "condition": "model.acd"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "pstPlasma",
+                "type": "checkbox"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "pstPlasmaNbParticipants",
+                  "pstPlasmaNbAssays",
+                  "pstPlasmaBiomarkers"
+                ],
+                "condition": "model.pstPlasma"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "pstPlasmaAssayVolume",
+                  "pstPlasmaDeadVolume",
+                  "pstPlasmaTotalVolume"
+                ],
+                "condition": "model.pstPlasma"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "dna",
+                "type": "checkbox"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "dnaNbParticipants",
+                  "dnaNbAssays",
+                  "dnaBiomarkers"
+                ],
+                "condition": "model.dna"
+              },
+              {
+                "type": "section",
+                "htmlClass": "col-xs-6",
+                "items": [
+                  "dnaAssayVolume",
+                  "dnaDeadVolume",
+                  "dnaTotalVolume"
+                ],
+                "condition": "model.dna"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "type": "checkboxgroup",
+                "minChecked": 1,
+                "items": [
+                  "sst",
+                  "edtaPlasma",
+                  "edtaRbc",
+                  "urine",
+                  "acd",
+                  "pstPlasma",
+                  "dna"
+                ]
+              }
+            ]
+          }
+        ],
+        "condition": "!model.noBiologicalSample"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              "hasBiosampleRestrictions",
+              {
+                "key": "preAnalyticalRestrictions",
+                "type": "textarea",
+                "condition": "model.hasBiosampleRestrictions"
+              }
+            ]
+          }
+        ],
+        "condition": "!model.noBiologicalSample"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "type": "help",
+                "helpvalue": "<strong>t(data-access-request.custom.I.M.biosamples-other-source)</strong>"
+              },
+              {
+                "key": "otherBiosampleSource",
+                "type": "radios-inline",
+                "notitle": true,
+                "titleMap": [
+                  {
+                    "value": true,
+                    "name": "t(data-access-request.custom.response.affirmative)"
+                  },
+                  {
+                    "value": false,
+                    "name": "t(data-access-request.custom.response.negative)"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "items": [
+                  {
+                    "key": "SpecifyBiosampleSource",
+                    "title": "t(data-access-request.custom.biosamples-other-source-where)"
+                  }
+                ],
+                "condition": "model.otherBiosampleSource"
+              }
+            ]
+          }
+        ],
+        "condition": "!model.noBiologicalSample"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-6",
+            "items": [
+              {
+                "key": "biosampleRequestStatus",
+                "type": "radios-inline",
+                "titleMap": [
+                  {
+                    "value": "Approved",
+                    "name": "t(data-access-request-custom.status.approved)"
+                  },
+                  {
+                    "value": "Pending",
+                    "name": "t(data-access-request-custom.status.pending)"
+                  },
+                  {
+                    "value": "Declined",
+                    "name": "t(data-access-request-custom.status.declined)"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "condition": "model.otherBiosampleSource"
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<strong>t(data-access-request.custom.I.M.biomarker-info)</strong>"
+      },
+      {
+        "type": "help",
+        "helpvalue": "t(data-access-request.custom.I.M.biomarker-info-help)"
+      },
+      {
+        "key": "biomarkerInformation",
+        "notitle": true,
+        "type": "textarea"
+      }
+    ],
+    "condition": "!model.noBiologicalSample"
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "section",
+        "items": [
+          {
+            "type": "help",
+            "helpvalue": "<strong>t(data-access-request.custom.I.M.methodology-lab)</strong>"
+          },
+          {
+            "type": "help",
+            "helpvalue": "t(data-access-request.custom.I.M.methodology-lab-info)"
+          },
+          {
+            "key": "assay",
+            "add": "t(data-access-request.custom.array-add)",
+            "style": {
+              "add": "btn-info"
+            },
+            "notitle": true,
+            "items": [
+              {
+                "type": "section",
+                "items": [
+                  "assay[].name",
+                  {
+                    "key": "assay[].methodology",
+                    "type": "textarea"
+                  },
+                  "assay[].labName",
+                  {
+                    "key": "assay[].labAddress",
+                    "type": "textarea"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "items": [
+                  {
+                    "type": "help",
+                    "helpvalue": "t(data-access-request.custom.I.M.evidence-lab)"
+                  },
+                  "assay[].nbYearsAssay",
+                  "assay[].nbAssayTest",
+                  {
+                    "type": "help",
+                    "helpvalue": "t(data-access-request.custom.I.M.applicant-only)"
+                  },
+                  "assay[].intraAssayCV",
+                  "assay[].interAssayCV",
+                  {
+                    "type": "textarea",
+                    "key": "assay[].labQualifyers"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "condition": "model.sst || model.edtaPlasma || model.edtaRbc || model.urine || model.acd || model.pst || model.dna"
+      },
+      {
+        "type": "section",
+        "items": [
+          "informedBiosampleStaggered"
+        ]
+      }
+    ],
+    "condition": "!model.noBiologicalSample"
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>N. t(data-access-request.custom.I.N.title)</h3><p class='help-block'>t(data-access-request.custom.I.N.info)</p>"
+      },
+      {
+        "type": "help",
+        "htmlClass": "voffset2",
+        "helpvalue": "<strong>t(data-access-request.custom.I.N.questionnaire)</strong>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              "socioCharacteristics",
+              "lifestyle",
+              "reproductiveHealthHistory",
+              "personalFamilyDiseases",
+              "usePrescriptionMedications",
+              "nonPharmacologicalInterventionsDiseases",
+              "selfReportedPhysicalMeasures",
+              "physicalEnvironmentExposures",
+              "variablesBasedOpenEndedResponses"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "help",
+        "htmlClass": "voffset2",
+        "helpvalue": "<strong>t(data-access-request.custom.I.N.mental-health)</strong>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              "mentalHealthCognitionMeasures"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "help",
+        "htmlClass": "voffset2",
+        "helpvalue": "<strong>t(data-access-request.custom.I.N.physical-measures)</strong>"
+      },
+      "noPhysicalMeasure",
+      {
+        "type": "section",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "hoffset3",
+            "items": [
+              "anthropometricMeasures",
+              "bloodPressure",
+              "gripStrength",
+              "bioimpedance",
+              "bonedensity"
+            ],
+            "condition": "!model.noPhysicalMeasure"
+          }
+        ]
+      },
+      {
+        "type": "help",
+        "htmlClass": "voffset2",
+        "helpvalue": "<strong>t(data-access-request.custom.I.N.biosample-data-title)</strong><p>t(data-access-request.custom.I.N.biosample-data)</p>"
+      },
+      {
+        "type": "help",
+        "htmlClass": "voffset2",
+        "helpvalue": "<strong>t(data-access-request.custom.I.N.supplementary-title)</strong><p class='help-block'>t(data-access-request.custom.I.N.supplementary-info)</p>"
+      },
+      {
+        "key": "additionalInfo",
+        "type": "textarea",
+        "notitle": true
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>O. t(data-access-request.custom.I.O.title)</h3><p class='help-block'>t(data-access-request.custom.I.O.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              {
+                "key": "return",
+                "type": "textarea",
+                "wordLimit": 100,
+                "notitle": true,
+                "validationMessage": {
+                  "wordLimitError": "t(data-access-request.custom.100-word-limit-error)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h2>II - t(data-access-request.custom.II.title)</h2><p class='help-block'>t(data-access-request.custom.II.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              "aggreementA",
+              "aggreementB",
+              "aggreementC",
+              "aggreementD",
+              "aggreementE"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h2>III - t(data-access-request.custom.III.title)</h2><p class='help-block'>t(data-access-request.custom.III.info)</p>"
+      },
+      {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+          {
+            "type": "section",
+            "htmlClass": "col-xs-12",
+            "items": [
+              "bioAggreementA",
+              "bioAggreementB",
+              "bioAggreementC",
+              "bioAggreementD",
+              "bioAggreementE"
+            ]
+          }
+        ]
+      }
+    ],
+    "condition": "!model.noBiologicalSample"
+  },
+  {
+    "type": "fieldset",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>t(data-access-request.default.signature.title)</h3>"
+      },
+      "isFormCompleted"
+    ]
+  }
+]
