@@ -236,7 +236,12 @@ p a {
   text-decoration: none;
 }
 
-.page-item.active .page-link {
+.btn-outline-primary {
+  border-color: #002554;
+  color: #002554;
+}
+
+.page-item.active .page-link, .btn-primary, .btn-primary:hover, .btn-outline-primary:hover {
     background-color: #002554;
     border-color: #002554;
 }
