@@ -224,6 +224,10 @@ p a {
   margin-top: 0 !important;
 }
 
+.dropdown-menu {
+  z-index: 1040;
+}
+
 /*
  * Footer
  */
