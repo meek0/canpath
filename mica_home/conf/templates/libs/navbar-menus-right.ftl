@@ -23,12 +23,24 @@
         </a>
       </li>
     </#if>
-    <li class="nav-item">
-      <a href="${contextPath}/cart" class="nav-link">
-        <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count" class="badge badge-danger navbar-badge"></span>
-      </a>
-    </li>
+    <#if cartEnabled>
+      <li class="nav-item">
+        <a href="${contextPath}/cart" class="nav-link">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count" class="badge badge-danger navbar-badge"></span>
+        </a>
+      </li>
+      <#if listsEnabled>
+        <li class="nav-item">
+          <a href="${contextPath}/lists" class="nav-link" title="<@message "sets.set.title"/>">
+            <i class="far fa-list-alt"></i>
+            <#if user?? && user.variablesLists?has_content>
+              <span id="list-count" class="badge badge-danger navbar-badge">${user.variablesLists?size}</span>
+            </#if>
+          </a>
+        </li>
+      </#if>
+    </#if>
     <li class="nav-item dropdown">
       <a id="userMenu" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-user"></i> ${user.fullName}</a>
       <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu navbar-yellow border-0 shadow">
