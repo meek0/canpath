@@ -1,3 +1,5 @@
+<#include "../libs/search.ftl">
+
 <div class="alert alert-info alert-dismissible mb-4 fade show">
   <div>
     <p>
