@@ -246,6 +246,10 @@ p a {
     border-color: #002554;
 }
 
+a.dropdown-item {
+  text-decoration: none;
+}
+
 /*
  * Footer
  */
