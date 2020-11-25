@@ -4,8 +4,8 @@
 <!-- Branding -->
 <#assign brandImageSrc = "/assets/images/logo.png"/>
 <#assign brandImageClass = ""/>
-<#assign brandTextClass = ""/>
-<#assign brandTextEnabled = false/>
+<#assign brandTextClass = "CanPath"/>
+<#assign brandTextEnabled = true/>
 
 <!-- Theme -->
 <!--#assign adminLTEPath = "/assets/theme"/-->
@@ -29,3 +29,9 @@
 
 <!-- Search -->
 <#assign defaultSearchState = "#lists?type=variables"/>
+<#assign searchVariableColumns = ["label+description", "valueType", "annotations", "type", "dataset"]/>
+<#assign searchDatasetColumns = ["name", "type", "variables"]/>
+<#assign searchStudyListDisplay = false/>
+<#assign searchNetworkListDisplay = false/>
+<#assign searchGraphicsDisplay = false/>
+<#assign searchCriteriaMenus = ["variable"]/>

@@ -10,6 +10,7 @@
           $(this).html(msg);
       }
     });
+    $('a.brand-link').removeClass('bg-white').addClass('bg-navy');
     $('#search-page aside.sidebar-dark-primary').removeClass('sidebar-dark-primary').addClass('sidebar-light-primary');
   });
 </script>

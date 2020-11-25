@@ -44,7 +44,7 @@ theme:
 	cp -r ../AdminLTE/plugins/toastr static/assets/theme/plugins/
 
 up:
-	docker-compose -f $(docker_compose_file) up -d
+	docker-compose -f $(docker_compose_file) up -d --remove-orphans
 
 down:
 	docker-compose -f $(docker_compose_file) down

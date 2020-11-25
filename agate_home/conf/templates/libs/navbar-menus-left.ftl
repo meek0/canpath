@@ -22,6 +22,9 @@
       </li>
     </ul>
   </li>
+  <li id="dataAccessMenu" class="nav-item">
+    <a href="${portalUrl}/data-accesses" class="btn btn-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
+  </li>
   <li id="searchMenu" class="nav-item <#if rc.requestUri?ends_with("/search")>active</#if>">
     <a href="${portalUrl}/search${defaultSearchState}" class="nav-link"><@message "search"/></a>
   </li>
