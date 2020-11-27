@@ -24,12 +24,19 @@
           ${msg("mica.email.dataAccessRequestIntermediateReportApplicant.details")}
         </p>
         <p style="margin: 0 0 10px;">
-        </p><p style="margin: auto;text-align: center;">
+        </p>
+        <p style="margin: auto;text-align: center;">
           <a href="${publicUrl}/data-access/${id}" target="_blank"
              style="color: #ffffff;text-decoration: none;display: inline-block;margin-bottom: 0;font-weight: normal;text-align: center;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;background: #2c3e50 none;white-space: nowrap;padding: 10px 15px;font-size: 15px;line-height: 1.5;border-radius: 4px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid #2c3e50;">
             ${msg("mica.email.dataAccessRequestIntermediateReportApplicant.link")}
           </a>
         </p>
+        <div style="margin: 30px 0 0;">
+          <hr width="55%" size="1" align="left" style="padding: 0; margin-top: 0;"/>
+          <p style="font-family:monospace;font-size: 10px">
+            ${msg("access-office")}
+          </p>
+        </div>
       </div>
     </div>
     <p style="display: block;margin: 5px 0 10px;color: #597ea2;">

@@ -1,105 +1,51 @@
 <!DOCTYPE html>
-
-<!--
-  ~ Copyright (c) 2015 OBiBa. All rights reserved.
-  ~
-  ~ This program and the accompanying materials
-  ~ are made available under the terms of the GNU Public License v3.0.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
   <meta charset="UTF-8"/>
   <title></title>
 </head>
 <body
-        style="margin: 0;font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 15px;line-height: 1.5;color: #2c3e50;background-color: #ffffff;">
+  style="margin: 0;font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 15px;line-height: 1.5;color: #2c3e50;background-color: #ffffff;">
 
-<div class="well"
-     style="min-height: 20px;padding: 19px;margin-bottom: 20px;background-color: #ecf0f1;border: 1px solid transparent;border-radius: 4px;-webkit-box-shadow: none;box-shadow: none;">
+<div
+  style="min-height: 20px;padding: 19px;margin-bottom: 20px;background-color: #ecf0f1;border: 1px solid transparent;border-radius: 4px;-webkit-box-shadow: none;box-shadow: none;">
   <div style="margin: auto;max-width: 700px;">
     <div
-            style="margin-bottom: 21px;background-color: #ffffff;border-radius: 4px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);box-shadow: 0 1px 1px rgba(0,0,0,0.05);border: 1px solid #18bc9c;">
+      style="margin-bottom: 21px;background-color: #ffffff;border-radius: 4px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);box-shadow: 0 1px 1px rgba(0,0,0,0.05);border: 1px solid gainsboro;">
       <div
-              style="padding: 10px 15px;border-top-right-radius: 3px;border-top-left-radius: 3px;color: #ffffff;background-color: #18bc9c;border-color: #18bc9c;">
-        <h3
-                style="font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0;margin-bottom: 0;font-size: 17px;">
-          <span>CanPath</span> - Data access<span style="float: right !important;font-size: 13px;vertical-align: text-bottom;">French version below</span></h3>
+        style="padding: 10px 15px;border-top-right-radius: 3px;border-top-left-radius: 3px;background-color: gainsboro;border-color: gainsboro;">
+        <h3 style="font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0;margin-bottom: 0;font-size: 17px;">
+          ${msg("mica.email.dataAccessRequestCommentAdded.title", organization)}
+        </h3>
       </div>
-      <div class="panel-body" style="padding: 15px;">
+      <div style="padding: 15px;">
         <p style="margin: 0 0 10px;">
-          Dear <span>${user.firstName}</span> <span>${user.lastName}</span>,
+          ${msg("email.generic.presentation", user.firstName!"", user.lastName!"")}
         </p>
         <p style="margin: 0 0 10px;">
-          A comment has been added to the access request "<strong>${title}</strong> (<strong>${id}</strong>)". Please click <a href="${publicUrl}/data-access/${id}" target="_blank">here</a> to view the comment.
+          ${msg("mica.email.dataAccessRequestCommentAdded.body", title!id)}
+        </p>
+        <p style="margin: 0 0 10px;">
+        </p>
+        <p style="margin: auto;text-align: center;">
+          <!-- Mica link -->
+          <a href="${publicUrl}/data-access/${id}" target="_blank"
+            style="color: #ffffff;text-decoration: none;display: inline-block;margin-bottom: 0;font-weight: normal;text-align: center;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;background: #2c3e50 none;white-space: nowrap;padding: 10px 15px;font-size: 15px;line-height: 1.5;border-radius: 4px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid #2c3e50;">
+            ${msg("mica.email.dataAccessRequestCommentAdded.link")}
+          </a>
         </p>
         <div style="margin: 30px 0 0;">
           <hr width="55%" size="1" align="left" style="padding: 0; margin-top: 0;"/>
           <p style="font-family:monospace;font-size: 10px">
-            Canadian Partnership for Tomorrow's Health, Access Office<br/>
-            Centre of Genomics and Policy - McGill University<br/>
-            740 Dr. Penfield Avenue, Room 5103<br/>
-            Montréal (Québec) Canada<br/>
-            H3A 0G1<br/>
-            <br/>
-            <a href="mailto:access@canpath.ca" target="_blank">access@canpath.ca</a><br/>
-            <br/>
-            <a href="https://canpath.ca" target="_blank">https://canpath.ca</a><br/>
-            <a href="https://portal.canpath.ca/" target="_blank">https://portal.canpath.ca</a>
+            ${msg("access-office")}
           </p>
         </div>
       </div>
     </div>
-    <p class="help-block" style="display: block;margin: 5px 0 10px;color: #597ea2;">
-      ** Do Not Reply - This is an auto-generated email. **
+    <p style="display: block;margin: 5px 0 10px;color: #597ea2;">
+      ${msg("email.generic.message")}
     </p>
   </div>
 </div>
-<div class="well"
-     style="min-height: 20px;padding: 19px;margin-bottom: 20px;background-color: #ecf0f1;border: 1px solid transparent;border-radius: 4px;-webkit-box-shadow: none;box-shadow: none;">
-  <div style="margin: auto;max-width: 700px;">
-    <div
-            style="margin-bottom: 21px;background-color: #ffffff;border-radius: 4px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);box-shadow: 0 1px 1px rgba(0,0,0,0.05);border: 1px solid #18bc9c;">
-      <div
-              style="padding: 10px 15px;border-top-right-radius: 3px;border-top-left-radius: 3px;color: #ffffff;background-color: #18bc9c;border-color: #18bc9c;">
-        <h3
-                style="font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0;margin-bottom: 0;font-size: 17px;">
-          <span>CanPath</span> - Demande d'accès<span style="float: right !important;font-size: 13px;vertical-align: text-bottom;">Version anglaise ci-dessus</span></h3>
-      </div>
-      <div class="panel-body" style="padding: 15px;">
-        <p style="margin: 0 0 10px;">
-          Bonjour <span>${user.firstName}</span> <span>${user.lastName}</span>,
-        </p>
-        <p style="margin: 0 0 10px;">
-          Un commentaire a été ajouté à la demande d'accès "<strong>${title}</strong> (<strong>${id}</strong>)". Veuillez cliquer <a href="${publicUrl}/data-access/${id}" target="_blank">ici</a> pour voir le commentaire.
-        </p>
-        <div style="margin: 30px 0 0;">
-          <hr width="72%" size="1" align="left" style="padding: 0; margin-top: 0;"/>
-          <p style="font-family:monospace;font-size: 10px">
-            Bureau d'accès du Partenariat canadien pour la santé de demain<br/>
-            Centre de génomique et politiques – Université McGill<br/>
-            740, avenue Dr Penfield, Bureau 5103<br/>
-            Montréal (Québec) Canada<br/>
-            H3A 0G1<br/>
-            <br/>
-            <a href="mailto:access@canpath.ca" target="_blank">access@canpath.ca</a><br/>
-            <br/>
-            <a href="https://canpath.ca" target="_blank">https://canpath.ca</a><br/>
-            <a href="https://portal.canpath.ca/" target="_blank">https://portal.canpath.ca</a>
-          </p>
-        </div>
-
-      </div>
-    </div>
-    <p class="help-block" style="display: block;margin: 5px 0 10px;color: #597ea2;">
-      ** Ne pas répondre - ceci est un courriel généré automatiquement. **
-    </p>
-  </div>
-</div>
-
 
 </body>
 </html>
