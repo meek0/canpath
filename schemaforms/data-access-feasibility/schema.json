@@ -1,29 +1,29 @@
 {
   "type": "object",
   "properties": {
-    "grantSubmission": {
-      "title": "t(data-access-feasibility.default.grant-submission.check)",
-      "type": "boolean"
-    },
     "grantingAgency": {
-      "title": "t(data-access-feasibility.default.granting-agency)",
+      "title": "t(data-access-feasibility.granting-agency)",
       "type": "string"
     },
     "grantCompetition": {
-      "title": "t(data-access-feasibility.default.grant-competition)",
+      "title": "t(data-access-feasibility.grant-competition)",
       "type": "string"
     },
     "grantDate": {
-      "title": "t(data-access-feasibility.default.grant-date)",
+      "title": "t(data-access-feasibility.grant-date)",
       "type": "string",
       "format": "datepicker"
     },
+    "grantTitle": {
+      "title": "t(data-access-feasibility.grant-title)",
+      "type": "string"
+    },
     "pi": {
-      "title": "t(data-access-feasibility.default.pi)",
+      "title": "t(data-access-feasibility.pi)",
       "type": "string"
     },
     "career": {
-      "title": "t(data-access-feasibility.default.career.title)",
+      "title": "t(data-access-feasibility.career.title)",
       "type": "string",
       "enum": [
         "inv-early",
@@ -35,79 +35,74 @@
       ]
     },
     "careerOther": {
-      "title": "t(data-access-feasibility.default.career.other-career)",
+      "title": "t(data-access-feasibility.career.other-career)",
       "type": "string"
     },
     "currentPosition": {
-      "title": "t(data-access-feasibility.default.current-position)",
+      "title": "t(data-access-feasibility.current-position)",
       "type": "string"
     },
     "piEmail": {
-      "title": "t(data-access-feasibility.default.pi-email)",
+      "title": "t(data-access-feasibility.pi-email)",
       "type": "string",
       "pattern": "^\\S+@\\S+$"
     },
     "piPhone": {
-      "title": "t(data-access-feasibility.default.pi-phone)",
+      "title": "t(data-access-feasibility.pi-phone)",
       "type": "string"
     },
     "piAddress": {
-      "title": "t(data-access-feasibility.default.pi-address)",
-      "type": "string"
-    },
-    "projectTitle": {
-      "title": "t(data-access-feasibility.default.project-title)",
+      "title": "t(data-access-feasibility.pi-address)",
       "type": "string"
     },
     "projectObjectives": {
-      "title": "t(data-access-feasibility.default.project-objectives)",
+      "title": "t(data-access-feasibility.project-objectives)",
       "type": "string"
     },
     "datasets": {
-      "title": "t(data-access-feasibility.default.datasets)",
+      "title": "t(data-access-feasibility.datasets)",
       "type": "string"
     },
     "selectionCriteria": {
-      "title": "t(data-access-feasibility.default.selection-criteria)",
+      "title": "t(data-access-feasibility.selection-criteria)",
       "type": "string"
     },
     "studyDesign": {
-      "title": "t(data-access-feasibility.default.study-design)",
+      "title": "t(data-access-feasibility.study-design)",
       "type": "string"
     },
-    "includeBiospecimens": {
-      "title": "t(data-access-feasibility.default.biospecimens.check)",
-      "type": "boolean"
-    },
-    "biospecimensType": {
-      "title": "t(data-access-feasibility.default.biospecimens-type)",
+    "biosamplesType": {
+      "title": "t(data-access-feasibility.biosamples-type)",
       "type": "string"
     },
-    "biospecimensSelectionCriteria": {
-      "title": "t(data-access-feasibility.default.biospecimens-selection-criteria)",
+    "biosamplesSelectionCriteria": {
+      "title": "t(data-access-feasibility.biosamples-selection-criteria)",
       "type": "string"
     },
-    "biospecimensPreAnalyticalCharacteristics": {
-      "title": "t(data-access-feasibility.default.biospecimens-pre-analytical-characteristics)",
+    "biosamplesPreAnalyticalCharacteristics": {
+      "title": "t(data-access-feasibility.biosamples-pre-analytical-characteristics)",
       "type": "string"
     },
-    "biospecimensAnalyzeMethods": {
-      "title": "t(data-access-feasibility.default.biospecimens-analyze-methods)",
+    "biosamplesAnalyzeMethods": {
+      "title": "t(data-access-feasibility.biosamples-analyze-methods)",
       "type": "string"
     },
     "linkage": {
-      "title": "t(data-access-feasibility.default.data-linkage)",
+      "title": "t(data-access-feasibility.data-linkage)",
       "type": "string"
     }
   },
   "required": [
+    "grantingAgency",
+    "grantDate",
+    "grantCompetition",
+    "grantTitle",
     "pi",
     "career",
     "currentPosition",
     "piEmail",
     "piPhone",
     "piAddress",
-    "projectTitle",
     "projectObjectives",
     "datasets",
     "selectionCriteria",

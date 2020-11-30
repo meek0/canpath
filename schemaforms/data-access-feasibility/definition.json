@@ -4,14 +4,21 @@
     "items": [
       {
         "type": "help",
-        "helpvalue": "<h3>t(data-access-feasibility.default.grant-submission.title)</h3>"
-      },
-      "grantSubmission"
+        "helpvalue": "<h3>t(data-access-feasibility.form-title)</h3>"
+      }
     ]
   },
   {
     "type": "fieldset",
-    "condition": "model.grantSubmission",
+    "items": [
+      {
+        "type": "help",
+        "helpvalue": "<h3>t(data-access-feasibility.grant-submission.title)</h3>"
+      }
+    ]
+  },
+  {
+    "type": "fieldset",
     "items": [
       {
         "type": "section",
@@ -21,17 +28,13 @@
             "type": "section",
             "htmlClass": "col-xs-6",
             "items": [
-              {
-                "key": "grantingAgency",
-                "required": true
-              },
+              "grantingAgency",
               {
                 "key": "grantDate",
                 "dateOptions": {
                   "dateFormat": "yyyy-MM-dd"
                 },
-                "validationMessage": "t(data-access-request.default.date-error)",
-                "required": true
+                "validationMessage": "t(data-access-request.date-error)"
               }
             ]
           },
@@ -39,10 +42,8 @@
             "type": "section",
             "htmlClass": "col-xs-6",
             "items": [
-              {
-                "key": "grantCompetition",
-                "required": true
-              }
+              "grantCompetition",
+              "grantTitle"
             ]
           }
         ]
@@ -54,7 +55,7 @@
     "items": [
       {
         "type": "help",
-        "helpvalue": "<h3>t(data-access-feasibility.default.applicant-info.title)</h3>"
+        "helpvalue": "<h3>t(data-access-feasibility.applicant-info.title)</h3>"
       }
     ]
   },
@@ -76,27 +77,27 @@
                 "titleMap": [
                   {
                     "value": "inv-early",
-                    "name": "t(data-access-feasibility.default.career.inv-early)"
+                    "name": "t(data-access-feasibility.career.inv-early)"
                   },
                   {
                     "value": "inv-mid",
-                    "name": "t(data-access-feasibility.default.career.inv-mid)"
+                    "name": "t(data-access-feasibility.career.inv-mid)"
                   },
                   {
                     "value": "inv-senior",
-                    "name": "t(data-access-feasibility.default.career.inv-senior)"
+                    "name": "t(data-access-feasibility.career.inv-senior)"
                   },
                   {
                     "value": "student",
-                    "name": "t(data-access-feasibility.default.career.student)"
+                    "name": "t(data-access-feasibility.career.student)"
                   },
                   {
                     "value": "postdoc",
-                    "name": "t(data-access-feasibility.default.career.postdoc)"
+                    "name": "t(data-access-feasibility.career.postdoc)"
                   },
                   {
                     "value": "other",
-                    "name": "t(data-access-feasibility.default.career.other)"
+                    "name": "t(data-access-feasibility.career.other)"
                   }
                 ]
               },
@@ -117,7 +118,8 @@
               {
                 "key": "piAddress",
                 "type": "textarea",
-                "required": true
+                "required": true,
+                "description": "t(data-access-feasibility.pi-address-help)"
               }
             ]
           }
@@ -130,7 +132,7 @@
     "items": [
       {
         "type": "help",
-        "helpvalue": "<h3>t(data-access-feasibility.default.project-info.title)</h3>"
+        "helpvalue": "<h3>t(data-access-feasibility.project-info.title)</h3>"
       }
     ]
   },
@@ -143,7 +145,6 @@
           {
             "type": "section",
             "items": [
-              "projectTitle",
               {
                 "key": "projectObjectives",
                 "type": "textarea"
@@ -159,7 +160,7 @@
     "items": [
       {
         "type": "help",
-        "helpvalue": "<h3>t(data-access-feasibility.default.data.title)</h3>"
+        "helpvalue": "<h3>t(data-access-feasibility.data.title)</h3>"
       }
     ]
   },
@@ -174,7 +175,8 @@
             "items": [
               {
                 "key": "datasets",
-                "type": "textarea"
+                "type": "textarea",
+                "description": "t(data-access-feasibility.datasets-help)"
               },
               {
                 "key": "selectionCriteria",
@@ -195,14 +197,12 @@
     "items": [
       {
         "type": "help",
-        "helpvalue": "<h3>t(data-access-feasibility.default.biospecimens.title)</h3>"
-      },
-      "includeBiospecimens"
+        "helpvalue": "<h3>t(data-access-feasibility.biosamples.title)</h3>"
+      }
     ]
   },
   {
     "type": "fieldset",
-    "condition": "model.includeBiospecimens",
     "items": [
       {
         "type": "section",
@@ -211,22 +211,25 @@
             "type": "section",
             "items": [
               {
-                "key": "biospecimensType",
+                "key": "biosamplesType",
                 "type": "textarea",
+                "description": "t(data-access-feasibility.biosamples-type-help)"
+              },
+              {
+                "key": "biosamplesSelectionCriteria",
+                "type": "textarea",
+                "condition": "model.biosamplesType",
                 "required": true
               },
               {
-                "key": "biospecimensSelectionCriteria",
+                "key": "biosamplesPreAnalyticalCharacteristics",
                 "type": "textarea",
-                "required": true
+                "condition": "model.biosamplesType"
               },
               {
-                "key": "biospecimensPreAnalyticalCharacteristics",
-                "type": "textarea"
-              },
-              {
-                "key": "biospecimensAnalyzeMethods",
+                "key": "biosamplesAnalyzeMethods",
                 "type": "textarea",
+                "condition": "model.biosamplesType",
                 "required": true
               }
             ]
@@ -240,7 +243,7 @@
     "items": [
       {
         "type": "help",
-        "helpvalue": "<h3>t(data-access-feasibility.default.linkage.title)</h3>"
+        "helpvalue": "<h3>t(data-access-feasibility.linkage.title)</h3>"
       }
     ]
   },
@@ -255,7 +258,8 @@
             "items": [
               {
                 "key": "linkage",
-                "type": "textarea"
+                "type": "textarea",
+                "description": "t(data-access-feasibility.data-linkage-help)"
               }
             ]
           }
