@@ -102,7 +102,7 @@
       "maximum-number-attained": "Your limit of {{arg0}} <a href='{{arg1}}' target='_self'><strong><u>lists</u></strong></a> have been attained.",
       "set": {
         "title": "Lists",
-        "help": "",
+        "help": "Manage saved lists of variables. Each list can be analyzed or can be viewed in the search page.",
         "no-variable-added": "No variable has been added to the {{arg0}} list.",
         "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) were added to list {{arg3}}.</u></a>"
       },
@@ -801,7 +801,7 @@
       "maximum-number-attained": "Votre limite de {{arg0}} <a href='{{arg1}}' target='_self'><strong><u>listes</u></strong></a> a été atteinte.",
       "set": {
         "title": "Listes",
-        "help": "",
+        "help": "Gestion des listes de variables sauvegardées. Chaque liste peut ensuite être analysée ou vu dans la page de recherche.",
         "no-variable-added": "Aucune variable n'a été ajoutée à la liste {{arg0}}.",
         "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) ont été ajoutées à la liste {{arg3}}.</u></a>"
       },
