@@ -3,8 +3,22 @@
     "type": "fieldset",
     "items": [
       {
-        "type": "help",
-        "helpvalue": "<h3>t(data-access-feasibility.form-title)</h3>"
+        "type": "section",
+        "items": [
+          {
+            "type": "help",
+            "helpvalue": "<h2 class='text-center'>t(data-access-feasibility.form-title)</h2><p class='h4 text-center'>t(data-access-feasibility.form-subtitle)</p>"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "items": [
+          {
+            "type": "help",
+            "helpvalue": "t(data-access-feasibility.intro)"
+          }
+        ]
       }
     ]
   },

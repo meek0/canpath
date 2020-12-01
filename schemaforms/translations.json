@@ -463,7 +463,9 @@
       }
     },
     "data-access-feasibility": {
-      "form-title": "CANPATH REQUEST FOR LETTER OF SUPPORT AND COST ESTIMATE FORM",
+      "form-title": "LETTER OF SUPPORT AND COST ESTIMATE",
+      "form-subtitle": "CanPath Request for Letter of Support and Cost Estimate Form",
+      "intro": "<p class='mt-3'>Please note:</p><ul><li>Provision of a draft Letter of Support is strongly recommended</li><li>10 business days are required to provide a Letter of Support</li></ul>",
       "grant-submission": {
         "title": "A. Grant Submission Details"
       },
@@ -1210,7 +1212,9 @@
       }
     },
     "data-access-feasibility": {
-      "form-title": "FORMULAIRE CANPATH DE LETTRE DE SUPPORT ET D'ESTIMATION DE COÛT",
+      "form-title": "LETTRE DE SUPPORT ET ESTIMATION DE COÛT",
+      "form-subtitle": "Formulaire CanPath de demande de lettre de support et d'estimation de coût",
+      "intro": "<p class='mt-3'>Veuillez noter:</p><ul><li>La fourniture d'une ébauche de lettre de soutien est fortement recommandée</li><li>10 jours ouvrables sont nécessaires pour fournir une lettre de soutien</li></ul>",
       "grant-submission": {
         "title": "A. Détails de la demande de financement"
       },
