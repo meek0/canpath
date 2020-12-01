@@ -5,12 +5,12 @@
       "harmonization-study": "Data"
     },
     "config": {
-      "sets": "Saved Lists",
-      "set-time-to-live": "Saved List Time Span",
-      "set-time-to-live-help": "Saved List time span in days.",
-      "max-number-sets": "Maximum number of saved lists",
-      "max-number-sets-help": "Maximum number of saved lists that a user can create.",
-      "max-items-per-set-help": "Maximum number of documents a saved list or the cart can contain.",
+      "sets": "Lists",
+      "set-time-to-live": "List Time Span",
+      "set-time-to-live-help": "List time span in days.",
+      "max-number-sets": "Maximum number of lists",
+      "max-number-sets-help": "Maximum number of lists that a user can create.",
+      "max-items-per-set-help": "Maximum number of documents a list or the cart can contain.",
       "single-study-enabled-help": "Only one study is present in Mica.",
       "roles-help": "A person can be member of a study or of a network with one of the listed roles.",
       "harmonization-dataset-enabled": "Harmonization datasets section enabled",
@@ -98,26 +98,26 @@
       "member-list": "List of {{type}}"
     },
     "sets": {
-      "empty": "No saved list",
-      "maximum-number-attained": "Your limit of {{arg0}} <a href='{{arg1}}' target='_self'><strong><u>saved lists</u></strong></a> have been attained.",
+      "empty": "No list",
+      "maximum-number-attained": "Your limit of {{arg0}} <a href='{{arg1}}' target='_self'><strong><u>lists</u></strong></a> have been attained.",
       "set": {
-        "title": "Saved Lists",
+        "title": "Lists",
         "help": "",
-        "no-variable-added": "No variable has been added to the {{arg0}} saved list.",
-        "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) were added to saved list {{arg3}}.</u></a>"
+        "no-variable-added": "No variable has been added to the {{arg0}} list.",
+        "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) were added to list {{arg3}}.</u></a>"
       },
       "add": {
         "button": {
-          "set-label": "Add to Saved List"
+          "set-label": "Add to a list"
         },
         "modal": {
-          "create-new": "Create a new saved list",
-          "to-existing": "Add to an existing saved list"
+          "create-new": "Create a new list",
+          "to-existing": "Add to an existing list"
         }
       },
       "delete-dialog": {
-        "title": "Delete Selected Saved Lists",
-        "message": "Are you sure you want to delete the selected saved lists."
+        "title": "Delete Selected Lists",
+        "message": "Are you sure you want to delete the selected lists."
       }
     },
     "search": {
@@ -146,7 +146,7 @@
       "help": {
         "network-config": "Configure network form.",
         "data-access-config": "Configure Access Request form.",
-        "sets": "Saved lists of variables.",
+        "sets": "Lists of variables.",
         "dataset-config": "Configure dataset form.",
         "study-config": "Configure study form."
       }
@@ -710,12 +710,12 @@
       "included-individual-study": "Étude individuelle incluse"
     },
     "config": {
-      "sets": "Listes enregistrées",
-      "set-time-to-live": "Durée de vie de la liste enregistrée",
-      "set-time-to-live-help": "Durée de vie de la liste enregistrée en jours.",
-      "max-number-sets": "Nombre maximum de listes enregistrées",
-      "max-number-sets-help": "Le nombre maximum de listes enregistrées qu'un utilisateur peut créer.",
-      "max-items-per-set-help": "Le nombre maximum de documents qu'une liste enregistrée ou le panier peut contenir.",
+      "sets": "Listes",
+      "set-time-to-live": "Durée de vie de la liste",
+      "set-time-to-live-help": "Durée de vie de la liste en jours.",
+      "max-number-sets": "Nombre maximum de listes",
+      "max-number-sets-help": "Le nombre maximum de listes qu'un utilisateur peut créer.",
+      "max-items-per-set-help": "Le nombre maximum de documents qu'une liste ou le panier peut contenir.",
       "single-study-enabled-help": "Une seule étude est présente dans Mica.",
       "roles-help": "Une personne peut être membre d'une étude ou d'un réseau avec l'un des rôles énumérés.",
       "harmonization-dataset-enabled": "Section ensemble de données d'harmonisation activée",
@@ -797,26 +797,26 @@
     "changed-on": "Changé le",
     "REJECTED": "Rejectée",
     "sets": {
-      "empty": "Aucune liste enregistrée",
-      "maximum-number-attained": "Votre limite de {{arg0}} <a href='{{arg1}}' target='_self'><strong><u>listes enregistrées</u></strong></a> a été atteinte.",
+      "empty": "Aucune liste",
+      "maximum-number-attained": "Votre limite de {{arg0}} <a href='{{arg1}}' target='_self'><strong><u>listes</u></strong></a> a été atteinte.",
       "set": {
-        "title": "Listes enregistrées",
+        "title": "Listes",
         "help": "",
-        "no-variable-added": "Aucune variable n'a été ajoutée à la liste enregistrées {{arg0}}.",
-        "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) ont été ajoutées à la liste enregistrée {{arg3}}.</u></a>"
+        "no-variable-added": "Aucune variable n'a été ajoutée à la liste {{arg0}}.",
+        "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) ont été ajoutées à la liste {{arg3}}.</u></a>"
       },
       "add": {
         "button": {
-          "set-label": "Ajouter à une liste enregistrée"
+          "set-label": "Ajouter à une liste"
         },
         "modal": {
-          "create-new": "Créer une nouvelle liste enregistrée",
-          "to-existing": "Ajouter à une liste enregistrée existante"
+          "create-new": "Créer une nouvelle liste",
+          "to-existing": "Ajouter à une liste existante"
         }
       },
       "delete-dialog": {
-        "title": "Supprimer les listes enregistrées sélectionnées",
-        "message": "Êtes-vous sûr de vouloir supprimer les listes enregistrées sélectionnées?"
+        "title": "Supprimer les listes sélectionnées",
+        "message": "Êtes-vous sûr de vouloir supprimer les listes sélectionnées?"
       }
     },
     "search": {
@@ -846,7 +846,7 @@
       "help": {
         "network-config": "Configure network form.",
         "data-access-config": "Configurer le formulaire de demande d'accès.",
-        "sets": "Listes enregistrées de variables.",
+        "sets": "Listes de variables.",
         "dataset-config": "Configure dataset form.",
         "study-config": "Configure study form."
       }
