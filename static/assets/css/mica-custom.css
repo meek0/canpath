@@ -30,6 +30,10 @@
  * Content
  */
 
+.card-primary.card-outline {
+  border-top-color: #17a2b8;
+}
+
 #harmonization-studies-callout,
 #data-access-process-callout,
 #projects-page .callout {
