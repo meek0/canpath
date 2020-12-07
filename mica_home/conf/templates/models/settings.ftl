@@ -35,3 +35,6 @@
 <#assign searchNetworkListDisplay = false/>
 <#assign searchGraphicsDisplay = false/>
 <#assign searchCriteriaMenus = ["variable"]/>
+
+<!-- Variables classifications charts -->
+<#assign studyVariablesClassificationsTaxonomies = []/>
