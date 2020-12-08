@@ -2,7 +2,7 @@
   <p>
     CanPath takes the power of the cohort study a step further with its large biological samples collection. The availability of these biological samples will allow wider and deeper investigations into the causes of cancer and chronic diseases, and may help uncover new means of detection and treatment.
   </p>
-  <h2 class="mt-5">The CanPath Biosamples Collection</h2>
+  <h5 class="mt-5 mb-3">The CanPath Biosamples Collection</h5>
   <table class="table table-striped" style="width:600px;">
     <thead>
     <tr>
