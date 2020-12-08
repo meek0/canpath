@@ -29,7 +29,7 @@
 
 <!-- Search -->
 <#assign defaultSearchState = "#lists?type=variables"/>
-<#assign searchVariableColumns = ["label+description", "valueType", "annotations", "type", "dataset"]/>
+<#assign searchVariableColumns = ["label+description", "valueType", "annotations", "type", "study", "population", "dataset"]/>
 <#assign searchDatasetColumns = ["name", "type", "variables"]/>
 <#assign searchStudyListDisplay = false/>
 <#assign searchNetworkListDisplay = false/>
