@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <h5><a id="required" name="required"></a> Documentation requise pour l’accès à CanPath</h5>
+  <h5 class="mt-5 mb-3"><a id="required" name="required"></a> Documentation requise pour l’accès à CanPath</h5>
   <p>Toutes les demandes d'accès doivent inclure les éléments suivants :</p>
   <ul>
     <li><p>Formulaire de demande d'accès rempli</p></li>
@@ -77,7 +77,7 @@
     <li><p>CV de deux pages du demandeur principal</p></li>
   </ul>
 
-  <h5>
+  <h5 class="mt-5 mb-3">
     <a id="submission_process" name="submission_process"></a> Soumettez une de demande d'accès
   </h5>
   <p style="text-align:center;"><img alt="" src="/assets/images/submission_process_fr.png" style="width: 750px; height: 498px;"></p>
@@ -181,11 +181,11 @@
       et la génomique. Le comité d’accès se réunit formellement 4 fois par an.
     </p>
 
-  <h5>Besoin d’aide?</h5>
+  <h5 class="mt-5 mb-3">Besoin d’aide?</h5>
   <p>Toute question sur l’accès à CanPath peut être adressée à Asha Mohamed, responsable de l’accès. Courriel : <a
         href="mailto:access@canpath.ca">access@canpath.ca</a></p>
 
-  <h5><a id="access_policies" name="access_policies"></a>Politiques &amp; lignes directrices de CanPath</h5>
+  <h5 class="mt-5 mb-3"><a id="access_policies" name="access_policies"></a>Politiques &amp; lignes directrices de CanPath</h5>
   <p>Avant de soumettre un formulaire de demande d'accès, nous vous recommandons fortement de consulter les documents suivants (disponibles en anglais seulement) :</p>
   <ul>
     <li>

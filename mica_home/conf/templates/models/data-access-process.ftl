@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <h5><a id="required" name="required"></a> Required CanPath Access Documentation</h5>
+  <h5 class="mt-5 mb-3"><a id="required" name="required"></a> Required CanPath Access Documentation</h5>
   <p>All applications for access must include the following:</p>
   <ul>
     <li><p>Completed Access Application Form</p></li>
@@ -74,7 +74,7 @@
     <li><p>2-Page CV of the principal applicant</p></li>
   </ul>
 
-  <h5>
+  <h5 class="mt-5 mb-3">
     <a id="submission_process" name="submission_process"></a> Submit an Access Request
   </h5>
   <p style="text-align:center;"><img alt="" src="/assets/images/submission_process.png" style="width: 750px; height: 498px;"></p>
@@ -182,11 +182,11 @@
       for submission deadlines.
     </p>
 
-  <h5>Need Support?</h5>
+  <h5 class="mt-5 mb-3">Need Support?</h5>
   <p>All CanPath access questions can be directed to Asha Mohamed, Access Officer. Email: <a
         href="mailto:access@canpath.ca">access@canpath.ca</a></p>
 
-  <h5><a id="access_policies" name="access_policies"></a>CanPath Policies &amp; Guidelines</h5>
+  <h5 class="mt-5 mb-3"><a id="access_policies" name="access_policies"></a>CanPath Policies &amp; Guidelines</h5>
   <p>We strongly recommend that you consult these prior to submitting an&nbsp;Access Application Form:</p>
   <ul>
     <li>
