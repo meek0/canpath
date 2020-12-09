@@ -36,5 +36,8 @@
 <#assign searchGraphicsDisplay = false/>
 <#assign searchCriteriaMenus = ["variable"]/>
 
+<!-- Variable -->
+<#assign showHarmonizedVariableSummarySelector = false/>
+
 <!-- Variables classifications charts -->
 <#assign studyVariablesClassificationsTaxonomies = []/>
