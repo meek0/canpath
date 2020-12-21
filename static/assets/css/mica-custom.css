@@ -88,6 +88,10 @@
   margin-top: 0.2em !important;
 }
 
+#sum, #sum-of-squares {
+  display: none;
+}
+
 /*
  * Data Access
  */

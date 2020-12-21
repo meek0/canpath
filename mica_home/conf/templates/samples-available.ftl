@@ -8,7 +8,7 @@
   <#include "libs/head.ftl">
   <title>${config.name!""} | <@message "biological-samples-available"/></title>
 </head>
-<body id="data-access-process-page" class="hold-transition layout-top-nav layout-navbar-fixed">
+<body id="samples-page" class="hold-transition layout-top-nav layout-navbar-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->

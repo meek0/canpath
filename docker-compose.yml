@@ -1,7 +1,7 @@
 version: '3'
 services:
   mica:
-    image: obiba/mica:snapshot
+    image: obiba/mica:latest
     ports:
       - "8445:8445"
       - "8082:8082"
