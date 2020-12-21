@@ -23,7 +23,16 @@
 <body id="${title}-page" class="hold-transition layout-top-nav layout-navbar-fixed">
 <div class="wrapper">
 
-  <!-- Navbar -->
+  <!-- Studies order -->
+  <#if !type??>
+    <#assign orderedStudies = orderStudies(studies, individualStudyOrder + harmonizationStudyOrder)/>
+  <#elseif type == "Harmonization">
+    <#assign orderedStudies = orderStudies(studies, harmonizationStudyOrder)/>
+  <#else>
+    <#assign orderedStudies = orderStudies(studies, individualStudyOrder)/>
+ </#if>
+
+    <!-- Navbar -->
   <#include "libs/top-navbar.ftl">
   <!-- /.navbar -->
 
@@ -88,7 +97,7 @@
                         <@studyTableHeadModel/>
                         </thead>
                         <tbody>
-                        <#list studies as std>
+                        <#list orderedStudies as std>
                           <@studyTableRowModel study=std/>
                         </#list>
                         </tbody>
@@ -99,7 +108,7 @@
 
                 <#if studyListDisplays?seq_contains("lines")>
                   <div class="tab-pane <#if studyListDefaultDisplay == "lines">active</#if>" id="lines">
-                    <#list studies as std>
+                    <#list orderedStudies as std>
                       <div class="border-bottom mb-3 pb-3" style="min-height: 150px;">
                         <div class="row">
                           <@studyLineModel study=std/>
@@ -112,7 +121,7 @@
                 <#if studyListDisplays?seq_contains("cards")>
                   <div class="tab-pane <#if studyListDefaultDisplay == "cards">active</#if>" id="cards">
                     <div class="row d-flex align-items-stretch">
-                      <#list studies as std>
+                      <#list orderedStudies as std>
                         <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                           <@studyCa study=std/>
                         </div>

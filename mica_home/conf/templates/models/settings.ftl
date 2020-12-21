@@ -41,3 +41,7 @@
 
 <!-- Variables classifications charts -->
 <#assign studyVariablesClassificationsTaxonomies = []/>
+
+<!-- Studies -->
+<#assign individualStudyOrder = ["atp", "atlantic-path", "bcgp", "cag", "ohs"]/>
+<#assign harmonizationStudyOrder = ["core", "genotype", "canue"]/>

@@ -89,3 +89,20 @@
     </div>
   </div>
 </#macro>
+
+<#function orderStudies studies orderedIds>
+  <#assign ordered = [] />
+  <#list orderedIds as id>
+    <#list studies as std>
+      <#if std.id == id>
+        <#assign ordered = ordered + [std] />
+      </#if>
+    </#list>
+  </#list>
+  <#list studies as std>
+    <#if !orderedIds?seq_contains(std.id)>
+      <#assign ordered = ordered + [std] />
+    </#if>
+  </#list>
+  <#return ordered/>
+</#function>
