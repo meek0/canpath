@@ -33,7 +33,7 @@
 <#macro studyLineModel study>
   <div class="col-lg-3 col-sm-12">
     <#if study.logo??>
-      <img class="rounded mx-auto d-block mb-3" style="max-height: 150px" alt="${localize(study.acronym)} logo" src="${contextPath}/ws/study/${study.id}/file/${study.logo.id}/_download"/>
+      <img class="rounded mx-auto d-block mb-3" style="max-height: 150px; max-width: 200px" alt="${localize(study.acronym)} logo" src="${contextPath}/ws/study/${study.id}/file/${study.logo.id}/_download"/>
     <#else >
       <div class="text-black-50 text-center mt-5">
         <i class="${studyIcon} fa-3x"></i>
