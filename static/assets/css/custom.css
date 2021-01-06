@@ -133,6 +133,14 @@ p a {
   color: #000 !important;
 }
 
+.text-height-1 {
+  line-height: 1.5!important;
+}
+
+.text-height-2 {
+  line-height: 2!important;
+}
+
 .main-header .brand-image {
   margin-top: -.5rem;
   margin-right: .2rem;

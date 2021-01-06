@@ -2,9 +2,9 @@
 
 <!-- Data access process model template -->
 <#macro dataAccessProcessModel>
-  <p>
+  <p class="text-height-2">
     Requests for access and information on the CanPath datasets are received by the <strong>CanPath Access Office</strong>. Access
-    requests limited to <a href="/harmonization-studies">Harmonized Data</a> are eligible for an Expedited Access Review. All
+    requests limited to <a href="/harmonization-studies">Harmonized (Core) Data</a>, including COVID-19 Questionnaire data, are eligible for an Expedited Access Review. All
     other requests, including, but not limited to, applications for <a href="/page/samples">Biosamples</a> and administrative health
     linkages, require a Full Access Committee Review. Submission deadlines for Full Access Committee Reviews are <a href="#review_process">listed here</a>.
   </p>
@@ -91,6 +91,15 @@
   </p>
 
   <h6><a id="review_process" name="review_process">CanPath Review Processes</a></h6>
+
+  <p class="mt-3"><strong>Expedited COVID-19 Data Access</strong></p>
+
+  <p>
+    National harmonized data from the CanPath COVID-19 Questionnaire are now available to researchers. Given the immediate
+    need for pandemic research, requests for access to the national COVID-19 Questionnaire dataset will be <strong>reviewed
+      in as little as 9 business days</strong>. Please refer to the Expedited Review Criteria below for eligibility.
+  </p>
+
   <div class="row">
     <div class="col-sm-6">
       <table class="table table-striped table-bordered">
@@ -104,7 +113,7 @@
         <tbody>
         <tr>
           <td><strong>Request Type</strong></td>
-          <td>Harmonized Datasets Only</td>
+          <td>Harmonized (Core) Datasets Only</td>
           <td>Requests for:
             <ul>
               <li>Non-Harmonized datasets</li>
@@ -193,7 +202,7 @@
       <a href="/assets/files/Access_Policy_Approved_July_29_2020_final.pdf"
          target="_blank">CanPath Access Policy</a></li>
     <li>
-      <a href="/assets/files/CanPath%20Publications%20Policy%20PDF%20Version.pdf"
+      <a href="/assets/files/CanPath%20Publications%20Policy_Approved%202020-Sep-23.pdf"
          target="_blank">Publications Policy</a></li>
     <li>
       <a href="/assets/files/CanPath%20Intellectual%20Property%20Policy_v1.1_2020-07-22.pdf"

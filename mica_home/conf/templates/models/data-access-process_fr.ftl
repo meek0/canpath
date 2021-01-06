@@ -2,9 +2,9 @@
 
 <!-- Data access process model template -->
 <#macro dataAccessProcessModel>
-  <p>
+  <p class="text-height-2">
     Les demandes d'accès et d’informations sur les ensembles de données de CanPath sont reçues par le <strong>bureau d'accès de CanPath</strong>.
-    Les demandes limitées aux <a href="/harmonization-studies">données harmonisées</a> sont admissibles à un examen d’accès accéléré. Toutes
+    Les demandes limitées aux <a href="/harmonization-studies">données harmonisées (de base)</a>, incluant les données du questionnaire COVID-19,  sont admissibles à un examen d’accès accéléré. Toutes
     autres demandes, incluant, mais sans s’y limiter, aux <a href="/page/samples">échantillons biologiques</a> et au couplage avec des données
     administratives de santé nécessite un examen détaillé par le comité d’accès. Les <a href="#review_process">dates limites de soumission sont indiquées ici</a>.
   </p>
@@ -93,6 +93,16 @@
   </p>
 
   <h6><a id="review_process" name="review_process">Processus d'examen CanPath</a></h6>
+
+  <p class="mt-3"><strong>Accès aux données COVID-19 accéléré</strong></p>
+
+  <p>
+    Les données nationales harmonisées du Questionnaire sur la COVID-19 de CanPath sont maintenant disponsibles aux chercheurs.
+    Étant donné le besoin immédiat de faire des recherches sur la pandémie, les demandes d’accès à l’ensemble de données
+    nationales du Questionnaire sur la COVID-19 seront <strong>examinées en aussi peu que neuf jours ouvrables</strong>.
+    Veuillez vous référer aux critères de examen accélérée ci-dessous pour l'éligibilité.
+  </p>
+
   <div class="row">
     <div class="col-sm-6">
       <table class="table table-striped table-bordered">
@@ -106,7 +116,7 @@
         <tbody>
         <tr>
           <td><strong>Type de demande</strong></td>
-          <td>Ensembles de données harmonisées seulement</td>
+          <td>Ensembles de données harmonisées (de base) seulement</td>
           <td>Demandes pour :
             <ul>
               <li>Ensembles de données non harmonisées</li>
@@ -192,7 +202,7 @@
       <a href="/assets/files/Access_Policy_Approved_July_29_2020_final.pdf"
          target="_blank">Politique d'accès de CanPath</a></li>
     <li>
-      <a href="/assets/files/CanPath%20Publications%20Policy%20PDF%20Version.pdf"
+      <a href="/assets/files/CanPath%20Publications%20Policy_Approved%202020-Sep-23.pdf"
          target="_blank">Politique des publications</a></li>
     <li>
       <a href="/assets/files/CanPath%20Intellectual%20Property%20Policy_v1.1_2020-07-22.pdf"
