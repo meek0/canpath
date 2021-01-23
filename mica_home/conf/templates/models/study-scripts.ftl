@@ -25,21 +25,23 @@
       const currentLanguage = '${.lang}';
       getStudyDatasets('${study.id}', function (data) {
          if (data.datasetResultDto && data.datasetResultDto['obiba.mica.DatasetResultDto.result']) {
-             $('#datasetsContainer').show();
              const datasets = data.datasetResultDto['obiba.mica.DatasetResultDto.result'].datasets;
-             const tbodyElem = $('#datasets tbody');
-             tbodyElem.children().remove();
-             datasets.forEach(dataset => {
-                let varCount = (dataset['obiba.mica.CountStatsDto.datasetCountStats'] && dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables) ?
-                    dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables : '0';
-                let row = '<tr>' +
-                    '<td><a href="../dataset/' + dataset.id + '">' + LocalizedValues.forLang(dataset.acronym, currentLanguage) + '</a></td>' +
-                    '<td>' + LocalizedValues.forLang(dataset.name, currentLanguage) + '</td>' +
-                    '<td><a href="../search#lists?type=variables&query=dataset(in(Mica_dataset.id,' + dataset.id + '))">' + varCount + '</a></td>' +
-                    '</tr>';
-                tbodyElem.append(row);
-             });
-             $("#datasets").DataTable(dataTablesSortOpts);
+             if (datasets && datasets.length>0) {
+                 $('#datasetsContainer').show();
+                 const tbodyElem = $('#datasets tbody');
+                 tbodyElem.children().remove();
+                 datasets.forEach(dataset => {
+                     let varCount = (dataset['obiba.mica.CountStatsDto.datasetCountStats'] && dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables) ?
+                         dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables : '0';
+                     let row = '<tr>' +
+                         '<td><a href="../dataset/' + dataset.id + '">' + LocalizedValues.forLang(dataset.acronym, currentLanguage) + '</a></td>' +
+                         '<td>' + LocalizedValues.forLang(dataset.name, currentLanguage) + '</td>' +
+                         '<td><a href="../search#lists?type=variables&query=dataset(in(Mica_dataset.id,' + dataset.id + '))">' + varCount + '</a></td>' +
+                         '</tr>';
+                     tbodyElem.append(row);
+                 });
+                 $("#datasets").DataTable(dataTablesSortOpts);
+             }
          }
          $('#loadingDatasets').hide();
       }, function() {
