@@ -49,6 +49,10 @@
   margin-top: 2em;
 }
 
+#studies-app a, #studies-app a:hover {
+  text-decoration: none;
+}
+
 #studies-card.card-info.card-outline,
 #individual-studies-card.card-info.card-outline,
 #harmonization-studies-card.card-info.card-outline,
