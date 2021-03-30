@@ -48,7 +48,7 @@
     window.location.reload();
   }
 
-  const mlstrDataTablesDefaultOpts = {
+  let mlstrDataTablesDefaultOpts = {
     paging: true,
     pageLength: 50,
     lengthChange: true,
