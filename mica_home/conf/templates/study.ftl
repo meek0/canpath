@@ -96,7 +96,7 @@
             <!-- Harmonization study -->
             <#if study.model.harmonizationDesign??>
               <div class="col-sm-12 col-md d-flex align-items-stretch">
-                <div class="card card-success card-outline w-100">
+                <div class="card card-info card-outline w-100">
                   <div class="card-header">
                     <h3 class="card-title">
                         <@message "harmonization-study-design"/>
@@ -125,7 +125,7 @@
             <#if type == "Individual">
               <div class="row ${canShowTimeline(study)?then('', 'd-none')}">
                 <div class="col-lg-12">
-                  <div class="card overflow-auto card-success card-outline">
+                  <div class="card overflow-auto card-info card-outline">
                     <div class="card-header">
                       <h3 class="card-title"><@message "timeline"/></h3>
                     </div>
@@ -140,7 +140,7 @@
           <!-- Populations -->
           <div id="populations" class="row">
             <div class="col-lg-12">
-              <div class="card card-success card-outline">
+              <div class="card card-info card-outline">
                 <div class="card-header">
                   <h3 class="card-title">
                       <#if study.populations?size == 1>

@@ -245,10 +245,10 @@
     <!-- /.card-header -->
     <div class="card-body">
       <dl class="row">
-        <dt class="col-sm-6" title="<@message "study_taxonomy.vocabulary.methods-recruitments.description"/>">
+        <dt class="col" title="<@message "study_taxonomy.vocabulary.methods-recruitments.description"/>">
           <@message "study.access.for"/>
         </dt>
-        <dd class="col-sm-6">
+        <dd class="col">
           <ul class="pl-3">
             <#list study.model.access as type>
               <li>
