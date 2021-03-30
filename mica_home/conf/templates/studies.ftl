@@ -212,9 +212,9 @@
 <#include "libs/scripts.ftl">
 <script src="${assetsPath}/libs/node_modules/vue/dist/vue.js"></script>
 <script src="${assetsPath}/libs/node_modules/rql/dist/rql.js"></script>
-<script src="/assets/js/mlstr-scripts.js"></script>
-<script src="/assets/js/pagination.js"></script>
-<script src="/assets/js/entities.js"></script>
+<script src="${assetsPath}/js/mlstr-scripts.js"></script>
+<script src="${assetsPath}/js/pagination.js"></script>
+<script src="${assetsPath}/js/entities.js"></script>
 
 <script>
   const Mica = {

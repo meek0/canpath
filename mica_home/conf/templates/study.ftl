@@ -6,6 +6,26 @@
 <#include "models/dce.ftl">
 <#include "models/files.ftl">
 
+<#if !type??>
+    <#assign title = "studies">
+    <#assign showTypeColumn = true>
+    <#assign forLogoLink = "study">
+<#elseif type == "Harmonization">
+    <#assign title = "harmonization-studies">
+    <#assign showTypeColumn = false>
+    <#assign forLogoLink = "harmonization-study">
+<#else>
+    <#assign title = "individual-studies">
+    <#assign showTypeColumn = false>
+    <#assign forLogoLink = "individual-study">
+</#if>
+
+<#assign draftImageUrlFragment = "/">
+
+<#if draft>
+  <#assign draftImageUrlFragment = "/draft/">
+</#if>
+
 <!DOCTYPE html>
 <html lang="${.lang}">
 <head>
@@ -277,7 +297,37 @@
 <!-- ./wrapper -->
 
 <#include "libs/scripts.ftl">
-<#include "models/study-scripts.ftl">
+<#include "libs/study-scripts.ftl">
+<script src="${assetsPath}/js/mlstr-scripts.js"></script>
+<script src="${assetsPath}/js/mlstr-files.js"></script>
+<script src="${assetsPath}/js/study.js"></script>
+
+<script>
+  dataTablesDefaultOpts = mlstrDataTablesDefaultOpts;
+
+  Mica.tr = {
+    "collected-dataset": "<@message "collected-dataset"/>",
+    "harmonized-dataset": "<@message "harmonized-dataset"/>",
+    "dataschema-dataset": "<@message "harmonized-dataset"/>"
+  }
+
+  const mlstrStudyService = MlstrStudyService.newInstance();
+
+  mlstrStudyService.createNetworksTable("${study.id}", "${.lang}");
+  mlstrStudyService.createDatasetsTable("${study.id}", "${.lang}");
+  <#if type == "Harmonization">
+    mlstrStudyService.createStudiesTables("${study.id}", "${.lang}", "${harmonizationStudyStudyTableShowVariables?c}");
+  <#else>
+    mlstrStudyService.ensurePopulationDceSelection();
+  </#if>
+
+  <#if draft>
+    let params = window.location.search;
+    let img = document.querySelector('#document-logo');
+
+    img.src = img.src + params.replace('draft', 'key');
+  </#if>
+</script>
 
 </body>
 </html>
