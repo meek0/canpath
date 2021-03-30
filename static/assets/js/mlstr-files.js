@@ -50,7 +50,7 @@ Vue.component('file-row-simple', {
         <i v-bind:class="iconClass" class="pr-2"></i>
         <a v-if="file.size>0" download :href="'/ws/file-dl' + file.path">{{ file.name }} </a>
         <span v-else>{{ file.name }} </span>
-        <span class="badge badge-success" v-if="hasMediaType">{{ file.mediaType }}</span>
+        <span class="badge badge-info" v-if="hasMediaType">{{ file.mediaType }}</span>
       </span>
     </td> 
 <!--    <td><small>{{ descriptionLabel }}</small> <i class="fas fa-info-circle" :title="descriptionTitle" v-if="hasDescriptionTitle"></i></td> -->

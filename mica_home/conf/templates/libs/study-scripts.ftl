@@ -395,7 +395,7 @@
 
       const modalFooterCloseButton = document.createElement('button');
       modalFooterCloseButton.type = 'button';
-      modalFooterCloseButton.className = 'btn btn-success';
+      modalFooterCloseButton.className = 'btn btn-info';
       modalFooterCloseButton.setAttribute('data-dismiss', 'modal');
       modalFooterCloseButton.innerHTML = '<@message "close"/>';
       modalFooter.appendChild(modalFooterCloseButton);
@@ -420,7 +420,7 @@
         listItem.className = 'mb-2';
 
         const anchor = document.createElement('a');
-        anchor.className = 'text-success';
+        anchor.className = 'text-info';
         anchor.href = '#';
         anchor.innerHTML = anchorInnerHtml.join(' ').trim();
         anchor.setAttribute('data-toggle', 'modal');
