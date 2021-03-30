@@ -52,7 +52,9 @@
           <p><@message (title + "-callout")/></p>
         </div>
 
-        <#if studies?? && studies?size != 0>
+        <div v-show="loading" class="spinner-border spinner-border-sm" role="status"></div>
+        <div v-show="!loading && entities && entities.length > 0" v-cloak>
+          <#if studies?? && studies?size != 0>
           <div id="${title}-card" class="card card-info card-outline">
 
             <div class="card-header d-flex p-0">
@@ -198,6 +200,7 @@
             </div>
           </div>
         </#if>
+        </div>
 
       </div><!-- /.container-fluid -->
     </div>
