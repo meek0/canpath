@@ -44,17 +44,19 @@
   display: none;
 }
 
-#individual-studies-card, #harmonization-studies-card, #projects-card {
+#studies-card, #individual-studies-card, #harmonization-studies-card, #projects-card {
   box-shadow: none;
   margin-top: 2em;
 }
 
+#studies-card.card-info.card-outline,
 #individual-studies-card.card-info.card-outline,
 #harmonization-studies-card.card-info.card-outline,
 #projects-card.card-info.card-outline {
   border-top: 0;
 }
 
+#studies-card .card-title,
 #individual-studies-card .card-title,
 #harmonization-studies-card .card-title,
 #projects-card .card-title {
@@ -65,6 +67,7 @@
   padding: 0;
 }
 
+#studies-card .card-header,
 #individual-studies-card .card-header,
 #harmonization-studies-card .card-header,
 #projects-card .card-header {

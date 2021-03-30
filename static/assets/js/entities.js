@@ -382,7 +382,7 @@ const EntitiesSortingComponent = {
   template: `
     <div class="sorting position-relative float-left">
       <div class="dropdown">
-        <button type="button" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown">
+        <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
           <span v-html="sortLabel(selectedChoice)"></span>
         </button>
 

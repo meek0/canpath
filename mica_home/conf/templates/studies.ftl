@@ -5,12 +5,15 @@
 <!-- Template variables -->
 <#if !type??>
   <#assign title = "studies">
+  <#assign countLabel = "studies">
   <#assign showTypeColumn = true>
 <#elseif type == "Harmonization">
   <#assign title = "harmonization-studies">
+  <#assign countLabel = "projects">
   <#assign showTypeColumn = false>
 <#else>
   <#assign title = "individual-studies">
+  <#assign countLabel = "studies">
   <#assign showTypeColumn = false>
 </#if>
 
@@ -83,9 +86,9 @@
                 <div class="row">
                   <div class="col">
                     <div role="group" class="btn-group">
-                      <button onclick="window.location.href='${contextPath}/studies';" type="button" class="btn btn-sm btn-info <#if !type??>active</#if>"><@message "all"/></button>
-                      <button onclick="window.location.href='${contextPath}/individual-studies';" type="button" class="btn btn-sm btn-info <#if type?? && type == "Individual">active</#if>"><@message "individual"/></button>
-                      <button onclick="window.location.href='${contextPath}/harmonization-studies';" type="button" class="btn btn-sm btn-info <#if type?? && type == "Harmonization">active</#if>"><@message "harmonization"/></button>
+                      <button onclick="window.location.href='${contextPath}/studies'" type="button" class="btn btn-info <#if !type??>active</#if>"><@message "all"/></button>
+                      <button onclick="window.location.href='${contextPath}/individual-studies'" type="button" class="btn btn-info <#if type?? && type == "Individual">active</#if>"><@message "individual"/></button>
+                      <button onclick="window.location.href='${contextPath}/harmonization-studies'" type="button" class="btn btn-info <#if type?? && type == "Harmonization">active</#if>"><@message "harmonization"/></button>
                     </div>
                   </div>
 
