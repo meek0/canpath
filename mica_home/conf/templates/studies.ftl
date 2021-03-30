@@ -21,7 +21,7 @@
   <title>${config.name!""} | <@message title/></title>
 </head>
 <body id="${title}-page" class="hold-transition layout-top-nav layout-navbar-fixed">
-<div class="wrapper">
+<div id="studies-app"  class="wrapper">
 
   <!-- Studies order -->
   <#if !type??>
@@ -77,60 +77,105 @@
               </#if>
             </div><!-- /.card-header -->
 
-            <div class="card-body">
+            <div>
               <#if config.studyDatasetEnabled && config.harmonizationDatasetEnabled>
-                <div class="mb-4">
-                  <div role="group" class="btn-group">
-                    <button onclick="window.location.href='${contextPath}/studies';" type="button" class="btn btn-sm btn-info <#if !type??>active</#if>"><@message "all"/></button>
-                    <button onclick="window.location.href='${contextPath}/individual-studies';" type="button" class="btn btn-sm btn-info <#if type?? && type == "Individual">active</#if>"><@message "individual"/></button>
-                    <button onclick="window.location.href='${contextPath}/harmonization-studies';" type="button" class="btn btn-sm btn-info <#if type?? && type == "Harmonization">active</#if>"><@message "harmonization"/></button>
+              <div class="pb-2">
+                <div class="row">
+                  <div class="col">
+                    <div role="group" class="btn-group">
+                      <button onclick="window.location.href='${contextPath}/studies';" type="button" class="btn btn-sm btn-info <#if !type??>active</#if>"><@message "all"/></button>
+                      <button onclick="window.location.href='${contextPath}/individual-studies';" type="button" class="btn btn-sm btn-info <#if type?? && type == "Individual">active</#if>"><@message "individual"/></button>
+                      <button onclick="window.location.href='${contextPath}/harmonization-studies';" type="button" class="btn btn-sm btn-info <#if type?? && type == "Harmonization">active</#if>"><@message "harmonization"/></button>
+                    </div>
                   </div>
+
+                  <div class="col">
+                    <div class="d-inline-flex float-right">
+                      <sorting @sort-update="onSortUpdate" :initial-choice="initialSort" :options-translations="sortOptionsTranslations"></sorting>
+                      <span class="ml-2 mr-1">
+                        <select class="custom-select" id="obiba-page-size-selector-top"></select>
+                      </span>
+                      <nav id="obiba-pagination-top" aria-label="Top pagination" class="mt-0">
+                        <ul class="pagination mb-0"></ul>
+                      </nav>
+                    </div>
+                  </div>
+
                 </div>
+              </div>
               </#if>
 
               <div class="tab-content">
-                <#if studyListDisplays?seq_contains("table")>
-                  <div class="tab-pane <#if studyListDefaultDisplay == "table">active</#if>" id="table">
-                    <div class="table-responsive">
-                      <table id="${title}" class="table table-bordered table-striped">
-                        <thead>
-                        <@studyTableHeadModel/>
-                        </thead>
-                        <tbody>
-                        <#list orderedStudies as std>
-                          <@studyTableRowModel study=std/>
-                        </#list>
-                        </tbody>
-                      </table>
+                
+                <div class="row d-flex align-items-stretch">
+                  <div class="col-md-12 col-lg-6 d-flex align-items-stretch" v-for="study in entities" v-bind:key="study.id">
+                    <div v-if="study.id === ''" class="card w-100">
+                      <div class="card-body pt-0 bg-light">
+                      </div>
                     </div>
-                  </div>
-                </#if>
-
-                <#if studyListDisplays?seq_contains("lines")>
-                  <div class="tab-pane <#if studyListDefaultDisplay == "lines">active</#if>" id="lines">
-                    <#list orderedStudies as std>
-                      <div class="border-bottom mb-3 pb-3" style="min-height: 150px;">
-                        <div class="row">
-                          <@studyLineModel study=std/>
+                    <div v-else class="card w-100">
+                      <div class="card-body">
+                        <div class="row h-100">
+                          <div class="col-xs-12 col">
+                            <h4 class="lead">
+                              <a v-bind:href="'${contextPath}/study/' + study.id" class="text-info mt-2">
+                                <b>{{study.name | localize-string}}</b>
+                              </a>
+                            </h4>
+                            <span class="marked"><small :inner-html.prop="study.objectives | localize-string | ellipsis(300, ('${contextPath}/study/' + study.id)) | markdown"></small></span>
+                          </div>
+                          <div class="col-3 mx-auto my-auto" v-if="study.logo">
+                            <a v-bind:href="'${contextPath}/study/' + study.id" class="text-decoration-none text-info text-center">
+                              <img class="img-fluid" style="max-height: 10em;" v-bind:alt="study.acronym | localize-string | concat(' logo')" v-bind:src="'${contextPath}/ws/study/' + study.id + '/file/' + study.logo.id + '/_download'"/>
+                            </a>
+                          </div>
                         </div>
                       </div>
-                    </#list>
-                  </div>
-                </#if>
-
-                <#if studyListDisplays?seq_contains("cards")>
-                  <div class="tab-pane <#if studyListDefaultDisplay == "cards">active</#if>" id="cards">
-                    <div class="row d-flex align-items-stretch">
-                      <#list orderedStudies as std>
-                        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-                          <@studyCa study=std/>
+                      <div class="card-footer py-1">
+                        <div class="row pt-1 row-cols-4">
+                          <template v-if="hasStats(study)">
+                            <a v-if="study.model && study.model.methods" href="javascript:void(0)" style="cursor: initial;" class="btn btn-sm col text-left">
+                              <span class="h6 pb-0 mb-0 d-block">{{study.model.methods.design | translate}}</span>
+                              <span class="text-muted"><small>Study Design</small></span>
+                            </a>
+                            <a v-if="study.model && study.model.numberOfParticipants" href="javascript:void(0)" style="cursor: initial;" class="btn btn-sm col text-left">
+                              <span class="h6 pb-0 mb-0 d-block">{{study.model.numberOfParticipants.participant.number | localize-number}}</span>
+                              <span class="text-muted"><small>Number of Participants</small></span>
+                            </a>
+                            <dataset-stat-item
+                                    v-bind:type="study.studyResourcePath"
+                                    v-bind:stats="study['obiba.mica.CountStatsDto.studyCountStats']">
+                            </dataset-stat-item>
+                            <variable-stat-item
+                                    v-bind:url="variablesUrl(study)"
+                                    v-bind:type="study.studyResourcePath"
+                                    v-bind:stats="study['obiba.mica.CountStatsDto.studyCountStats']">
+                            </variable-stat-item>
+                          </template>
+                          <template v-else>
+                            <!-- HACK used 'studiesWithVariables' with opacity ZERO to have the same height as the longest stat item -->
+                            <a href="url" class="btn btn-sm btn-link text-info col text-left" style="opacity: 0">
+                              <span class="h6 pb-0 mb-0 d-block">0</span>
+                              <span class="text-muted"><small>Empty</small></span>
+                            </a>
+                          </template>
                         </div>
-                      </#list>
+                      </div>
                     </div>
                   </div>
-                </#if>
+                </div>
 
               </div>
+
+              <div class="d-inline-flex pt-0 ml-auto float-right">
+                <span>
+                    <select class="custom-select" id="obiba-page-size-selector-bottom"></select>
+                </span>
+                <nav id="obiba-pagination-bottom" aria-label="Bottom pagination" class="mt-0">
+                  <ul class="pagination"></ul>
+                </nav>
+              </div>
+
             </div>
           </div>
         <#else>
@@ -162,10 +207,27 @@
 <!-- ./wrapper -->
 
 <#include "libs/scripts.ftl">
+<script src="${assetsPath}/libs/node_modules/vue/dist/vue.js"></script>
+<script src="${assetsPath}/libs/node_modules/rql/dist/rql.js"></script>
+<script src="/assets/js/mlstr-scripts.js"></script>
+<script src="/assets/js/pagination.js"></script>
+<script src="/assets/js/entities.js"></script>
+
 <script>
-    $(function () {
-        $("#${title}").DataTable(dataTablesDefaultOpts);
-    });
+  const Mica = {
+    tr: MlstrTranslations
+  };
+
+  const sortOptionsTranslations = {
+    'name': '<@message "global.name"/>',
+    'acronym': '<@message "acronym"/>',
+    'lastModifiedDate': '<@message "last-modified"/>',
+    <#if title == "individual-studies">
+    'numberOfParticipants-participant-number': '<@message "numberOfParticipants.label"/>'
+    </#if>
+  };
+
+  MlstrStudiesApp.build("#studies-app", "${title}", "en", sortOptionsTranslations);
 </script>
 </body>
 </html>

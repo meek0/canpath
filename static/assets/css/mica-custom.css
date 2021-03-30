@@ -34,6 +34,10 @@
   border-top-color: #17a2b8;
 }
 
+.dropdown-toggle:not(.nav-link)::after {
+  content: none;
+}
+
 #harmonization-studies-callout,
 #data-access-process-callout,
 #projects-page .callout {
@@ -57,8 +61,6 @@
   display: none;
 }
 
-#individual-studies-card .card-body,
-#harmonization-studies-card .card-body,
 #projects-card .card-body {
   padding: 0;
 }
