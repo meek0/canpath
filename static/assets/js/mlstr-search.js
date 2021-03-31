@@ -168,7 +168,7 @@ Vue.component('search-criteria', {
 Vue.component('study-filter-shortcut', {
   name: 'StudyFilterShortcut',
   template: `
-  <div v-if="visible && showFilter" class="d-inline-block">
+  <div v-if="visible" class="d-inline-block">
     <div class="btn-group" role="group">
       <button type="button" v-bind:class="{active: selection.all}" class="btn btn-sm btn-light" v-on:click="onSelectionClicked('all')">{{tr('all')}}</button>
       <button type="button" v-bind:class="{active: selection.study}" class="btn btn-sm btn-light" v-on:click="onSelectionClicked('study')">{{tr('individual')}}</button>
@@ -181,11 +181,6 @@ Vue.component('study-filter-shortcut', {
       selection: {all: true, study: false, harmonization: false},
       visible: true
     }
-  },
-  computed: {
-    showFilter: () => Mica.config.isCollectedDatasetEnabled
-      && Mica.config.isHarmonizedDatasetEnabled
-      && !Mica.config.isSingleStudyEnabled
   },
   methods: {
     tr(key) {
