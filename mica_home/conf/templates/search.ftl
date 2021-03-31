@@ -36,7 +36,7 @@
           </nav>
 
           <div class="col-xs-12 col-sm-12 col-lg-10">
-            <div id="query-builder" class="card card-success card-outline" v-if="!noQueries">
+            <div id="query-builder" class="card card-info card-outline" v-if="!noQueries">
               <div class="card-header d-flex align-items-center py-2">
                 <h3 class="card-title"><@message "query"/></h3>
                 <div class="card-tools ml-auto">
@@ -110,7 +110,7 @@
                       <#if cartEnabled>
                         <#if listsEnabled>
                           <div class="btn-group ml-2">
-                            <button id="cart-add-variables" type="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" title="<@message "sets.add.button.set-label"/>"><i class="fas fa-cart-plus"></i></button>
+                            <button id="cart-add-variables" type="button" class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" title="<@message "sets.add.button.set-label"/>"><i class="fas fa-cart-plus"></i></button>
                             <div ref="listsDropdownMenu" class="dropdown-menu dropdown-menu-right" style="min-width: 24em;">
                               <form class="px-3 py-3" v-if="numberOfSetsRemaining > 0">
 
@@ -118,7 +118,7 @@
                                   <div class="input-group">
                                     <input type="text" class="form-control" placeholder="<@message "sets.add.modal.create-new"/>" v-model="newVariableSetName" @keyup.enter.prevent.stop="onAddToSet()">
                                     <div class="input-group-append">
-                                      <button v-bind:class="{ disabled: !newVariableSetName }" class="btn btn-success" type="button" @click="onAddToSet()">
+                                      <button v-bind:class="{ disabled: !newVariableSetName }" class="btn btn-info" type="button" @click="onAddToSet()">
                                         <i class="fa fa-plus"></i> <@message "global.add"/>
                                       </button>
                                     </div>
@@ -135,7 +135,7 @@
                           </div>
 
                         <#else>
-                          <a href="${contextPath}/signin?redirect=${contextPath}/search" class="btn  btn-success ml-2" title="<@message "sets.add.button.set-label"/>"><i class="fas fa-cart-plus"></i></a>
+                          <a href="${contextPath}/signin?redirect=${contextPath}/search" class="btn btn-info ml-2" title="<@message "sets.add.button.set-label"/>"><i class="fas fa-cart-plus"></i></a>
                         </#if>
                       </#if>
                       <#if downloadQueryEnabled>
@@ -339,7 +339,7 @@
             </#if>
           </div>
 
-          <button type="button" class="btn btn-sm btn-success" data-dismiss="modal"><span aria-hidden="true"><@message "global.close-panel"/></span></button>
+          <button type="button" class="btn btn-sm btn-info" data-dismiss="modal"><span aria-hidden="true"><@message "global.close-panel"/></span></button>
         </div>
         <div class="modal-body" v-if="selectedTarget">
           <rql-panel v-bind:target="selectedTarget" v-bind:taxonomy="selectedTaxonomy" v-bind:query="selectedQuery" @update-query="onQueryUpdate" @remove-query="onQueryRemove"></rql-panel>
