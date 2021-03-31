@@ -202,7 +202,7 @@
               <div class="card w-100">
                 <div class="card-header">
                   <h3 class="card-title">
-                      <@message "sources-of-recruitment"/>
+                      <@message "study_taxonomy.vocabulary.populations-recruitment-dataSources.title"/>
                   </h3>
                 </div>
                 <!-- /.card-header -->
