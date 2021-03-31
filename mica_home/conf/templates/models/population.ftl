@@ -196,7 +196,7 @@
   </div>
   <div class="row d-flex align-items-stretch">
       <#if hasRecruitment(population)>
-        <div class="col-6 d-flex align-items-stretch">
+        <div class="col-sm-12 col-md d-flex align-items-stretch">
 
             <#if hasRecruitment(population)>
               <div class="card w-100">
@@ -284,7 +284,7 @@
       </#if>
 
       <#if hasNumberOfParticipants(population)>
-        <div class="col-6 d-flex align-items-stretch">
+        <div class="col-sm-12 col-md d-flex align-items-stretch">
           <div class="card w-100">
             <div class="card-header">
               <h3 class="card-title">
