@@ -32,7 +32,7 @@
     <div class="col-lg-12">
       <div class="card card-info card-outline">
         <div class="card-header">
-          <h3 class="card-title"><@message "individual-studies-included"/></h3>
+          <h3 class="card-title"><@message "global.included-individual-studies"/></h3>
         </div>
         <div class="card-body">
           <div class="tab-content">
