@@ -99,7 +99,7 @@
                 <div class="card card-info card-outline w-100">
                   <div class="card-header">
                     <h3 class="card-title">
-                        <@message "harmonization-study-design"/>
+                        <@message "study_taxonomy.vocabulary.harmonizationDesign.title"/>
                     </h3>
                   </div>
                   <!-- /.card-header -->
