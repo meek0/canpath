@@ -228,11 +228,9 @@
 
   const mlstrStudyService = MlstrStudyService.newInstance();
 
-  mlstrStudyService.createNetworksTable("${study.id}", "${.lang}");
   mlstrStudyService.createDatasetsTable("${study.id}", "${.lang}");
-  <#if type == "Harmonization">
-    mlstrStudyService.createStudiesTables("${study.id}", "${.lang}", "${harmonizationStudyStudyTableShowVariables?c}");
-  <#else>
+  <#if type != "Harmonization">
+    mlstrStudyService.createNetworksTable("${study.id}", "${.lang}");
     mlstrStudyService.ensurePopulationDceSelection();
   </#if>
 
