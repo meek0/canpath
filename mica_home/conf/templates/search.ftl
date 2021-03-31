@@ -19,11 +19,12 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header bg-info pb-0" style="margin-top: 125px;">
+    <section class="content-header bg-info pb-0">
       <div class="container-fluid">
         <h1><@message "search"/></h1>
-        <@searchInfo/>
       </div>
+
+      <@searchInfo/>
           
     </section>
 
