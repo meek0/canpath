@@ -184,32 +184,6 @@
           </div>
         </#if>
 
-        <div id="loadingDatasets" class="spinner-border spinner-border-sm" role="status"></div>
-        <div id="datasetsContainer" style="display: none;" class="card card-info card-outline">
-          <div class="card-header">
-            <h3 class="card-title"><@message "datasets"/></h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="<@message "collapse"/>">
-                <i class="fas fa-minus"></i></button>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table id="datasets" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th><@message "acronym"/></th>
-                  <th><@message "name"/></th>
-                  <th><@message "variables"/></th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
         <@individualStudyList study.id/>
 
         <@harmonizationStudyList study.id/>
