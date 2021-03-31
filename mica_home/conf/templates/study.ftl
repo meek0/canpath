@@ -211,7 +211,7 @@
 </div>
 <!-- ./wrapper -->
 
-<#include "libs/scripts.ftl">
+<#include "models/scripts.ftl">
 <#include "libs/study-scripts.ftl">
 <script src="${assetsPath}/js/mlstr-scripts.js"></script>
 <script src="${assetsPath}/js/mlstr-files.js"></script>
