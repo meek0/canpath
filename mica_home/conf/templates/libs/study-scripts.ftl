@@ -158,7 +158,6 @@
     function prepareStudyVariablesClassificationsData(chart) {
       const itemCounts = {};
       let vocabularies = [];
-      chart.subtitle = '<@message graphicsSubTitle/>';
       chart.data.forEach(vocabularyData => {
         const title = vocabularyData.items[0].title;
         const vocabulary = {

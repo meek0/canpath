@@ -232,15 +232,11 @@
 
 <!-- Custom model macros, to redefine some default model macros -->
 <#macro studyAccess study>
-  <div class="card card-info card-outline">
+  <div class="card card-info card-outline w-100">
     <div class="card-header">
       <h3 class="card-title">
         <@message "study.access.label"/>
       </h3>
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="<@message "collapse"/>">
-          <i class="fas fa-minus"></i></button>
-      </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -269,7 +265,7 @@
 <#macro generalDesing study>
     <div class="card card-info card-outline w-100">
       <div class="card-header">
-        <h3 class="card-title"><@message "general-design"/></h3>
+        <h3 class="card-title"><@message "design"/></h3>
       </div>
       <div class="card-body pb-0">
         <div class="tab-content">
@@ -318,7 +314,7 @@
             <#if study.model.methods?? && study.model.methods.recruitments??>
                 <dt class="col-sm-4">
                   <span title="<@message "study_taxonomy.vocabulary.methods-recruitments.description"/>">
-                    <@message "study.recruitment-sources"/>
+                    <@message "study_taxonomy.vocabulary.methods-recruitments.title"/>
                   </span>
                 </dt>
                 <dd class="col-sm-8">
@@ -377,7 +373,7 @@
             </#if>
             <#if localizedStringNotEmpty((study.model.numberOfParticipants.info))>
                 <dt class="col-sm-4">
-                    <@message "study.number-participants-suppl-info"/>
+                    <@message "suppl-info"/>
                 </dt>
                 <dd class="col-sm-8">
                     ${localize(study.model.numberOfParticipants.info)}
