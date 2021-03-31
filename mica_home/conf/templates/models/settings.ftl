@@ -52,5 +52,4 @@
 <!-- Harmonization Dataset -->
 <#assign harmonizationDatasetStudyTableShowVariables = false/>
 
-<#assign colors = ["#4c722a","#608b2e","#73a432","#d2de43","#ffe637","#fcb814","#f58023","#d9461d","#b72918","#940c12"]/>
 <#assign studyDesignColors = ["#4c722a","#73a432","#ffe637","#fcb814","#d9461d","#940c12"]/>
