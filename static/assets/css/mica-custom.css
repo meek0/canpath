@@ -139,3 +139,16 @@
   background-color: #fff;
 }
 
+
+dl.striped > dt:nth-of-type(odd), dl.striped > dd:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05) ;
+}
+
+dl.striped > dd {
+  margin-bottom: 0 !important;
+}
+
+dl.striped > dt, dl.striped > dd {
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
+}
