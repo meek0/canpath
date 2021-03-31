@@ -52,7 +52,7 @@
       <#list members as member>
         <li class="mb-2">
           <#assign i++>
-          <a class="text-success" href="#" data-toggle="modal" data-target="#modal-${role}-${i}">
+          <a class="text-info" href="#" data-toggle="modal" data-target="#modal-${role}-${i}">
               ${member.person.title!""} ${member.person.firstName!""} ${member.person.lastName}
           </a>
           <#if member.person.institution?? && member.person.institution.name??>
