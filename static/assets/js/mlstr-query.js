@@ -752,7 +752,7 @@ class MicaQueryExecutor {
               break;
 
             case DISPLAYS.GRAPHICS:
-              const graphicsTree = new RQL.QueryTree(RQL.Parser.parseQuery(tree.serialize(), QueryTreeOptions));
+              const graphicsTree = new RQL.QueryTree(RQL.Parser.parseQuery(tree.serialize()), QueryTreeOptions);
               this.__executeGraphicsQuery(tree, entityQuery.prepareForGraphics(graphicsTree), type, display, noUrlUpdate);
               break;
           }
