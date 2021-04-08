@@ -34,35 +34,44 @@
   border-top-color: #17a2b8;
 }
 
+.dropdown-toggle:not(.nav-link)::after {
+  content: none;
+}
+
 #harmonization-studies-callout,
 #data-access-process-callout,
 #projects-page .callout {
   display: none;
 }
 
-#individual-studies-card, #harmonization-studies-card, #projects-card {
+#studies-card, #individual-studies-card, #harmonization-studies-card, #projects-card {
   box-shadow: none;
   margin-top: 2em;
 }
 
+#studies-app a, #studies-app a:hover {
+  text-decoration: none;
+}
+
+#studies-card.card-info.card-outline,
 #individual-studies-card.card-info.card-outline,
 #harmonization-studies-card.card-info.card-outline,
 #projects-card.card-info.card-outline {
   border-top: 0;
 }
 
+#studies-card .card-title,
 #individual-studies-card .card-title,
 #harmonization-studies-card .card-title,
 #projects-card .card-title {
   display: none;
 }
 
-#individual-studies-card .card-body,
-#harmonization-studies-card .card-body,
 #projects-card .card-body {
   padding: 0;
 }
 
+#studies-card .card-header,
 #individual-studies-card .card-header,
 #harmonization-studies-card .card-header,
 #projects-card .card-header {
@@ -130,3 +139,16 @@
   background-color: #fff;
 }
 
+
+dl.striped > dt:nth-of-type(odd), dl.striped > dd:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05) ;
+}
+
+dl.striped > dd {
+  margin-bottom: 0 !important;
+}
+
+dl.striped > dt, dl.striped > dd {
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
+}

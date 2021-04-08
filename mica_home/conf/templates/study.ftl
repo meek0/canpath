@@ -6,6 +6,26 @@
 <#include "models/dce.ftl">
 <#include "models/files.ftl">
 
+<#if !type??>
+    <#assign title = "studies">
+    <#assign showTypeColumn = true>
+    <#assign forLogoLink = "study">
+<#elseif type == "Harmonization">
+    <#assign title = "harmonization-studies">
+    <#assign showTypeColumn = false>
+    <#assign forLogoLink = "harmonization-study">
+<#else>
+    <#assign title = "individual-studies">
+    <#assign showTypeColumn = false>
+    <#assign forLogoLink = "individual-study">
+</#if>
+
+<#assign draftImageUrlFragment = "/">
+
+<#if draft>
+  <#assign draftImageUrlFragment = "/draft/">
+</#if>
+
 <!DOCTYPE html>
 <html lang="${.lang}">
 <head>
@@ -38,7 +58,7 @@
 
         <div class="row">
           <div class="col-lg-12">
-            <div class="card card-primary card-outline">
+            <div class="card card-info card-outline">
               <div class="card-body">
                 <div class="row">
                   <div class="col-lg-12">
@@ -46,181 +66,115 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-3 col-sm-6 col-12">
-                    <#if study.logo??>
-                      <img class="img-fluid" style="max-height: 200px" alt="${localize(study.acronym)} logo" src="${contextPath}/ws/study/${study.id}/file/${study.logo.id}/_download"/>
-                    <#else >
-                      <p class="text-light text-center">
-                        <i class="${studyIcon} fa-4x"></i>
-                      </p>
-                    </#if>
+                  <#if study.logo??>
+                    <div class="col-2">                    
+                      <img id="document-logo" class="img-fluid" style="width: 12em" alt="${localize(study.acronym)} logo" src="${contextPath}/ws${draftImageUrlFragment}${forLogoLink}/${study.id}/file/${study.logo.id}/_download"/>
+                    </div>
+                  </#if>  
+
+                  <div class="col card-text">
+                    <div class="marked">
+                      <template>${localize(study.objectives)}</template>
+                    </div>
                   </div>
 
-                  <#if config.networkEnabled && !config.singleNetworkEnabled>
-                    <div class="col-md-3 col-sm-6 col-12">
-                      <div class="info-box">
-                        <span class="info-box-icon bg-info">
-                          <a href="${contextPath}/search#lists?type=networks&query=study(in(Mica_study.id,${study.id}))">
-                            <i class="${networkIcon}"></i>
-                          </a>
-                        </span>
-                        <div class="info-box-content">
-                          <span class="info-box-text"><@message "networks"/></span>
-                          <span class="info-box-number" id="network-hits">-</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                      </div>
-                    </div>
-                  </#if>
-
-                  <#if config.studyDatasetEnabled || config.harmonizationDatasetEnabled>
-                    <div class="col-md-3 col-sm-6 col-12">
-                      <div class="info-box">
-                        <span class="info-box-icon bg-warning">
-                          <a href="${contextPath}/search#lists?type=datasets&query=study(in(Mica_study.id,${study.id}))">
-                            <i class="${datasetIcon}"></i>
-                          </a>
-                        </span>
-                        <div class="info-box-content">
-                          <span class="info-box-text"><@message "datasets"/></span>
-                          <span class="info-box-number" id="dataset-hits">-</span>
-                        </div>
-                        <div>
-                        </div>
-
-                        <!-- /.info-box-content -->
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-12">
-                      <div class="info-box">
-                        <span class="info-box-icon bg-danger">
-                          <a href="${contextPath}/search#lists?type=variables&query=study(in(Mica_study.id,${study.id}))">
-                            <i class="${variableIcon}"></i>
-                          </a>
-                        </span>
-                        <div class="info-box-content">
-                          <span class="info-box-text"><@message "variables"/></span>
-                          <span class="info-box-number" id="variable-hits">-</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                      </div>
-                    </div>
-                  </#if>
-
                 </div>
-
-                <div class="card-text marked mt-3">
-                  <template>${localize(study.objectives)}</template>
-                </div>
-
-                <!-- Study definition model -->
-                <@studyDefinition study=study type=type/>
-
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Member list -->
-        <#if study.memberships?? && study.memberships?keys?size!=0>
-          <div class="row">
-            <div class="col-12">
-              <div class="card card-primary card-outline">
-                <div class="card-header">
-                  <h3 class="card-title"><@message "members"/></h3>
-                  <div class="card-tools float-right">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="<@message "collapse"/>">
-                      <i class="fas fa-minus"></i></button>
+        <div class="row d-flex align-items-stretch">
+          <div class="col-sm-12 col-md d-flex align-items-stretch">
+            <@studyOverview study=study type=type/>
+          </div>
+          <#if study.model.methods??>
+            <div class="col-sm-12 col-md d-flex align-items-stretch">
+                <@generalDesing study/>
+            </div>
+          <#else>
+            <!-- Harmonization study -->
+            <#if study.model.harmonizationDesign??>
+              <div class="col-sm-12 col-md d-flex align-items-stretch">
+                <div class="card card-info card-outline w-100">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                        <@message "study_taxonomy.vocabulary.harmonizationDesign.title"/>
+                    </h3>
                   </div>
-                  <a href="${contextPath}/ws/persons/_search/_download?limit=1000&query=studyMemberships.parentId:(${study.id})" class="btn btn-primary float-right mr-2">
-                    <i class="fas fa-download"></i> <@message "download"/>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                      <tr>
-                        <th><@message "investigators"/></th>
-                        <th><@message "contacts"/></th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr>
-                        <td>
-                          <#if study.memberships.investigator??>
-                            <@memberList members=study.memberships.investigator role="investigator"/>
-                          </#if>
-                        </td>
-                        <td>
-                          <#if study.memberships.contact??>
-                            <@memberList members=study.memberships.contact role="contact"/>
-                          </#if>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                      ${localize(study.model.harmonizationDesign)}
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- /.col-12 -->
-          </div>
-          <!-- /.row -->
-        </#if>
+            </#if>
+          </#if>
+        </div>
 
         <!-- Study model -->
         <@studyModel study=study type=type/>
 
+        <!-- Files -->
+        <#if showStudyFiles>
+            <@studyFilesBrowser study=study/>
+        </#if>
+
         <#if study.populations?? && study.populations?size != 0>
           <!-- Timeline -->
-          <#if type == "Individual">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card card-info card-outline">
-                  <div class="card-header">
-                    <h3 class="card-title"><@message "timeline"/></h3>
-                  </div>
-                  <div class="card-body">
-                    <div id="timeline"></div>
+            <#if type == "Individual">
+              <div class="row ${canShowTimeline(study)?then('', 'd-none')}">
+                <div class="col-lg-12">
+                  <div class="card overflow-auto card-info card-outline">
+                    <div class="card-header">
+                      <h3 class="card-title"><@message "timeline"/></h3>
+                    </div>
+                    <div class="card-body">
+                      <div id="timeline"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </#if>
+            </#if>
 
           <!-- Populations -->
-          <div class="row">
+          <div id="populations" class="row">
             <div class="col-lg-12">
-              <div id="populations" class="card card-info card-outline">
+              <div class="card card-info card-outline">
                 <div class="card-header">
                   <h3 class="card-title">
-                    <#if study.populations?size == 1>
-                      ${localize(study.populations[0].name)}
-                    <#else>
-                      <@message "populations"/>
-                    </#if>
+                      <#if study.populations?size == 1>
+                          <@message "population"/>
+                      <#else>
+                          <@message "populations"/>
+                      </#if>
                   </h3>
                 </div>
                 <div class="card-body">
                   <#if study.populations?size == 1>
                   <#else>
-                    <ul class="nav nav-pills mb-3">
-                      <#list study.populationsSorted as pop>
-                        <li class="nav-item"><a class="nav-link <#if pop?index == 0>active</#if>" href="#population-${pop.id}" data-toggle="tab">
-                          ${localize(pop.name)}</a>
-                        </li>
-                      </#list>
+                    <ul class="nav nav-pills mb-3 h6">
+                        <#list study.populationsSorted as pop>
+                          <li class="nav-item my-1"><a class="nav-link <#if pop?index == 0>active</#if>" href="#population-${pop.id}" data-toggle="tab">
+                                  ${localize(pop.name)}</a>
+                          </li>
+                        </#list>
                     </ul>
                   </#if>
-                  <div class="tab-content">
+                  <div>
+                    <#list study.populationsSorted as pop>
+                        <@dceModals population=pop/>
+                    </#list>
+                  </div>
+                  <div class="col tab-content">
                     <#list study.populationsSorted as pop>
                       <div class="tab-pane <#if pop?index == 0>active</#if>" id="population-${pop.id}">
-                        <div class="mb-3 marked">
+                        <span class="lead">${localize(pop.name)}</span>
+                        <div class="my-3 marked">
                           <template>${localize(pop.description)}</template>
                         </div>
-                        <@populationModel population=pop/>
-                        <@dceList population=pop/>
+                          <@populationModel population=pop/>
+                          <@dceList population=pop/>
                       </div>
                     </#list>
                   </div>
@@ -230,41 +184,22 @@
           </div>
         </#if>
 
-        <div id="loadingDatasets" class="spinner-border spinner-border-sm" role="status"></div>
-        <div id="datasetsContainer" style="display: none;" class="card card-info card-outline">
-          <div class="card-header">
-            <h3 class="card-title"><@message "datasets"/></h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="<@message "collapse"/>">
-                <i class="fas fa-minus"></i></button>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table id="datasets" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th><@message "acronym"/></th>
-                  <th><@message "name"/></th>
-                  <th><@message "variables"/></th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        <@individualStudyList study.id/>
 
-        <!-- Files -->
-        <#if showStudyFiles>
-          <@studyFilesBrowser study=study/>
-        </#if>
+        <@harmonizationStudyList study.id/>
+
+        <@networkList study.id/>
+
+        <@datasetList study.id type/>
 
         <!-- Variables classifications -->
         <#if studyVariablesClassificationsTaxonomies?? && studyVariablesClassificationsTaxonomies?size gt 0>
-          <@variablesClassifications study=study/>
+            <@variablesClassifications study=study/>
         </#if>
+
+        <div class="text-black-50 row col pb-3 pb-3">
+          <span><@message "last-update"/>: <span class="text-muted moment-datetime">${study.lastModifiedDate.toString(datetimeFormat)}</span></span>
+        </div>
 
       </div><!-- /.container-fluid -->
     </div>
@@ -277,7 +212,35 @@
 <!-- ./wrapper -->
 
 <#include "libs/scripts.ftl">
-<#include "models/study-scripts.ftl">
+<#include "libs/study-scripts.ftl">
+<script src="${assetsPath}/js/mlstr-scripts.js"></script>
+<script src="${assetsPath}/js/mlstr-files.js"></script>
+<script src="${assetsPath}/js/study.js"></script>
+
+<script>
+  dataTablesDefaultOpts = mlstrDataTablesDefaultOpts;
+
+  Mica.tr = {
+    "collected-dataset": "<@message "collected-dataset"/>",
+    "harmonized-dataset": "<@message "harmonized-dataset"/>",
+    "dataschema-dataset": "<@message "harmonized-dataset"/>"
+  }
+
+  const mlstrStudyService = MlstrStudyService.newInstance();
+
+  mlstrStudyService.createDatasetsTable("${study.id}", "${.lang}");
+  <#if type != "Harmonization">
+    mlstrStudyService.createNetworksTable("${study.id}", "${.lang}");
+    mlstrStudyService.ensurePopulationDceSelection();
+  </#if>
+
+  <#if draft>
+    let params = window.location.search;
+    let img = document.querySelector('#document-logo');
+
+    img.src = img.src + params.replace('draft', 'key');
+  </#if>
+</script>
 
 </body>
 </html>
