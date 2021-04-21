@@ -17,7 +17,8 @@
 <script src="${assetsPath}/js/mica-repo.js"></script>
 
 <script>
-  const Mica = { options: {} };
+  const Mica = {...DefaultMica};
+  Mica.options = {};
   <#if study.populations?? && study.populations?size != 0>
     <#list study.populationsSorted as population>
       <#if type == "Individual">

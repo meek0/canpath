@@ -10,7 +10,7 @@
 <script src="${assetsPath}/js/mica-repo.js"></script>
 
 <script>
-  const Mica = {};
+  const Mica = {...DefaultMica};
 
   // cart
   <#if cartEnabled>
@@ -208,7 +208,7 @@
                       row.push('<i class="' + iconClass + '"></i>');
                     } else {
                       const url = harmonizedVariable.harmonizedVariableRef ? '../variable/' + harmonizedVariable.harmonizedVariableRef.id : '#';
-                      row.push('<a title="' + harmonizedVariable.status + '" href="' + url + '"><i class="' + iconClass + '"></i></a>');
+                      row.push('<a title="' + Mica.tr[harmonizedVariable.status] + '" href="' + url + '"><i class="' + iconClass + '"></i></a>');
                     }
                   });
                 rows.push(row);

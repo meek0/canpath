@@ -3,13 +3,9 @@
 
 <!-- MicaConfig in JSON Format -->
 <script>
-  const Mica = {
-    config: ${configJson!"{}"},
-    locale: "${.lang}",
-    defaultLocale: "${defaultLang}"
-  };
-
-  Mica.tr = MlstrTranslations;
+  const Mica = {...DefaultMica};
+  Mica.config = ${configJson!"{}"};
+  Mica.defaultLocale = "${defaultLang}";
 
   Mica.trArgs = (msgKey, msgArgs) => {
     let template = Mica.tr[msgKey] || msgKey;
