@@ -32,7 +32,7 @@
             impliquées avant d'envoyer une demande.
           </p>
           <p>
-            <a href="${contextPath}/contact" class="btn btn-outline-info"><@message "contact-menu"/> <i class="fas fa-info-circle"></i></a>
+            <a href="${contextPath}/contact" class="btn btn-outline-primary"><@message "contact-menu"/> <i class="fas fa-info-circle"></i></a>
           </p>
           <p>
             Lorsque les chercheurs sont prêts à remplir et à envoyer une demande d'accès, ils doivent remplir et soumettre un
@@ -40,7 +40,7 @@
             à leur compte d'utilisateur de CanPath et en créant une <strong><@message "new-data-access-request"/></strong>.
           </p>
           <p class="mb-3">
-            <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="${contextPath}/data-accesses" class="btn btn-outline-primary"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
           </p>
         </div>
         <div class="col-md-4">
@@ -50,7 +50,7 @@
             connectant à leur compte d'utilisateur du portail de CanPath et en consultant <strong><@message "my-data-access-requests"/></strong>.
           </p>
           <p>
-            <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="${contextPath}/data-accesses" class="btn btn-outline-primary"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
           </p>
         </div>
       </div>
@@ -215,50 +215,4 @@
          target="_blank">Revue de la faisabilité pour les échantillons biologiques</a></li>
   </ul>
 
-  <div class="mt-5 row">
-    <div id="cohorts-biosamples" class="col-lg-12 col-xl-6">
-      <h5>Types de bioéchantillons disponibles par cohorte</h5>
-      <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-          <th>ATP</th>
-          <th>BCGP</th>
-          <th>CaG</th>
-          <th>OHS</th>
-          <th>PATH</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Red Top: Serum</td>
-          <td>ACD: whole blood in DMSO</td>
-          <td>ACD: whole blood in DMSO</td>
-          <td>Ficoll separated lymphocytes in DMSO/FBS</td>
-          <td>Toe Nails and Saliva</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>PST: plasma</td>
-          <td></td>
-          <td>PST: plasma</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>NaCitrate: Plasma</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Pax-Gene:  Tempus</td>
-          <td></td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </#macro>

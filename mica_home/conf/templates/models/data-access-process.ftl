@@ -29,15 +29,15 @@
             before submitting an application.
           </p>
           <p>
-            <a href="${contextPath}/contact" class="btn btn-outline-info"><@message "contact-menu"/> <i class="fas fa-info-circle"></i></a>
+            <a href="${contextPath}/contact" class="btn btn-outline-primary"><@message "contact-menu"/> <i class="fas fa-info-circle"></i></a>
           </p>
           <p>
-            When researchers are ready to complete and submit an access request, they must fill and submit an
-            application form online and attach all of the required CanPath access documentation by logging
+            When researchers are ready to submit an access request, they must complete and submit an
+            application form online and attach all of the required documentation by logging
             into their CanPath Portal User account, and creating a <strong><@message "new-data-access-request"/></strong>.
           </p>
           <p class="mb-3">
-            <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="${contextPath}/data-accesses" class="btn btn-outline-primary"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
           </p>
         </div>
         <div class="col-md-4">
@@ -47,7 +47,7 @@
             logging into their CanPath Portal User account, and checking <strong><@message "my-data-access-requests"/></strong>.
           </p>
           <p>
-            <a href="${contextPath}/data-accesses" class="btn btn-outline-warning"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="${contextPath}/data-accesses" class="btn btn-outline-primary"><@message "data-access"/> <i class="fas fa-arrow-circle-right"></i></a>
           </p>
         </div>
       </div>
@@ -215,50 +215,4 @@
          target="_blank">Biosample Feasibility Review</a></li>
   </ul>
 
-  <div class="mt-5 row">
-    <div id="cohorts-biosamples" class="col-lg-12 col-xl-6">
-      <h5>Available Biosample Types per Cohort</h5>
-      <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-          <th>ATP</th>
-          <th>BCGP</th>
-          <th>CaG</th>
-          <th>OHS</th>
-          <th>PATH</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Red Top: Serum</td>
-          <td>ACD: whole blood in DMSO</td>
-          <td>ACD: whole blood in DMSO</td>
-          <td>Ficoll separated lymphocytes in DMSO/FBS</td>
-          <td>Toe Nails and Saliva</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>PST: plasma</td>
-          <td></td>
-          <td>PST: plasma</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>NaCitrate: Plasma</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Pax-Gene:  Tempus</td>
-          <td></td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </#macro>
