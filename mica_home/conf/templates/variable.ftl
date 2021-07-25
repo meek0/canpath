@@ -153,8 +153,6 @@
                   <dd class="col-sm-8"><a href="${contextPath}/dataset/${variable.datasetId}">${localize(variable.datasetAcronym)}</a></dd>
                   <dt class="col-sm-4"><@message "value-type"/></dt>
                   <dd class="col-sm-8"><@message "variable_taxonomy.vocabulary.valueType.term." + variable.valueType + ".title"/></dd>
-                  <dt class="col-sm-4"><@message "client.label.variable.variable-type"/></dt>
-                  <dd class="col-sm-8">${variable.variableType}</dd>
                 </dl>
 
                 <#if variable.categories?? && variable.categories?size != 0>
@@ -293,7 +291,6 @@
                           <th><@message "study"/></th>
                           <th><@message "data-collection-event"/></th>
                           <th><@message "status"/></th>
-                          <th><@message "status-detail"/></th>
                           <th><@message "comment"/></th>
                         </tr>
                       </thead>
