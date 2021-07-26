@@ -37,6 +37,7 @@
       <div class="col-xs-12 col-lg-6">
         <canvas id="frequencyChart"></canvas>
         <div id="continuousSummary" class="table-responsive">
+          <span><@message "continuous-summary-title"/></span>
           <table class="table">
             <thead>
             <tr>
@@ -50,7 +51,6 @@
             </thead>
             <tbody></tbody>
           </table>
-          <span><@message "continuous-summary-title"/></span>
         </div>
       </div>
     </div>
