@@ -19,6 +19,7 @@
     contextPath: "${contextPath}",
     currentLanguage: '${.lang}',
     variableId: '${variable.id}',
+    nature: '${variable.nature}',
     categories: {},
     backgroundColors: ['${colors?join("', '")}'],
     barChartBorderColor: '${barChartBorderColor}',

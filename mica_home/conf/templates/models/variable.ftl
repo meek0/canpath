@@ -12,9 +12,9 @@
     </div>
   </#if>
 
-  <div id="categoricalSummary" style="display: none" class="mt-3 pt-3">
+  <div>
     <div class="row">
-      <div class="col-xs-12 col-lg-6">
+      <div id="categoricalSummary" style="display: none"   class="col-xs-12 col-lg-6">
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -37,6 +37,7 @@
       <div class="col-xs-12 col-lg-6">
         <canvas id="frequencyChart"></canvas>
         <div id="continuousSummary" class="table-responsive">
+          <span>Cumulative Summary of all Studies</span>
           <table class="table">
             <thead>
             <tr>
@@ -44,7 +45,8 @@
               <th><@message "max"/></th>
               <th><@message "mean"/></th>
               <th><@message "stdDev"/></th>
-              <th><@message "sum"/></th>
+              <th><@message "n"/></th>
+              <th><@message "total"/></th>
             </tr>
             </thead>
             <tbody></tbody>

@@ -43,6 +43,10 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
     renderFrequencies(data);
     renderStatistics(data);
 
+    if (Mica.nature === 'CONTINUOUS') {
+      $('#categoricalSummary').hide();
+    }
+
     if (!data.frequencies && !data.statistics) {
       $('#noSummary').show();
     }
@@ -171,7 +175,8 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
           <td>${summary.n === 0 ? '-' : summary.max.toFixed(2)}</td>
           <td>${summary.n === 0 ? '-' : summary.mean.toFixed(2)}</td>
           <td>${summary.n === 0 ? '-' : summary.stdDeviation.toFixed(2)}</td>
-          <td>${summary.n === 0 ? '-' : summary.sum.toFixed(2)}</td>
+          <td>${data.n === 0 ? '-' : data.n.toFixed(2)}<p class="text-muted">(${numberFormatter.format((100 * data.n / data.total).toFixed(2))}%)</p></td>
+          <td>${data.total === 0 ? '-' : data.total.toFixed(2)}</td>
         </tr>
       `);
 
