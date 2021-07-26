@@ -16,7 +16,7 @@
     <div class="row">
       <div id="categoricalSummary" style="display: none"   class="col-xs-12 col-lg-6">
         <div class="table-responsive">
-          <table class="table table-striped">
+          <table class="table table-striped border">
             <thead>
               <tr>
                 <th><@message "value"/></th>
@@ -38,7 +38,7 @@
         <canvas id="frequencyChart"></canvas>
         <div id="continuousSummary" class="table-responsive">
           <span><@message "continuous-summary-title"/></span>
-          <table class="table">
+          <table class="table border">
             <thead>
             <tr>
               <th><@message "min"/></th>
