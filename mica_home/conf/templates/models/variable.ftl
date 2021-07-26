@@ -14,50 +14,38 @@
 
   <div id="categoricalSummary" style="display: none" class="mt-3 pt-3">
     <div class="row">
-      <div class="col-xs-12 col-lg">
-        <dl>
-          <dt><@message "frequencies"/></dt>
-          <dd>
-            <div class="table-responsive">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th><@message "value"/></th>
-                    <th><@message "frequency"/></th>
-                  </tr>
-                </thead>
-                <tbody id="validValues"></tbody>
-                <tbody id="otherValues"></tbody>
-                <tbody>
-                  <tr>
-                    <th><@message "total"/></th>
-                    <td id="frequencyTotal"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </dd>
-        </dl>
-      </div>
-      <div class="col-xs-12 col-lg">
-        <canvas id="frequencyChart"></canvas>
-      </div>
-    </div>
-  </div>
-
-  <div id="continuousSummary" style="display: none" class="mt-3 pt-3">
-    <div class="row">
-      <div class="col">
+      <div class="col-xs-12 col-lg-6">
         <div class="table-responsive">
-          <table class="table">
+          <table class="table table-striped">
             <thead>
               <tr>
-                <th><@message "min"/></th>
-                <th><@message "max"/></th>
-                <th><@message "mean"/></th>
-                <th><@message "stdDev"/></th>
-                <th><@message "sum"/></th>
+                <th><@message "value"/></th>
+                <th><@message "frequency"/></th>
               </tr>
+            </thead>
+            <tbody id="validValues"></tbody>
+            <tbody id="otherValues"></tbody>
+            <tbody>
+              <tr>
+                <th><@message "total"/></th>
+                <td id="frequencyTotal"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <canvas id="frequencyChart"></canvas>
+        <div id="continuousSummary" class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+              <th><@message "min"/></th>
+              <th><@message "max"/></th>
+              <th><@message "mean"/></th>
+              <th><@message "stdDev"/></th>
+              <th><@message "sum"/></th>
+            </tr>
             </thead>
             <tbody></tbody>
           </table>
