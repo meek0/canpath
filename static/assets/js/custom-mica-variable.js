@@ -52,17 +52,51 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
     }
   };
 
+  const customMakeVariableFrequenciesChartSettings = function(frequencies, backgroundColors, tr) {
+    const labels = [];
+    const dataset = {
+      data: [],
+      backgroundColor: backgroundColors,
+    };
+    frequencies.forEach(frequency => {
+      if (frequency.count>0) {
+        labels.push(tr[frequency.label] ? tr[frequency.label] : frequency.label);
+        dataset.data.push(frequency.count);
+      }
+    });
+
+    return {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [dataset]
+      },
+      options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        legend: {
+          display: true
+        },
+      },
+    };
+  };
+
   const renderFrequencies = function(data) {
     const frequencyChartElem = $('#frequencyChart');
     if (data.frequencies) {
-      // frequencies chart
-      const chartCanvas = frequencyChartElem.get(0).getContext('2d');
+
       const padStringWithZeros = (s) => !isNaN(s) ? '0'.repeat(10 - s.length) + s : s;
-      new Chart(chartCanvas, makeVariableFrequenciesChartSettings(data.frequencies, Mica.backgroundColors, {
-        'NOT_NULL': Mica.tr['not-empty-values'],
-        'N/A': Mica.tr['empty-values']
-      }));
-      frequencyChartElem.show();
+
+      if (Mica.nature === 'CATEGORICAL') {
+        // frequencies chart
+        const chartCanvas = frequencyChartElem.get(0).getContext('2d');
+
+        new Chart(chartCanvas, customMakeVariableFrequenciesChartSettings(data.frequencies, Mica.backgroundColors, {
+          'NOT_NULL': Mica.tr['not-empty-values'],
+          'N/A': Mica.tr['empty-values']
+        }));
+        frequencyChartElem.show();
+      }
 
       $('#frequencyTotal').html(numberFormatter.format(data.total));
 
@@ -134,7 +168,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
 
 
       });
-      frequencyRows = frequencyRows +
+      frequencyRows = (Mica.nature === 'CATEGORICAL' ? frequencyRows : '') +
         `<tr>
           <td><em>${Mica.tr['subtotal']}</em></td>
           <td>
@@ -146,7 +180,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
 
       if (data.n !== data.total) {
         missingRows = `<tr><th colspan="2">${Mica.tr['other-values']}</td></tr>` +
-          missingRows +
+        (Mica.nature === 'CATEGORICAL' ? missingRows : '') +
           `<tr>
             <td><em>${Mica.tr['subtotal']}</em></td>
             <td>
