@@ -197,5 +197,9 @@ dl.striped > dt, dl.striped > dd {
 }
 
 #categoricalSummary .table td {
-  padding: 0.5rem;
+  padding: 0.2rem 0.5rem;
+}
+
+#categoricalSummary .table th {
+  padding: 0.2rem 0.5rem;
 }
