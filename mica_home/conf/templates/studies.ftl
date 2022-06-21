@@ -199,20 +199,18 @@
 <!-- ./wrapper -->
 
 <#include "libs/scripts.ftl">
-<script src="${assetsPath}/libs/node_modules/vue/dist/vue.js"></script>
-<script src="${assetsPath}/libs/node_modules/rql/dist/rql.js"></script>
-<script src="${assetsPath}/js/mlstr-scripts.js"></script>
-<script src="${assetsPath}/js/pagination.js"></script>
-<script src="${assetsPath}/js/entities.js"></script>
+<#include "libs/entities-list-scripts.ftl">
 
 <script>
-  const Mica = {...DefaultMica};
+  if (!window.location.href.match('(individual|harmonization)-')) {
+    document.querySelector('#studyFilter').classList.remove('d-none');
+  }
 
   const sortOptionsTranslations = {
     'weight': '<@message "global.sort-weight"/>'
   };
 
-  MlstrStudiesApp.build("#studies-app", "${title}", "${.lang}", sortOptionsTranslations);
+  ObibaStudiesApp.build("#studies-app", "${title}", "${.lang}", sortOptionsTranslations);
 </script>
 </body>
 </html>

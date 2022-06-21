@@ -1,8 +1,11 @@
+<!-- Macros -->
+<#include "models/list.ftl">
+
 <!DOCTYPE html>
 <html lang="${.lang}" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
   <#include "libs/head.ftl">
-  <title>${config.name!""} | ${set.name}</title>
+  <title>${config.name!""} | ${listName(set)}</title>
 </head>
 <body id="list-page" class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
 <!-- Site wrapper -->
@@ -38,21 +41,37 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <#if user?? && user.variablesLists?? && user.variablesLists?size gt 0>
+        <#if sets?? && sets.variablesLists?? && sets.variablesLists?size gt 0>
           <ul class="nav nav-pills nav-sidebar flex-column">
-            <#list user.variablesLists as variableList>
+            <#list sets.variablesLists as variableList>
               <#assign variableListActiveClass = (variableList.id == set.id)?then("active", "") />
               <li class="nav-item">
                 <a class="nav-link ${variableListActiveClass}" href="${contextPath}/list/${variableList.id}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    <span title="${variableList.name}">${variableList.name?truncate_c(20, "...")}</span>
+                    <span title="${listName(variableList)} <#if variableList.name?starts_with("dar:")>[<@message "data-access-request"/>]</#if>">
+                        ${listName(variableList)?truncate_c(20, "...")}
+                    </span>
+                    <#if variableList.name?starts_with("dar:")>
+                      <i class="fas fa-link ml-2"></i>
+                    <#else>
+                      <span></span>
+                    </#if>
+                    <#if variableList.locked>
+                      <i class="fas fa-lock ml-2"></i>
+                    </#if>
                     <span class="badge badge-light right">${variableList.identifiers?size}</span>
                   </p>
                 </a>
               </li>
             </#list>
           </ul>
+        <#else >
+          <span class="pl-2 text-white-50">
+            <em>
+              <@message "no-personal-list"/>
+            </em>
+          </span>
         </#if>
       </nav>
       <!-- /.sidebar-menu -->
@@ -67,18 +86,24 @@
   <!-- /.control-sidebar -->
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" id="query-vue-container">
     <!-- Content Header (Page header) -->
     <div class="content-header bg-info mb-4">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
             <h1 class="m-0 float-left">
-              <span class="text-white-50"><@message "search.list"/> /</span> ${set.name}
+              <span class="text-white-50"><@message "search.list"/> /</span>
+                ${listName(set)}
+                <#if set.name?starts_with("dar:")>
+                  [<@message "data-access-request"/>]
+                </#if>
             </h1>
-            <button type="button" class="btn btn-danger ml-4" data-toggle="modal" data-target="#modal-delete-list">
-              <i class="fas fa-trash"></i> <@message "delete"/>
-            </button>
+            <#if !set.locked || isAdministrator>
+              <button type="button" class="btn btn-danger ml-4" data-toggle="modal" data-target="#modal-delete-list">
+                <i class="fas fa-trash"></i> <@message "delete"/>
+              </button>
+            </#if>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -90,7 +115,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title"><@message "cart-confirm-deletion-title"/> (${set.name})</h4>
+            <h4 class="modal-title"><@message "cart-confirm-deletion-title"/> (${listName(set)})</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -117,7 +142,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title"><@message "cart-confirm-deletion-title"/> (${set.name})</h4>
+            <h4 class="modal-title"><@message "cart-confirm-deletion-title"/> (${listName(set)})</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -141,64 +166,101 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <div id="list-callout" class="callout callout-info">
-          <p><@message "sets.set.help"/></p>
-        </div>
+
+        <#if set.name?starts_with("dar:")>
+          <div id="dar-list-callout" class="callout callout-info">
+            <p><@message "sets.set.dar-help"/></p>
+            <button class="btn btn-info" onclick="location.href='${contextPath}/data-access-form/${set.name?replace("dar:", "")}'">
+              <i class="fas fa-link"></i>
+                <#if set.name?matches(".+-F\\d+$")>
+                  <@message "data-access-feasibility"/>
+                <#elseif set.name?matches(".+-A\\d+$")>
+                  <@message "data-access-amendment"/>
+                <#else>
+                  <@message "data-access-request"/>
+                </#if>
+            </button>
+          </div>
+        <#else>
+          <div id="list-callout" class="callout callout-info">
+            <p><@message "sets.set.help"/></p>
+          </div>
+        </#if>
 
         <div class="card card-info card-outline">
           <div class="card-header">
-            <h3 class="card-title"><@message "variables"/></h3>
+
+            <#if config.harmonizationDatasetEnabled && config.studyDatasetEnabled>
+            <div class="float-left">
+              <ul class="nav nav-pills" id="studyClassNameChoice" :title="countWarning ? '<@message "count-warning"/>' : ''" role="tablist" v-cloak>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="individual-tab" @click="onStudyClassNameChange('Study')" href="" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true"><@message "individual-search"/> <span :class="{ 'badge-warning': countWarning, 'badge-light': !countWarning }" class="badge right">{{individualSubCount}}</span></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="harmonization-tab" @click="onStudyClassNameChange('HarmonizationStudy')" href="" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false"><@message "harmonization-search"/> <span :class="{ 'badge-warning': countWarning, 'badge-light': !countWarning }" class="badge right">{{harmonizationSubCount}}</span></a>
+                </li>
+              </ul>
+            </div>
+            </#if>
+
             <div class="float-right">
+              <button class="btn btn-success ml-2" onclick="onVariablesCartAdd('${set.id}')">
+                <i class="fas fa-cart-plus"></i> <@message "sets.cart.add-to-cart"/>
+              </button>
               <#if showCartDownload>
                 <#if showCartViewDownload>
-                  <div class="btn-group" role="group">
+                  <div class="btn-group ml-2" role="group">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-download"></i> <@message "download"/>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" id="download-variables" href="javascript:void(0)" download><@message "variables"/></a>
+                      <a class="dropdown-item" href="${contextPath}/ws/variables/set/${set.id}/documents/_report?locale=${.locale}" download><@message "download-cart-report"/></a>
+                      <a class="dropdown-item" href="${contextPath}/ws/variables/set/${set.id}/documents/_export" download><@message "download-cart-ids"/></a>
                       <a class="dropdown-item" href="${contextPath}/ws/variables/set/${set.id}/documents/_opal" download><@message "download-cart-views"/></a>
                     </div>
                   </div>
                 <#else>
-                  <a id="download-variables" href="javascript:void(0)" download class="btn btn-primary ml-2">
+                  <a href="${contextPath}/ws/variables/set/${set.id}/documents/_report?locale=${.locale}" download class="btn btn-primary ml-2">
                     <i class="fas fa-download"></i> <@message "download"/>
                   </a>
                 </#if>
               </#if>
-              <button id="delete-all" type="button" class="btn btn-danger ml-2" data-toggle="modal" data-target="#modal-delete">
-                <i class="fas fa-trash"></i> <@message "delete"/> <span class="badge badge-light selection-count"></span>
-              </button>
-              <#if config.setsSearchEnabled>
-                <a class="btn btn-info ml-2" href="${contextPath}/search#lists?type=variables&query=variable(in(Mica_variable.sets,${set.id}))">
-                  <i class="fas fa-search"></i>
-                </a>
+              <#if !set.locked || isAdministrator>
+                <button id="delete-all" type="button" class="btn btn-danger ml-2" data-toggle="modal" data-target="#modal-delete">
+                  <i class="fas fa-trash"></i> <@message "delete"/> <span class="badge badge-light selection-count"></span>
+                </button>
               </#if>
             </div>
           </div>
           <div class="card-body">
             <#if set?? && set.identifiers?size gt 0>
               <div id="loadingSet" class="spinner-border spinner-border-sm" role="status"></div>
-              <div class="table-responsive">
-                <table id="setTable" class="table table-striped">
-                  <thead>
-                  <tr>
-                    <th><i class="far fa-square"></i></th>
-                    <th></th>
-                    <th><@message "name"/></th>
-                    <th><@message "label"/></th>
-                    <#if config.studyDatasetEnabled && config.harmonizationDatasetEnabled>
-                      <th><@message "type"/></th>
-                    </#if>
-                    <#if !config.singleStudyEnabled>
-                      <th><@message "study"/></th>
-                    </#if>
-                    <th><@message "dataset"/></th>
-                  </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
+              <div class="mt-3 text-muted" v-show="!hasResult"><@message "empty-list"/></div>
+              <div v-show="hasResult" class="clearfix mb-3">
+                <div class="float-left">
+                  <div class="d-inline-block">
+                    <div class="d-inline-flex">
+                      <span class="mr-2">
+                        <select class="custom-select" id="obiba-page-size-selector-top"></select>
+                      </span>
+                      <nav id="obiba-pagination-top" aria-label="Top pagination" class="mt-0">
+                        <ul class="pagination mb-0"></ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                <#if config.setsSearchEnabled>
+                  <div class="float-right">
+                    <a class="btn btn-info ml-2" v-if="studyClassName != 'HarmonizationStudy'" href="${contextPath}/individual-search#lists?type=variables&query=variable(in(Mica_variable.sets,${set.id})),study(in(Mica_study.className,Study))">
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a class="btn btn-info ml-2" v-else href="${contextPath}/harmonization-search#lists?type=variables&query=variable(in(Mica_variable.sets,${set.id})),study(in(Mica_study.className,HarmonizationStudy))">
+                      <i class="fas fa-search"></i>
+                    </a>
+                  </div>
+                </#if>
               </div>
+              <variables-result v-show="hasResult" :show-checkboxes="hasCheckboxes"></variables-result>
             <#else>
               <div class="text-muted"><@message "empty-list"/></div>
             </#if>
@@ -219,45 +281,5 @@
 <#if set??>
   <#include "libs/document-set-scripts.ftl">
 </#if>
-
-<script>
-  $(function () {
-    const downloadVariableButton = document.getElementById('download-variables');
-
-    const sortQuery = 'sort(' + ['${searchVariableSortFields?join("', '")}'].join(',') + ')';
-    const fieldsQuery = 'fields(' + ['${searchVariableFields?join("', '")}'].join(',') + ')';
-    const limitQuery = 'limit(0,${maxItemsPerSet?c})';
-
-    const setQuery = 'in(Mica_variable.sets,${set.id})';
-
-    downloadVariableButton.addEventListener('click', function () {
-      const selections = variablesCartStorage.getSelections();
-
-      let query = [setQuery, sortQuery, fieldsQuery, limitQuery];
-
-      if (Array.isArray(selections) && selections.length > 0) {
-        const idQuery = 'in(id,(' + selections.join(',') + '))';
-        query.push(idQuery);
-      }
-
-      const form = document.createElement('form');
-      form.setAttribute('class', 'hidden');
-      form.setAttribute('method', 'post');
-
-      form.action = '${contextPath}/ws/variables/_rql_csv';
-      form.accept = 'text/csv';
-
-      const input = document.createElement('input');
-      input.name = 'query';
-      input.value = 'variable(' + query.join(',') + '),locale(${.lang})';
-
-      form.appendChild(input);
-
-      document.body.appendChild(form);
-      form.submit();
-      form.remove();
-    });
-  });
-</script>
 </body>
 </html>
