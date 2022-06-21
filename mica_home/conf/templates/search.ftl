@@ -10,7 +10,7 @@
 </head>
 <body id="search-page" class="hold-transition layout-top-nav layout-navbar-fixed">
 <!-- Site wrapper -->
-<div class="wrapper" id="search-application" v-cloak>
+<div class="wrapper" id="search-application" :class="{'harmoMode': currentStudyTypeSelection && currentStudyTypeSelection.harmonization}" v-cloak>
 
   <!-- Navbar -->
   <#assign hideBarsIcon=true>
@@ -34,7 +34,7 @@
       <div class="container-fluid">
         <div class="row">
           <nav id="sidebar" class="col-xs-12 col-sm-12 col-lg-2 sidebar sidebar-light-primary mt-0">
-            <search-criteria></search-criteria>
+            <search-criteria :study-type-selection="currentStudyTypeSelection"></search-criteria>
           </nav>
 
           <div class="col-xs-12 col-sm-12 col-lg-10">
@@ -183,6 +183,21 @@
                           </li>
                         </#if>
                       </ul>
+                    </div>
+
+                    <div id="paging-sorting-container" class="mt-2">
+                      <div class="row">
+                        <div class="col d-flex align-items-center justify-content-end">
+                          <div class="d-inline-flex">
+                            <span class="ml-2 mr-2">
+                              <select class="custom-select" id="obiba-page-size-selector-top"></select>
+                            </span>
+                            <nav id="obiba-pagination-top" aria-label="Top pagination" class="mt-0">
+                              <ul class="pagination mb-0"></ul>
+                            </nav>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     
                     <div class="mt-3">
