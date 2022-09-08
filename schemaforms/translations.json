@@ -302,7 +302,7 @@
             "canue-text-accompany": "Note - any request for the CANUE dataset requires the completion and execution of a <a target=\"_blank\" href =\"https://canue.ca/wp-content/uploads/2018/11/CANUE-Data-Use-and-Sharing-via-Third-Party-Agreement.pdf\">Data Sharing and Use via Approved Third Party Agreement</a>",
             "questionnaire-followup": "Follow-up Questionnaire",
             "mental-health-cognition-personality-psychological-measures": "",
-            "always-included-info": "OPlease note that BMI data, Baseline Health and Risck Factors Questionnaire and Baseline Physical Measures data may be self reported."
+            "always-included-info": "Please note that BMI data, Baseline Health and Risk Factors Questionnaire and Baseline Physical Measures data may be self reported."
           },
           "O": {
             "info": "<p class=\"help-block\">Please provide a brief description (100 words) of the derived data that will be returned to CanPath generated during the analyses undertaken for your research project using Research Data and/or Biosamples. Data that must be returned include new variables issued from assay results (if applicable) and derived variables generated from existing variables using an expression including all intermediates of these derived variables. For example, a derived variable can be an index combining several variables (e.g. risk scores) or a numeric variable created by doing the sum of values stored in two or more numeric variables.</p> <p class=\"help-block\">The Derived Data must be returned in the analytical format used to create your final working dataset such as SAS (.sas), SPSS (.sps), .CSV or the equivalent, along with the data dictionary or codebook. The Derived Data must include the original anonymized IDs supplied by CanPath.</p> <p class=\"help-block\">All biosample analysis data is to be returned in both raw (initial data generated from laboratory instrument) and analyzed (analysis extracted from raw data) formats and is to be accompanied by a completed CanPath Derived Data Report. Raw and analyzed data for the assay's standards and controls are also to be provided.</p>",
@@ -1141,7 +1141,7 @@
             "canue-text-accompany": "Remarque: toute demande relative à l'ensemble de données CANUE nécessite la finalisation et l'exécution d'un <a target=\"_blank\" href =\"https://canue.ca/wp-content/uploads/2018/11/CANUE-Data-Use-and-Sharing-via-Third-Party-Agreement.pdf\">partage de données et son utilisation via un contrat tiers approuvé.</a>",
             "questionnaire-followup": "Questionnaire de suivi",
             "mental-health-cognition-personality-psychological-measures": "Cognition, personnalité et autres mesures psychologiques",
-            "always-included-info": "OPlease note that BMI data, Baseline Health and Risck Factors Questionnaire and Baseline Physical Measures data may be self reported."
+            "always-included-info": "Veuillez noter que les données relatives à l'IMC, au questionnaire initiale sur la santé et les facteurs de risque et aux mesures physiques peuvent être déclarées par les participants eux-mêmes."
           },
           "O": {
             "info": "<p class='help-block'>Veuillez décrire brièvement (100 mots) les données dérivées qui seront retournées à CanPath et qui seront générées dans le cadre de votre projet de recherche par l'analyse des Données de recherche ou des Échantillons biologiques. Les données à retourner incluent: les nouvelles variables découlant des résultats des essais effectués (le cas échéant) et les variables dérivées générées à partir des variables existantes utilisant une expression, y compris toutes les variables intermédiaires de ces variables dérivées. Par exemple, une variable dérivée peut être un indice combinant plusieurs variables (p. ex., scores de risque) ou une variable numérique créée en additionnant les valeurs stockées dans deux ou plusieurs variables numériques.</p><p class='help-block'>Vous devrez retourner les données dérivées dans le format analytique utilisé pour créer votre base de données de travail finale tel que SAS (.sas), SPSS (.sps), .CSV ou un équivalent, en plus du dictionnaire de données ou de la liste de codage. Les données dérivées doivent comprendre les ID anonymisés d'origine fournis par CanPath.</p><p class='help-block'>Toutes les données d'analyse d'un échantillon biologique doivent mentionner la source de la méthodologie utilisée dans une déclaration définissant les mesures de contrôle de la qualité qui ont été prises et en précisant si elles ont été satisfaites ou non.</p>",
@@ -1379,9 +1379,9 @@
         "dsCovid19AntibodyBlQuestionnaire": "Questionnaire sur la présence d'anticorps COVID-19 collecte initiale",
         "dsCovid19AntibodyTestBlQuestionnaireCollectionProcessing": "Test d'anticorps COVID-19 collecte initiale &mdash; Collecte et processus de traitement",
         "dsCovid19AntibodyTestBlQuestionnaireSerologyResults": "Test d'anticorps COVID-19 collecte initiale &mdash; Résultats sérologiques",
-        "dsGenotypeData": "Données de génotypage",
+        "dsGenotypeData": "Données sur les génotypes",
         "dsEnvironmentalExposureData": "Données d'exposition environnementale",
-        "dsCANUEData": "Données du Consortium canadien de recherche sur la santé en milieu urbain (CANUE)",
+        "dsCANUEData": "Données du Consortium canadien de recherche sur la santé environnementale en milieu urbain (CANUE)",
         "dsRegionalDatasets": "Ensembles de données régionales (p. ex. questionnaire sur les antécédents résidentiels)",
         "variables-file": "Variables individuelles"
       },
