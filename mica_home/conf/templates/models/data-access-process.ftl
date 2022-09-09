@@ -147,7 +147,7 @@
       </div>
       <div class="card mb-0">
         <div class="card-header">
-          <button type="button" class="btn btn-link btn-block text-navy text-left" data-toggle="collapse" data-target="#collapseThree">The Access Committe</button>
+          <button type="button" class="btn btn-link btn-block text-navy text-left" data-toggle="collapse" data-target="#collapseThree">The Access Committee</button>
         </div>
         <div id="collapseThree" class="collapse" data-parent="#accessProcessAccordion">
           <div class="card-body">
