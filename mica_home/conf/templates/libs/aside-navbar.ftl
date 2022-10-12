@@ -6,6 +6,7 @@
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand">
         <@rightmenus></@rightmenus>
       </ul>
+      <@portalOverview/>
     </div>
   </div>
  <div class="navbar navbar-expand navbar-navy">

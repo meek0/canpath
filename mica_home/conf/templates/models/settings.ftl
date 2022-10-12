@@ -62,3 +62,6 @@
 <#assign dataAccessInstructionsEnabled = false/>
 
 <#assign studyDesignColors = ["#4c722a","#73a432","#ffe637","#fcb814","#d9461d","#940c12"]/>
+
+<#assign portalNavOverviewUrl = {"en" :"https://www.youtube.com/watch?v=cA-9SBqcAiQ&t=0", "fr": "https://www.youtube.com/watch?v=cA-9SBqcAiQ&t=0"}/>
+
