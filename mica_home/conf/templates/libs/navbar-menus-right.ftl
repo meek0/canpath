@@ -13,6 +13,15 @@
   </li>
 </#macro>
 
+<#macro portalOverview>
+  <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" target="_blank" href="${portalNavOverviewUrl[.lang]}"><i class="fab fa-youtube"></i> <@message "portal-nav-overview"/></a>
+    </li>
+  </ul>
+
+</#macro>
+
 <#macro rightmenus>
   <#if user??>
     <@staticTopMenus/>
