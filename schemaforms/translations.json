@@ -570,7 +570,7 @@
         "dsCovid19AntibodyTestBlQuestionnaireCollectionProcessing": "COVID-19 Antibody Test Baseline &mdash; Collection and Processing",
         "dsCovid19AntibodyTestBlQuestionnaireSerologyResults": "COVID-19 Antibody Test Baseline &mdash; Serology results",
         "dsCANUEData": "Canadian Urban Environment Health Research Consortium (CANUE) Data",
-        "dsCAHHM": "CAHHM"
+        "dsCAHHM": "Canadian Alliance for Healthy Hearts and Minds (CAHHM)"
       },
       "data-linkage": {
         "title": "Data Linkage",
@@ -1471,7 +1471,7 @@
         "dsCovid19AntibodyTestBlQuestionnaireCollectionProcessing": "Test d'anticorps COVID-19 collecte initiale &mdash; Collecte et processus de traitement",
         "dsCovid19AntibodyTestBlQuestionnaireSerologyResults": "Test d'anticorps COVID-19 collecte initiale &mdash; Résultats sérologiques",
         "dsCANUEData": "Données du Consortium canadien de recherche sur la santé environnementale en milieu urbain (CANUE)",
-        "dsCAHHM": "CAHHM"
+        "dsCAHHM": "Alliance Canadienne Cœurs et Cerveaux Sains (CAHHM)"
       },
       "data-linkage": {
         "title": "Jumelage de données",
