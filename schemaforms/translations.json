@@ -544,7 +544,8 @@
         "dsEnvironmentalExposureData": "Environmental Exposure Data",
         "dsCANUEData": "Canadian Urban Environment Health Research Consortium (CANUE) Data",
         "dsRegionalDatasets": "Regional Datasets (e.g. Residential History questionnaire)",
-        "variables-file": "Individual Variables"
+        "variables-file": "Individual Variables",
+        "dsCAHHM": "Canadian Alliance for Healthy Hearts and Minds (CAHHM)"
       },
       "data-linkage": {
         "title": "Data Linkage",
@@ -1383,7 +1384,8 @@
         "dsEnvironmentalExposureData": "Données d'exposition environnementale",
         "dsCANUEData": "Données du Consortium canadien de recherche sur la santé environnementale en milieu urbain (CANUE)",
         "dsRegionalDatasets": "Ensembles de données régionales (p. ex. questionnaire sur les antécédents résidentiels)",
-        "variables-file": "Variables individuelles"
+        "variables-file": "Variables individuelles",
+        "dsCAHHM": "Alliance Canadienne Cœurs et Cerveaux Sains (CAHHM)"
       },
       "data-linkage": {
         "title": "Jumelage de données",

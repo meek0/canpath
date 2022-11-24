@@ -796,6 +796,12 @@
       "default": false,
       "name": "dsCovid192020Questionnaire"
     },
+    "dsCAHHM": {
+      "title": "t(data-access-request.variables-list.dsCAHHM)",
+      "type": "boolean",
+      "default": false,
+      "name": "dsCAHHM"
+    },
     "dsCovid19AntibodyBlQuestionnaire": {
       "title": "t(data-access-request.variables-list.dsCovid19AntibodyBlQuestionnaire)",
       "type": "boolean",
