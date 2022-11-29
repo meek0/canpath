@@ -45,12 +45,12 @@
             "items": [
               {
                 "type": "section",
-                "htmlClass": "col-md-6",
+                "htmlClass": "col-md-12",
                 "items": ["startResearchProjectTimeTable"]
               },
               {
                 "type": "section",
-                "htmlClass": "col-md-6",
+                "htmlClass": "col-md-12",
                 "items": ["endResearchProjectTimeTable"]
               }
             ]
