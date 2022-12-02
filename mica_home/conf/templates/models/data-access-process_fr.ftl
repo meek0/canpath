@@ -99,7 +99,7 @@
             <ul>
               <li>Le demandeur est un chercheur de bonne foi (c.-à-d. la preuve qu'il possède une expérience et des qualifications pertinentes);</li>
               <li>Le projet de recherche est conforme aux principes directeurs de CanPath et aux consentements éclairés signés par les participants à la recherche (voir les sections 2 et 4a de la <a href="#access_policies">Politique d'accès de CanPath</a>);</li>
-              <li>La demande a passé avec succès les phases d'examen administratif de l'exhaustivité et d'évaluation de la faisabilité.</li>
+              <li>La demande a passé les phases d'examen de la complétude administrative et d'évaluation de la faisabilité.</li>
             </ul>
 
             <p>L'évaluation d'Access Office a établi que la demande répond aux exigences suivantes :</p>
