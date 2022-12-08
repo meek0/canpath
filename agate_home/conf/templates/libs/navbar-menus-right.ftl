@@ -33,7 +33,7 @@
   <#else>
     <@staticTopMenus/>
     <li class="nav-item">
-      <a class="nav-link pr-1" href="${portalUrl}/signup"><@message "sign-up"/></a>
+      <a class="nav-link pr-1" href="${portalLink}/signup"><@message "sign-up"/></a>
     </li>
     <li class="nav-item">
       <span class="nav-link pl-0 pr-0">|</span>
