@@ -196,7 +196,8 @@
         </#if>
 
         <div class="text-black-50 row col pb-3 pb-3">
-          <span><@message "last-update"/>: <span class="text-muted moment-datetime">${study.lastModifiedDate.get().toString(datetimeFormat)}</span></span>
+          <!-- TODO: For date using 'datetimeFormat' -->
+          <span><@message "last-update"/>: <span class="text-muted moment-datetime">${study.lastModifiedDate.get().toString()}</span></span>
         </div>
 
       </div><!-- /.container-fluid -->
