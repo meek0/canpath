@@ -262,6 +262,3 @@ Vue.filter("translate", (key) => {
   let value = MlstrTranslations[key];
   return typeof value === "string" ? value : key;
 });
-
-const DEFAULT_PAGE_SIZES = [10,20,50,100];
-const DEFAULT_PAGE_SIZE = DEFAULT_PAGE_SIZES[2];
