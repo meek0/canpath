@@ -67,10 +67,10 @@
                 </div>
                 <div class="row">
                   <#if study.logo??>
-                    <div class="col-2">                    
+                    <div class="col-2">
                       <img id="document-logo" class="img-fluid" style="width: 12em" alt="${localize(study.acronym)} logo" src="${contextPath}/ws${draftImageUrlFragment}${forLogoLink}/${study.id}/file/${study.logo.id}/_download"/>
                     </div>
-                  </#if>  
+                  </#if>
 
                   <div class="col card-text">
                     <div class="marked">
@@ -196,7 +196,7 @@
         </#if>
 
         <div class="text-black-50 row col pb-3 pb-3">
-          <span><@message "last-update"/>: <span class="text-muted moment-datetime">${study.lastModifiedDate.toString(datetimeFormat)}</span></span>
+          <span><@message "last-update"/>: <span class="text-muted moment-datetime">${study.lastModifiedDate.get().toString(datetimeFormat)}</span></span>
         </div>
 
       </div><!-- /.container-fluid -->
