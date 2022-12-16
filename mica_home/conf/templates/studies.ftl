@@ -102,7 +102,7 @@
               </#if>
 
               <div class="tab-content">
-                
+
                 <div class="row d-flex align-items-stretch">
                   <div class="col-md-12 col-lg-6 d-flex align-items-stretch" v-for="study in entities" v-bind:key="study.id">
                     <div v-if="study.id !== ''" class="card w-100">
@@ -210,7 +210,7 @@
     'weight': '<@message "global.sort-weight"/>'
   };
 
-  ObibaStudiesApp.build("#studies-app", "${title}", "${.lang}", sortOptionsTranslations);
+  ObibaStudiesApp.build("#studies-app", "${title}", "${.lang}", sortOptionsTranslations, "weight");
 </script>
 </body>
 </html>
