@@ -162,7 +162,7 @@
         </#if>
 
         <div class="text-black-50 row col pb-3 pb-3">
-          <span><@message "last-update"/>: <span class="text-muted moment-datetime">${dataset.lastModifiedDate.toString(datetimeFormat)}</span></span>
+          <span><@message "last-update"/>: <span class="text-muted moment-datetime">${dataset.lastModifiedDate.get().toString()}</span></span>
         </div>
 
       </div>
