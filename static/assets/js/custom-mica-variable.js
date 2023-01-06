@@ -94,8 +94,8 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
         const layout = {
           showlegend: false,
           margin: {
-            b: 0,
-            t: 0
+            b: 10,
+            t: 10
           }
         }
 
