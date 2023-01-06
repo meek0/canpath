@@ -69,10 +69,6 @@
                       <template>${localize(dataset.description)}</template>
                     </div>
                   </#if>
-
-                  <div class="float-right">
-                    <a class="btn btn-sm btn-info" href="${contextPath}/search#lists?type=variables&query=dataset(in(Mica_dataset.id,${dataset.id}))"><@message "search-variables"/></a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -254,10 +250,10 @@
             <div class="card-header">
               <h3 class="card-title"><@message "harmonization"/></h3>
               <div class="float-right">
-                <a href="${contextPath}/ws/harmonized-dataset/${dataset.id}/variables/harmonizations/_export" class="btn btn-sm btn-success">
+                <a href="${contextPath}/ws/harmonized-dataset/${dataset.id}/variables/harmonizations/_export" class="btn btn-sm btn-info">
                     <i class="fas fa-download"></i> <@message "download"/>
                 </a>
-                <a class="btn btn-sm btn-success" href="${contextPath}/${searchPageUrl}#lists?type=variables&query=dataset(in(Mica_dataset.id,${dataset.id}))"><@message "search-variables"/></a>
+                <a class="btn btn-sm btn-info" href="${contextPath}/${searchPageUrl}#lists?type=variables&query=dataset(in(Mica_dataset.id,${dataset.id}))"><@message "search-variables"/></a>
               </div>
             </div>
             <div class="card-body">
