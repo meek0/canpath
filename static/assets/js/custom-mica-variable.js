@@ -91,8 +91,16 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
           'N/A': Mica.tr['empty-values']
         });
 
+        const layout = {
+          showlegend: false,
+          margin: {
+            b: 0,
+            t: 0
+          }
+        }
+
         if (frequencyChartElem.length) {
-          Plotly.newPlot("frequencyChart", chartData, null, {responsive: true, displaylogo: false, modeBarButtonsToRemove: ['select2d', 'lasso2d', 'pan', 'zoom', 'autoscale', 'zoomin', 'zoomout', 'resetscale']});
+          Plotly.newPlot("frequencyChart", chartData, layout, {responsive: true, displaylogo: false, modeBarButtonsToRemove: ['select2d', 'lasso2d', 'pan', 'zoom', 'autoscale', 'zoomin', 'zoomout', 'resetscale']});
           frequencyChartElem.show();
         }
       }
