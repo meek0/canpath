@@ -5,15 +5,22 @@
 <#include "models/dataset.ftl">
 <#include "models/files.ftl">
 
+
 <#if !type??>
     <#assign title = "datasets">
     <#assign showTypeColumn = true>
+    <#assign studyClassName = "Study,HarmonizationStudy">
+    <#assign searchPageUrl = "search">
 <#elseif type == "Harmonized">
     <#assign title = "harmonized-datasets">
     <#assign showTypeColumn = false>
+    <#assign studyClassName = "HarmonizationStudy">
+    <#assign searchPageUrl = "harmonization-search">
 <#else>
     <#assign title = "collected-datasets">
     <#assign showTypeColumn = false>
+    <#assign studyClassName = "Study">
+    <#assign searchPageUrl = "individual-search">
 </#if>
 
 <!DOCTYPE html>
@@ -82,29 +89,114 @@
                 <div class="card-body">
                   <div class="tab-content">
                     <dl class="row striped mt-0 mb-1">
-                      <dt class="col-sm-4">
-                          <@message "client.label.dataset.dataset-type"/>
-                      </dt>
-                      <dd class="col-sm-8">
-                          <@message title/>
-                      </dd>
-                      <#if !(dataset.model.hide_var)?? || !dataset.model.hide_var>
+                      <#if type == "Harmonized">
+                        <#if study??>
+                          <dt class="col-sm-4">
+                                <@message "harmonization-study"/>
+                          </dt>
+                          <dd class="col-sm-8">
+                            <a href="${contextPath}/study/${study.id}">${localize(study.acronym)}</a>
+                          </dd>
+                        </#if>
+
                         <dt class="col-sm-4">
-                            <@message "client.label.dataset.number-of-variables"/>
+                              <@message "harmonized-dataset"/>
                         </dt>
                         <dd class="col-sm-8">
-                          <span id="dataset-${dataset.id}-variables-count"></span>
+                          ${localize(dataset.acronym)}
                         </dd>
+
+                        <#if dataset.model.version??>
+                          <dt class="col-sm-4">
+                              <@message "harmonization-protocol.version"/>
+                          </dt>
+                          <dd class="col-sm-8">
+                            <span>${dataset.model.version}</span>
+                          </dd>
+                        </#if>
                       </#if>
+
+                      <dt class="col-sm-4">
+                          <@message "client.label.dataset.number-of-variables"/>
+                      </dt>
+                      <dd class="col-sm-8">
+                        <span id="dataset-${dataset.id}-variables-count"></span>
+                      </dd>
+
                     </dl>
                   </div>
                 </div>
               </div>
             </div>
-              <#if type == "Collected">
-                  <@individualStudy study population dce/>
-              <#else>
-                  <@harmonizationStudy study/>
+              <#if type == "Harmonized">
+                <#if (dataset.model.qualitativeQuantitative)?? ||
+                    (dataset.model.prospectiveRetrospective)?? ||
+                    localizedStringNotEmpty(dataset.model.procedures) ||
+                    localizedStringNotEmpty(dataset.model.infrastructure) ||
+                    localizedStringNotEmpty(dataset.model.participantsInclusion) ||
+                    (dataset.model.participants)??>
+                  <div class="col-sm-12 col-md d-flex align-items-stretch">
+                    <div class="card card-info card-outline w-100">
+                      <div class="card-header">
+                        <h3 class="card-title"><@message "design"/></h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="tab-content">
+                          <dl class="row striped mt-0 mb-1">
+                            <#if (dataset.model.qualitativeQuantitative)??>
+                              <dt class="col-sm-4">
+                                  <@message "harmonization-protocol.qualitative-quantitative.title"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.qualitative-quantitative.alt-help"/>"></i>
+                              </dt>
+                              <dd class="col-sm-8">
+                                <span><@message "harmonization-protocol.qualitative-quantitative.enum.${dataset.model.qualitativeQuantitative}"/> </span>
+                              </dd>
+                            </#if>
+                            <#if (dataset.model.prospectiveRetrospective)??>
+                              <dt class="col-sm-4">
+                                  <@message "harmonization-protocol.prospective-retrospective.title"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.prospective-retrospective.alt-help"/>"></i>
+                              </dt>
+                              <dd class="col-sm-8">
+                                <span><@message "harmonization-protocol.prospective-retrospective.enum.${dataset.model.prospectiveRetrospective}"/> </span>
+                              </dd>
+                            </#if>
+                            <#if localizedStringNotEmpty(dataset.model.procedures)>
+                              <dt class="col-sm-4">
+                                  <@message "harmonization-protocol.procedures"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.procedures-help"/>"></i>
+                              </dt>
+                              <dd class="col-sm-8">
+                                <span>${localize(dataset.model.procedures)}</span>
+                              </dd>
+                            </#if>
+                            <#if localizedStringNotEmpty(dataset.model.infrastructure)>
+                              <dt class="col-sm-4">
+                                  <@message "harmonization-protocol.infrastructure"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.infrastructure-help"/>"></i>
+                              </dt>
+                              <dd class="col-sm-8">
+                                <span>${localize(dataset.model.infrastructure)}</span>
+                              </dd>
+                            </#if>
+                            <#if localizedStringNotEmpty(dataset.model.participantsInclusion)>
+                              <dt class="col-sm-4">
+                                  <@message "harmonization-protocol.participants-inclusion"/>
+                              </dt>
+                              <dd class="col-sm-8">
+                                <span>${localize(dataset.model.participantsInclusion)}</span>
+                              </dd>
+                            </#if>
+                            <#if (dataset.model.participants)??>
+                              <dt class="col-sm-4">
+                                  <@message "harmonization-protocol.participants"/>
+                              </dt>
+                              <dd class="col-sm-8">
+                                <span>${dataset.model.participants}</span>
+                              </dd>
+                            </#if>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </#if>
               </#if>
           </div>
         </#if>
@@ -114,6 +206,45 @@
 
         <!-- Harmonization content -->
         <#if type == "Harmonized">
+          <#if localizedStringNotEmpty(dataset.model.informationContent) || localizedStringNotEmpty(dataset.model.additionalInformation)>
+            <div class="row d-flex align-items-stretch">
+              <#if localizedStringNotEmpty(dataset.model.informationContent)>
+                <div class="col-sm-12 col-md d-flex align-items-stretch">
+                  <div class="card card-info card-outline w-100">
+                    <div class="card-header">
+                      <h3 class="card-title">
+                        <@message "harmonization-protocol.information-content"/>
+                      </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                      <div class="marked">
+                        <template>${localize(dataset.model.informationContent)}</template>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </#if>
+              <#if localizedStringNotEmpty(dataset.model.additionalInformation)>
+                <div class="col-sm-12 col-md d-flex align-items-stretch">
+                  <div class="card card-info card-outline w-100">
+                    <div class="card-header">
+                      <h3 class="card-title">
+                        <@message "global.additional-information"/>
+                      </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                      <div class="marked">
+                        <template>${localize(dataset.model.additionalInformation)}</template>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </#if>
+            </div>
+          </#if>
+
           <@individualStudyList dataset.id/>
 
           <@harmonizationStudyList dataset.id/>
@@ -122,16 +253,17 @@
             <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title"><@message "harmonization"/></h3>
+              <div class="float-right">
+                <a href="${contextPath}/ws/harmonized-dataset/${dataset.id}/variables/harmonizations/_export" class="btn btn-sm btn-success">
+                    <i class="fas fa-download"></i> <@message "download"/>
+                </a>
+                <a class="btn btn-sm btn-success" href="${contextPath}/${searchPageUrl}#lists?type=variables&query=dataset(in(Mica_dataset.id,${dataset.id}))"><@message "search-variables"/></a>
+              </div>
             </div>
             <div class="card-body">
               <div class="row">
-                <div class="col-lg-9 col-sm-6">
+                <div class="col">
                   <@harmonizationTableLegend/>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <a href="${contextPath}/ws/harmonized-dataset/${dataset.id}/variables/harmonizations/_export" class="btn btn-info float-right mb-3">
-                    <i class="fas fa-download"></i> <@message "download"/>
-                  </a>
                 </div>
               </div>
               <div class="table-responsive mt-3">

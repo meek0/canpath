@@ -152,8 +152,8 @@
             </#if>
 
           </div>
-
           <div class="row">
+            <pre>${study.model.info}</pre>
             <#if localizedStringNotEmpty((study.model.info))>
               <div class="col-sm-12 col-lg-12">
                 <div class="card card-info card-outline">
@@ -164,7 +164,9 @@
                   </div>
                   <div class="card-body">
                     <div class="tab-content">
-                        ${localize(study.model.info)}
+                      <div class="marked">
+                        <template>${localize(study.model.info)}</template>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -190,7 +192,23 @@
               ${localize(study.acronym)}
           </dd>
           <#if study.model??>
-            <#if study.model.website??>
+            <#if type == "Harmonization">
+                <#if study.model.startYear?? || study.model.endYear??>
+                    <dt class="col-sm-4">
+                        <@message "study.start-end-year"/>
+                    </dt>
+                    <dd class="col-sm-8">
+                      <#if study.model.startYear??>
+                        ${study.model.startYear?c}
+                      </#if>
+                        -
+                      <#if study.model.endYear??>
+                        ${study.model.endYear?c}
+                      </#if>
+                    </dd>
+                </#if>
+            </#if>
+            <#if study.model.website?? && study.model.website?has_content>
               <dt class="col-sm-4">
                   <@message "website"/>
               </dt>
@@ -199,7 +217,7 @@
               </dd>
             </#if>
 
-            <#if study.model.funding??>
+            <#if localizedStringNotEmpty(study.model.funding)>
               <dt class="col-sm-4">
                   <@message "funding"/>
               </dt>
@@ -228,6 +246,7 @@
       </div>
     </div>
   </div>
+
 </#macro>
 
 <!-- Custom model macros, to redefine some default model macros -->

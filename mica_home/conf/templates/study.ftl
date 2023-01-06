@@ -92,19 +92,20 @@
             <div class="col-sm-12 col-md d-flex align-items-stretch">
                 <@generalDesing study/>
             </div>
-          <#else>
-            <!-- Harmonization study -->
-            <#if study.model.harmonizationDesign??>
+          <#elseif type == "Harmonization">
+            <#if localizedStringNotEmpty(study.model.additionalInformation)>
               <div class="col-sm-12 col-md d-flex align-items-stretch">
                 <div class="card card-info card-outline w-100">
                   <div class="card-header">
                     <h3 class="card-title">
-                        <@message "study_taxonomy.vocabulary.harmonizationDesign.title"/>
+                        <@message "global.additional-information"/>
                     </h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
-                      ${localize(study.model.harmonizationDesign)}
+                    <div class="marked">
+                      <template>${localize(study.model.additionalInformation)}</template>
+                    </div>
                   </div>
                 </div>
               </div>
