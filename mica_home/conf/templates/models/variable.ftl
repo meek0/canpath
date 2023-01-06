@@ -13,7 +13,7 @@
   </#if>
 
   <div>
-    <div class="row">
+    <div class="row d-flex align-items-center">
       <div id="categoricalSummary" style="display: none" class="col-xs-12 col-lg-6">
         <div class="table-responsive" style="min-height: 36em; max-height: 36em;">
           <table class="table table-striped border">
