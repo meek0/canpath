@@ -69,6 +69,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
       type: "pie",
       sort: false,
       hole: 0,
+      textposition: 'inside', // to get rid of labels when the slices are too small (ugly antennas)
       marker: {
         colors: dataset.backgroundColors
       },
