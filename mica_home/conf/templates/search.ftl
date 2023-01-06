@@ -167,13 +167,13 @@
                         <#if searchDatasetListDisplay>
                           <li class="nav-item datasets">
                             <a class="nav-link" id="datasets-tab" data-toggle="pill" href="#datasets" role="tab" @click="onSelectResult('datasets', 'dataset')"
-                               aria-controls="datasets" aria-selected="false"><@message "datasets"/> <span id="dataset-count" class="pl-1">{{counts.datasets}}</span></a>
+                               aria-controls="datasets" aria-selected="false">{{currentStudyTypeSelection && currentStudyTypeSelection.harmonization ? '<@message "protocols"/>' : '<@message "datasets"/>'}} <span id="dataset-count" class="pl-1">{{counts.datasets}}</span></a>
                           </li>
                         </#if>
                         <#if searchStudyListDisplay>
                           <li class="nav-item studies">
                             <a class="nav-link" id="studies-tab" data-toggle="pill" href="#studies" role="tab" @click="onSelectResult('studies', 'study')"
-                                aria-controls="studies" aria-selected="false"><@message "studies"/> <span id="study-count" class="pl-1">{{counts.studies}}</span></a>
+                                aria-controls="studies" aria-selected="false">{{currentStudyTypeSelection && currentStudyTypeSelection.harmonization ? '<@message "initiatives"/>' : '<@message "studies"/>'}} <span id="study-count" class="pl-1">{{counts.studies}}</span></a>
                           </li>
                         </#if>
                         <#if searchNetworkListDisplay>
@@ -199,7 +199,7 @@
                         </div>
                       </div>
                     </div>
-                    
+
                     <div class="mt-3">
                       <div class="tab-content" id="results-tabContent">
 
