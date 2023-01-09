@@ -227,7 +227,7 @@
               </#if>
               <#if !set.locked || isAdministrator>
                 <button id="delete-all" type="button" class="btn btn-danger ml-2" data-toggle="modal" data-target="#modal-delete">
-                  <i class="fas fa-trash"></i> <@message "delete"/> <span class="badge badge-light selection-count"></span>
+                  <i class="fas fa-trash"></i> <@message "empty"/> <span class="badge badge-light selection-count"></span>
                 </button>
               </#if>
             </div>
