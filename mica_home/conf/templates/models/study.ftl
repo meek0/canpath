@@ -153,7 +153,6 @@
 
           </div>
           <div class="row">
-            <pre>${study.model.info}</pre>
             <#if localizedStringNotEmpty((study.model.info))>
               <div class="col-sm-12 col-lg-12">
                 <div class="card card-info card-outline">
