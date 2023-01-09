@@ -91,7 +91,13 @@
     <div class="col-lg-12">
       <div class="card card-info card-outline">
         <div class="card-header">
-          <h3 class="card-title"><@message "datasets"/></h3>
+          <h3 class="card-title">
+            <#if type == "Individual">
+              <@message "datasets"/>
+            <#else>
+              <@message "protocols"/>
+            </#if>
+          </h3>
         </div>
         <div class="card-body">
           <div class="tab-content">
