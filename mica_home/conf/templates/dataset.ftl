@@ -141,7 +141,7 @@
                           <dl class="row striped mt-0 mb-1">
                             <#if (dataset.model.qualitativeQuantitative)??>
                               <dt class="col-sm-4">
-                                  <@message "harmonization-protocol.qualitative-quantitative.title"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.qualitative-quantitative.help"/>"></i>
+                                  <@message "harmonization-protocol.qualitative-quantitative.title"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.qualitative-quantitative.alt-help"/>"></i>
                               </dt>
                               <dd class="col-sm-8">
                                 <span><@message "harmonization-protocol.qualitative-quantitative.enum.${dataset.model.qualitativeQuantitative}"/> </span>
@@ -149,7 +149,7 @@
                             </#if>
                             <#if (dataset.model.prospectiveRetrospective)??>
                               <dt class="col-sm-4">
-                                  <@message "harmonization-protocol.prospective-retrospective.title"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.prospective-retrospective.help"/>"></i>
+                                  <@message "harmonization-protocol.prospective-retrospective.title"/> <i class="fas fa-info-circle text-muted-60" title="<@message "harmonization-protocol.prospective-retrospective.alt-help"/>"></i>
                               </dt>
                               <dd class="col-sm-8">
                                 <span><@message "harmonization-protocol.prospective-retrospective.enum.${dataset.model.prospectiveRetrospective}"/> </span>

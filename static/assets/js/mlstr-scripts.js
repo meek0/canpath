@@ -72,6 +72,15 @@ class MlstrEntityService {
     )
   }
 
+  __ensureStudyClassNameQuery(studyType, query) {
+    const classNameQuery = 'harmonization-study' === studyType ? 'in(Mica_study.className,HarmonizationStudy)' : 'in(Mica_study.className,Study)';
+    return query ? `and(${classNameQuery},${query})`: classNameQuery;
+  }
+
+  __getSearchPageUrl(studyType) {
+    return 'harmonization-study' === studyType ? 'harmonization-search' : 'individual-search';
+  }
+
   __createIndividualStudiesTable(id, studies, lang, taxonomyTitleFinder, showVariables) {
     if (studies.length > 0) {
       const studyList = this.__ensureDistinctStudies(studies);

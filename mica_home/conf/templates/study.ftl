@@ -223,18 +223,30 @@
   Mica.tr = {
     "collected-dataset": "<@message "collected-dataset"/>",
     "harmonized-dataset": "<@message "harmonized-dataset"/>",
-    "dataschema-dataset": "<@message "harmonized-dataset"/>"
+    "dataschema-dataset": "<@message "harmonized-dataset"/>",
+    "harmonization-protocol.qualitative-quantitative.title": "<@message "harmonization-protocol.qualitative-quantitative.title"/>",
+    "harmonization-protocol.qualitative-quantitative.enum.qualitative": "<@message "harmonization-protocol.qualitative-quantitative.enum.qualitative"/>",
+    "harmonization-protocol.qualitative-quantitative.enum.quantitative": "<@message "harmonization-protocol.qualitative-quantitative.enum.quantitative"/>",
+    "harmonization-protocol.prospective-retrospective.title": "<@message "harmonization-protocol.prospective-retrospective.title"/>",
+    "harmonization-protocol.prospective-retrospective.enum.prospective": "<@message "harmonization-protocol.prospective-retrospective.enum.prospective"/>",
+    "harmonization-protocol.prospective-retrospective.enum.retrospective": "<@message "harmonization-protocol.prospective-retrospective.enum.retrospective"/>",
+    "harmonization-protocol.participants": "<@message "harmonization-protocol.participants"/>"
   }
+
+  
 
   const mlstrStudyService = MlstrStudyService.newInstance();
 
   let datasetsSortKey = 'weight';
+  let isHarmonization = true;
+
   <#if type != "Harmonization">
     mlstrStudyService.createNetworksTable("${study.id}", "${.lang}");
     mlstrStudyService.ensurePopulationDceSelection();
+    isHarmonization = false;
   </#if>
 
-  mlstrStudyService.createDatasetsTable("${study.id}", "${.lang}", datasetsSortKey);
+  mlstrStudyService.createDatasetsTable("${study.id}", "${.lang}", isHarmonization, datasetsSortKey);
 
   <#if draft>
     let params = window.location.search;

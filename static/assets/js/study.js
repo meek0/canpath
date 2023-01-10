@@ -25,7 +25,7 @@ class MlstrStudyService extends MlstrEntityService {
 
   __getDatasets(studyId, start, length, lang, sortKey, onsuccess, onfailure) {
     const sort = sortKey ? sortKey : 'studyTable.studyId,studyTable.populationWeight,studyTable.dataCollectionEventWeight,acronym';
-    let url = `/ws/datasets/_rql?query=dataset(limit(${start},${length}),exists(Mica_dataset.id),sort(${sort}),fields((name.*,studyTable.studyId,studyTable.populationId,studyTable.dataCollectionEventId,studyTable.project,studyTable.table,model.hide_var))),locale(${lang}),study(in(Mica_study.id,(${studyId})))`;
+    let url = `/ws/datasets/_rql?query=dataset(limit(${start},${length}),exists(Mica_dataset.id),sort(${sort}),fields((name.*,studyTables.*,harmonizationTables.*,studyTable.studyId,studyTable.populationId,studyTable.dataCollectionEventId,studyTable.project,studyTable.table,model.*))),locale(${lang}),study(in(Mica_study.id,(${studyId})))`;
     this.__getResource(url, onsuccess, onfailure);
   }
 
@@ -90,7 +90,42 @@ class MlstrStudyService extends MlstrEntityService {
     $(`#${studyId}-networks`).DataTable({...mlstrDataTablesDefaultOpts, ...tableOptions});
   }
 
-  createDatasetsTable(studyId, lang, sortKey) {
+  createDatasetsTable(studyId, lang, isHarmonization, sortKey) {
+
+    const addCollectedDatasetColumns = (dataset, row) => {
+      const datasetType = `${dataset.variableType.toLowerCase()}-dataset`;
+      const dceName = this.__getDceFromStudySummary(dataset['obiba.mica.CollectedDatasetDto.type'].studyTable, lang);
+      const dceId = dataset['obiba.mica.CollectedDatasetDto.type'].studyTable.populationId + '-' + dataset['obiba.mica.CollectedDatasetDto.type'].studyTable.dataCollectionEventId;
+      row.push(Mica.tr[datasetType] || datasetType);
+      row.push(`<a href="#" data-toggle="modal" data-target="#modal-${dceId}">${dceName}</a>`);
+    }
+
+    const countProtocolStudies = (studyTableData) => {
+
+      if ('studyTables' in studyTableData) {
+        const studies = new Set();
+        studyTableData.studyTables.forEach(table => studies.add(table.studyId))
+        return studies.size;
+      }
+
+      return 0;
+    };
+
+    const addHarmonizationProtocolColumns = (dataset, row) => {
+      const model = JSON.parse(dataset.content) || {};
+      let quantitative = model.qualitativeQuantitative ? Mica.tr['harmonization-protocol.qualitative-quantitative.enum.' + model.qualitativeQuantitative] : '-';
+      let prospective = model.qualitativeQuantitative ? Mica.tr['harmonization-protocol.prospective-retrospective.enum.' + model.prospectiveRetrospective] : '-';
+      let participants = model.participants ? model.participants.toLocaleString() : '-';
+      row.push(quantitative)
+      row.push(prospective)
+      if ('obiba.mica.HarmonizedDatasetDto.type' in dataset) {
+        row.push(countProtocolStudies(dataset['obiba.mica.HarmonizedDatasetDto.type']));
+      }
+      row.push(participants);
+    }
+
+    const addDatasetSpecificColumns = isHarmonization ?  addHarmonizationProtocolColumns : addCollectedDatasetColumns;
+
     const getDatasetsCallback = (data, callback) => {
       this.__getDatasets(studyId, data.start, data.length, lang, sortKey, (response) => {
         $('#loading-datasets-summary').hide();
@@ -101,30 +136,18 @@ class MlstrStudyService extends MlstrEntityService {
             $(`#${studyId}-datasets-card`).removeClass('d-none');
             let rows = [];
             datasets.forEach(dataset => {
-              const content = JSON.parse(dataset.content);
-              let hideVariableCounts = content && 'hide_var' in content && content.hide_var;
               const datasetType = `${dataset.variableType.toLowerCase()}-dataset`;
-
-              const dceName = 'collected-dataset' === datasetType
-                ? this.__getDceFromStudySummary(dataset['obiba.mica.CollectedDatasetDto.type'].studyTable, lang)
-                : null;  
+              const studyClassName = 'collected-dataset' === datasetType ? 'individual-study' : 'harmonization-study';
 
               let row = [];
               const url = MicaService.normalizeUrl(`/dataset/${dataset.id}`);
-              const searchUrl = MicaService.normalizeUrl(`/search#lists?type=variables&query=dataset(in(Mica_dataset.id,${dataset.id}))`);
-              const variables = hideVariableCounts
-                  ? '-'
-                  : dataset['obiba.mica.CountStatsDto.datasetCountStats'] ? dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables : '-';
+              const studyQuery = this.__ensureStudyClassNameQuery(studyClassName);
+              const searchUrl = MicaService.normalizeUrl(`/${this.__getSearchPageUrl(studyClassName)}#lists?type=variables&query=study(${studyQuery}),dataset(in(Mica_dataset.id,${dataset.id}))`);
+              const variables = dataset['obiba.mica.CountStatsDto.datasetCountStats'] ? dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables : '';
 
               row.push(`<a href="${url}">${LocalizedValues.forLang(dataset.name, lang)}</a>`);
-              row.push(Mica.tr[datasetType] || datasetType);
-
-              if (dceName) {
-                const dceId = dataset['obiba.mica.CollectedDatasetDto.type'].studyTable.populationId + '-' + dataset['obiba.mica.CollectedDatasetDto.type'].studyTable.dataCollectionEventId;
-                row.push(`<a href="#" data-toggle="modal" data-target="#modal-${dceId}">${dceName}</a>`);
-              }
-
-              row.push(variables === '-' ? `${variables}` : `<a href=${searchUrl}>${variables}</a>`);
+              addDatasetSpecificColumns(dataset, row);
+              row.push(`<a href=${searchUrl}>${variables}</a>`);
               rows.push(row);
             });
             callback({
