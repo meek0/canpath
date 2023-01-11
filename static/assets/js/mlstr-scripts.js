@@ -236,6 +236,30 @@ class MlstrVariableService {
 
 }
 
+class MlstrStudyTablePopoverFactory {
+
+  static create(study, studyTableName) {
+    const title = localizedString(study.studySummary.acronym) + ' ' + studyTableName;
+    let colName = title;
+
+    if (study.description) {
+      const description = marked(localizedString(study.description));
+      colName =
+          '<a class="text-decoration-none" style="cursor: help;" href="javascript:void(0)" ' +
+          'data-type="description" ' +
+          'data-html="true" ' +
+          'data-toggle="popover" ' +
+          'data-trigger="hover" ' +
+          'data-placement="top" ' +
+          'data-boundary="viewport" ' +
+          'title="' + Mica.tr['dataset.harmonized-table']+ '"' +
+          'data-content="' + description.replaceAll('"', "'") + '">' + title + '</a>';
+    }
+
+    return colName;
+  }
+}
+
 
 // Register all filters
 

@@ -252,6 +252,48 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
 
 };
 
+function makeStatusDetail(statusDetail, withPopover) {
+  if (statusDetail) {
+    title = Mica.tr['sd-'+localizedString(statusDetail)];
+    description = Mica.tr['sd-'+localizedString(statusDetail)+'-description'];
+    let popover = '<span> ' + title + ' ';
+
+    if (description && description.length> 0 && withPopover) {
+      popover += '<a class="text-muted-60" href="javascript:void(0)" ' +
+      'data-toggle="popover" ' +
+      'data-trigger="hover" ' +
+      'data-placement="top" ' +
+      'data-boundary="viewport" ' +
+      'data-content="' + description.replaceAll('"', "'") + '"><i class="fa fa-info-circle"></i></a>';
+    }
+
+    return popover + '</span>';
+  }
+
+  return '';
+}
+
+function makeRuleCategoryPopover(ruleCategory) {
+  if (ruleCategory) {
+    title = Mica.tr['rc-' + localizedString(ruleCategory)];
+    description = Mica.tr['rc-' + localizedString(ruleCategory)+'-description'];
+    let popover = '<span> ' + title + ' ';
+
+    if (description && description.length> 0) {
+      popover += '<a class="text-muted-60" href="javascript:void(0)" ' +
+      'data-toggle="popover" ' +
+      'data-trigger="hover" ' +
+      'data-placement="top" ' +
+      'data-boundary="viewport" ' +
+      'data-content="' + description.replaceAll('"', "'") + '"><i class="fa fa-info-circle"></i></a>';
+    }
+
+    return popover + '</span>';
+  }
+
+  return '';
+}
+
 // Harmonizations table
 const makeHarmonizedVariablesTable = function() {
   VariableService.getHarmonizations(Mica.variableId, function(data) {
@@ -259,35 +301,33 @@ const makeHarmonizedVariablesTable = function() {
     const harmonizedVariablesTableBody = $('#harmonizedVariables > tbody');
     if (data.datasetVariableSummaries) {
       for (const harmonizedVariable of data.datasetVariableSummaries) {
-        const status = localizedString(VariableService.getHarmoStatus(harmonizedVariable));
-        const statusDetail = VariableService.getHarmoStatusDetail(harmonizedVariable);
-        const comment = VariableService.getHarmoComment(harmonizedVariable);
-        const baseStudyTable = harmonizedVariable.studyTable ? harmonizedVariable.studyTable : harmonizedVariable.harmonizationStudyTable;
-        const population = StudyService.findPopulation(baseStudyTable.studySummary, baseStudyTable.populationId);
-        const dce = population ? StudyService.findPopulationDCE(population, baseStudyTable.dataCollectionEventId) : undefined;
-        const studyAnchor = (summary) => summary.published
-          ? '<a href="' + Mica.contextPath + '/study/' + baseStudyTable.studyId + '">' + localizedString(baseStudyTable.studySummary.acronym) + '</a></td>'
-          : localizedString(baseStudyTable.studySummary.acronym);
+          const status = VariableService.getHarmoStatus(harmonizedVariable);
+          const iconClass = MlstrVariableService.getHarmoStatusClass(localizedString(status));
+          const statusDetail = VariableService.getHarmoStatusDetail(harmonizedVariable);
+          const comment = VariableService.getHarmoComment(harmonizedVariable);
+          const ruleCategory = VariableService.getAttributeValue(harmonizedVariable, 'Mlstr_harmo', 'rule_category');
+          const baseStudyTable = harmonizedVariable.studyTable ? harmonizedVariable.studyTable : harmonizedVariable.harmonizationStudyTable;
+          const population = StudyService.findPopulation(baseStudyTable.studySummary, baseStudyTable.populationId);
+          const dce = population ? StudyService.findPopulationDCE(population, baseStudyTable.dataCollectionEventId) : undefined;
+          const studyAnchor = (summary) => summary.published
+            ? '<a href="' + Mica.contextPath + '/study/' + baseStudyTable.studyId + '">' + localizedString(baseStudyTable.studySummary.acronym) + '</a>'
+            : localizedString(baseStudyTable.studySummary.acronym);
 
-        let dceName = population ? localizedString(population.name) : "";
+          let dceName = population ? localizedString(population.name) : "";
+          if (dce) {
+            dceName = dceName + ' -- ' + localizedString(dce.name);
+          }
 
-        if (dce) {
-          dceName = dceName + ' -- ' + localizedString(dce.name);
-        }
+          const studyTableName =  baseStudyTable.name ? ' (' + localizedString(baseStudyTable.name) + ')' : '';
 
-        let tableName = localizedString(baseStudyTable.name);
-
-        harmonizedVariablesTableBody.append('<tr>' +
-          '<td title=""><a href="' + Mica.contextPath + '/variable/' + harmonizedVariable.resolver.id + '">' + harmonizedVariable.resolver.name + '</a> ' +
-          '</td>' +
-          '<td>' + localizedString(baseStudyTable.studySummary.acronym) +
-          (tableName ? (' (' + localizedString(baseStudyTable.name) + ') ') : '') +
-          '<div class="text-muted">' + localizedString(baseStudyTable.description) + '</div>' +
-          '</td>' +
-          '<td>' + studyAnchor(baseStudyTable.studySummary) + '</td>' +
-          '<td><i class=" ' + VariableService.getHarmoStatusClass(status) + '"></i></td>' +
-          '<td>' + localizedString(comment) + '</td>' +
-          '</tr>')
+          harmonizedVariablesTableBody.append('<tr>' +
+            '<td>' + studyAnchor(baseStudyTable.studySummary) + '</td>' +
+            '<td>' + MlstrStudyTablePopoverFactory.create(baseStudyTable, studyTableName) +
+            '<td title="' + Mica.tr[localizedString(status)] + '"><i class=" ' + iconClass + '"></i></td>' +
+            '<td>' + makeStatusDetail(statusDetail, false) + '</td>' +
+            '<td>' + makeRuleCategoryPopover(ruleCategory) + '</td>' +
+            '<td>' + localizedString(comment) + '</td>' +
+            '</tr>')
       }
       $('#harmonizedVariables').show();
     } else {

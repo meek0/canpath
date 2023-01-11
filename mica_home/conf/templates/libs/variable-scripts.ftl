@@ -13,6 +13,7 @@
 <!-- Mica variable and dependencies -->
 <script src="${adminLTEPath}/plugins/select2/js/select2.js"></script>
 <script src="${adminLTEPath}/plugins/select2/js/i18n/${.lang}.js"></script>
+<script src="${assetsPath}/js/mlstr-scripts.js"></script>
 <script src="${assetsPath}/js/custom-mica-variable.js"></script>
 
 <script>
