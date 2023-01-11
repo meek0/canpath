@@ -149,7 +149,7 @@
                       <dd class="col-sm-8">${localize(study.acronym)}</dd>
                     </#if>
                   </#if>
-                  <dt class="col-sm-4"><@message "dataset"/></dt>
+                  <dt class="col-sm-4"><@message "harmonized-dataset"/></dt>
                   <dd class="col-sm-8"><a href="${contextPath}/dataset/${variable.datasetId}">${localize(variable.datasetAcronym)}</a></dd>
                   <dt class="col-sm-4"><@message "value-type"/></dt>
                   <dd class="col-sm-8"><@message "variable_taxonomy.vocabulary.valueType.term." + variable.valueType + ".title"/></dd>
