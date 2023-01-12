@@ -39,6 +39,8 @@
 <#assign searchCriteriaMenus = ["variable"]/>
 <#assign searchVariableSortFields = ["-studyId","datasetId","index","name"]/>
 <#assign searchDatasetSortFields = ["-harmonizationTable.studyId","harmonizationTable.populationWeight","acronym"]/>
+<#assign searchDatasetColumnsHarmonization = ["name", "initiative", "variables"]/>
+
 
 <!-- Variable -->
 <#assign showHarmonizedVariableSummarySelector = false/>
