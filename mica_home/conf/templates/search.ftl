@@ -89,7 +89,7 @@
               </div>
               <!-- /.card-body -->
             </div>
-
+            <pre>{{selectedBucket}}</pre>
             <div class="card" id="results-tab-content">
               <div class="card-header p-0">
                 <div class="row">
@@ -99,7 +99,7 @@
                         <li class="nav-item"><a id="lists-tab" class="nav-link active py-3" href="#tab_lists" data-toggle="tab" @click="onSelectSearch()"><@message "search.list"/></a></li>
                       </#if>
                       <#if searchCoverageDisplay>
-                        <li class="nav-item"><a id="coverage-tab" class="nav-link py-3" href="#tab_coverage" data-toggle="tab" @click="onSelectCoverage()"><@message "search.coverage"/></a></li>
+                        <li class="nav-item"><a id="coverage-tab" class="nav-link py-3" href="#tab_coverage" data-toggle="tab" @click="onSelectCoverage();"><@message "search.coverage"/></a></li>
                       </#if>
                       <#if searchGraphicsDisplay>
                         <li class="nav-item"><a id="graphics-tab" class="nav-link py-3" href="#tab_graphics" data-toggle="tab" @click="onSelectGraphics()"><@message "search.graphics"/></a></li>
@@ -271,18 +271,6 @@
                         <div id="coverage">
                           <div class="mb-3">
                             <div class="mt-4 mb-2 clearfix">
-                              <ul class="nav nav-pills float-left" role="tablist">
-                                <li class="nav-item">
-                                  <a class="nav-link active"
-                                    data-toggle="pill"
-                                    id="bucket-dataset-tab"
-                                    href role="tab"
-                                    @click="onSelectBucket('dataset')"
-                                    aria-controls="dataset"
-                                    aria-selected="true">{{ bucketTitles.dataset }}</a>
-                                </li>
-                              </ul>
-
                               <ul class="nav nav-pills float-right" role="tablist">
                                 <li class="ml-3">
                                   <div class="dropleft">
