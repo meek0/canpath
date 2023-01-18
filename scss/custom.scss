@@ -1,0 +1,422 @@
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+
+//
+// Bring in Bootstrap
+//
+
+// Option 1
+//
+// Import all of Bootstrap's CSS
+
+// @import "bootstrap/scss/bootstrap";
+
+// Option 2
+//
+// Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
+
+// Toggle global options
+$enable-shadows: true;
+
+// Customize some defaults
+$navy: #002554;
+
+$yellow: #ffce01;
+
+$primary: $navy;
+$warning: $yellow;
+
+$theme-colors: (
+  "navy": $navy,
+  "yellow": $yellow
+);
+
+$font-family-sans-serif: "Gothic A1", "Helvetica";
+$font-size-base: .875rem;
+
+$body-color: #231f20;
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+
+@import "bootstrap/scss/root"; // Required
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+// @import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/input-group"; // Requires forms
+@import "bootstrap/scss/custom-forms";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+@import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/jumbotron";
+@import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/media";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/print";
+
+
+//
+// Custom styles
+//
+
+@font-face {
+  font-family: 'FontAwesomeFree';
+  src: url('/assets/fonts/fa-solid-900.woff2') format('woff2'),
+    url('/assets/fonts/fa-solid-900.woff') format('woff'),
+    url('/assets/fonts/fa-solid-900.ttf') format('ttf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-ExtraBold.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-ExtraBold.woff') format('woff'),
+  url('/assets/fonts/GothicA1-ExtraBold.ttf') format('ttf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Black.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Black.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Black.ttf') format('ttf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Bold.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Bold.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-ExtraLight.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-ExtraLight.woff') format('woff'),
+  url('/assets/fonts/GothicA1-ExtraLight.ttf') format('ttf');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Medium.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Medium.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Light.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Light.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Regular.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Regular.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-SemiBold.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-SemiBold.woff') format('woff'),
+  url('/assets/fonts/GothicA1-SemiBold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gothic A1';
+  src: url('/assets/fonts/GothicA1-Thin.woff2') format('woff2'),
+  url('/assets/fonts/GothicA1-Thin.woff') format('woff'),
+  url('/assets/fonts/GothicA1-Thin.ttf') format('ttf');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  min-width: 80%;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: $navy;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+a, a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.alert a:hover {
+  color: #fff;
+}
+
+p a {
+  font-weight: 600;
+}
+
+.text-white a, .text-white a:hover {
+  color: #fff !important;
+}
+
+.text-dark a {
+  color: #000 !important;
+}
+
+.text-navy {
+  color: $navy;
+}
+
+.text-height-1 {
+  line-height: 1.5!important;
+}
+
+.text-height-2 {
+  line-height: 2!important;
+}
+
+.main-header .brand-image {
+  margin-top: -.5rem;
+  margin-right: .2rem;
+  height: 33px;
+}
+
+.navbar-yellow {
+  background-color: $yellow !important;
+  padding: 0;
+  font-weight: 500;
+}
+
+.navbar-navy {
+  background-color: $navy !important;
+  padding: .6rem 0;
+}
+
+.navbar-navy .nav-item {
+  font-size: 20px;
+}
+
+.navbar-navy .nav-item a, .navbar-navy .nav-item a:hover {
+  color: #fff;
+}
+
+.navbar-navy .nav-item a.btn, .navbar-navy .nav-item a.btn:hover {
+  color: #000 !important;
+}
+
+.nav-item.active, .dropdown-item.active {
+  font-weight: 900;
+  background-color: transparent;
+}
+
+.nav-item .dropdown-item:focus, .nav-item .dropdown-item:hover {
+  background-color: transparent;
+}
+
+.navbar-nav a, .login-logo a, a.nav-link, .sidebar a, a.brand-link, a.btn, .info-box a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  html[lang="en"] .content-wrapper {
+    margin-top: 9rem !important;
+  }
+
+  html[lang="fr"] .content-wrapper {
+    margin-top: 10rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  html[lang="en"] .content-wrapper {
+    margin-top: 7rem !important;
+  }
+
+  html[lang="fr"] .content-wrapper {
+    margin-top: 10rem !important;
+  }
+
+}
+
+@media (min-width: 1025px) {
+  html[lang="en"] .content-wrapper {
+    margin-top: 6rem !important;
+  }
+
+  html[lang="fr"] .content-wrapper {
+    margin-top: 7rem !important;
+  }
+}
+
+@media (min-width: 1441px) {
+  html[lang="en"] .content-wrapper {
+    margin-top: 6rem !important;
+  }
+
+  html[lang="fr"] .content-wrapper {
+    margin-top: 6rem !important;
+  }
+}
+
+.navbar-toggler {
+  margin-left: 0.5em;
+  color: #fff;
+}
+
+.brand-link {
+  padding-top: 2.1rem;
+  padding-bottom: 2.2rem;
+}
+
+.brand-link.bg-white {
+  background-color: $navy !important;
+}
+
+.bg-navy {
+  background-color: $navy !important;
+}
+
+/* Content */
+
+.content-header .breadcrumb {
+  display: none;
+}
+
+.content-header h1 {
+  margin-top: 0.5em !important;
+}
+
+.content-header.bg-info {
+  background: #eee !important;
+  color: #000 !important;
+}
+
+.wrapper {
+  background: #fff;
+}
+
+.content-wrapper {
+  background-color: #fff;
+}
+
+.layout-navbar-fixed.layout-fixed .wrapper .sidebar {
+  margin-top: calc(6rem + 1px) !important;
+}
+
+.layout-navbar-fixed.sidebar-mini.sidebar-collapse .wrapper .brand-link {
+  height: calc(6.2rem + 1px) !important;
+}
+
+.dropdown-menu {
+  z-index: 1040;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: $primary;
+}
+
+.page-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.btn-outline-primary {
+  border-color: $primary;
+  color: $primary;
+}
+
+.page-item.active .page-link, .btn-primary, .btn-primary:hover, .btn-outline-primary:hover {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+a.dropdown-item {
+  text-decoration: none;
+}
+
+.callout.callout-info {
+  border-left-color: #fff;
+}
+
+/* Footer */
+
+ footer.main-footer h1, footer.main-footer .h1, footer.main-footer h2, footer.main-footer .h2, footer.main-footer h3,
+ footer.main-footer .h3, footer.main-footer h4, footer.main-footer .h4, footer.main-footer h5, footer.main-footer .h5,
+ footer.main-footer h6, footer.main-footer .h6 {
+   font-weight: 600;
+   color: darken($navy, 15%);
+ }
+ 
+ .main-footer {
+   padding: 0;
+   margin-top: 5em;
+ }
+ 
+ .can_path_footer {
+   background-color: #f8f8f8;
+ }
