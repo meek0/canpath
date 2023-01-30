@@ -89,7 +89,6 @@
               </div>
               <!-- /.card-body -->
             </div>
-            <pre>{{selectedBucket}}</pre>
             <div class="card" id="results-tab-content">
               <div class="card-header p-0">
                 <div class="row">
