@@ -109,6 +109,8 @@
     }
   };
 
+  const excludeStatusList = ['na', 'undetermined'];
+
   $(function () {
     function prepareDatasetVariablesClassificationsData(chart) {
       const itemCounts = {};
@@ -171,7 +173,7 @@
           return {title: name, width: percentage + '%'};
         });
 
-        return [{title: "<@message "variable"/>", width: '25%'}].concat(sorted);
+        return [{title: "<@message "variable"/>", width: '25%'}, {title: '<@message "percentage-complete-column-title"/>', width: '5%'}].concat(sorted);
       }
 
       $('#harmonizedTable').show();
@@ -210,6 +212,35 @@
                 const name = variableHarmonization.dataschemaVariableRef.name;
                 row.push('<a href="${contextPath}/variable/${dataset.id}:' + name + ':Dataschema">' + name + '</a>');
 
+                var completeCount = variableHarmonization.harmonizedVariables.reduce((acc, curr) => {
+                  if (curr.status === 'complete') acc = acc + 1;
+                  return acc;
+                }, 0);
+
+                var partialCount = variableHarmonization.harmonizedVariables.reduce((acc, curr) => {
+                  if (curr.status === 'partial') acc = acc + 1;
+                  return acc;
+                }, 0);
+
+                var impossibleCount = variableHarmonization.harmonizedVariables.reduce((acc, curr) => {
+                  if (curr.status === 'impossible') acc = acc + 1;
+                  return acc;
+                }, 0);
+
+                var denominator = variableHarmonization.harmonizedVariables.reduce((acc, curr) => {
+                  acc = acc + (!excludeStatusList.includes(curr.status) ? 1 : 0);
+                  return acc;
+                }, 0);
+
+                const explaination =
+                '<span class=\'row\'>' +
+                  '<span class=\'col-4\'><i class=\'fas fa-check fa-fw text-success\'></i><span>' + completeCount + '</span></span>' +
+                  '<span class=\'col-4\'><i class=\'fas fa-adjust fa-fw text-partial\'></i><span>' + partialCount + '</span></span>' +
+                  '<span class=\'col-4\'><i class=\'fas fa-times fa-fw text-danger\'></i><span>' + impossibleCount + '</span></span>' +
+                '</span>';
+
+                row.push('<button type="button" class="btn btn-xs btn-link text-muted" data-toggle="popover" data-trigger="hover" title="<@message "status-distribution"/>" data-content="' + explaination + '">' + Math.round(completeCount * 100 / Math.max(1, denominator)) + '%</button>');
+
                 variableHarmonization.harmonizedVariables
                   .forEach((harmonizedVariable, index) => harmonizedVariable.weight = originalWeights[index]);
                 variableHarmonization.harmonizedVariables.sort((a, b) => a.weight - b.weight);
@@ -230,6 +261,9 @@
                 recordsTotal: response.total,
                 recordsFiltered: response.total
               });
+
+              $('#harmonizedTable tr [data-type="description"]').popover({html: true, delay: { show: 250, hide: 1000 }});
+              $('#harmonizedTable tr [data-toggle="popover"]').popover({html: true});
             }
           });
         },
@@ -241,6 +275,14 @@
         const columns = getStudySummaries(response);
         dataTableOpts.columns = columns;
         $("#harmonizedTable").DataTable(dataTableOpts);
+
+        setTimeout(() => {
+          let percentColumn = document.querySelector('#harmonizedTable thead th:nth-child(2)');
+          if (percentColumn) {
+            percentColumn.title = '<@message "percentage-complete-column-info"/>';
+            percentColumn.classList.add('text-muted', 'font-weight-normal');
+          }
+        }, 500);
       });
 
 

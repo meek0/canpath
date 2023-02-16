@@ -42,10 +42,6 @@
               <div class="card-header d-flex align-items-center py-2">
                 <h3 class="card-title"><@message "query"/></h3>
                 <div class="card-tools ml-auto">
-                  <a class="btn btn-secondary btn-sm ml-2" href="javascript:void(0)" @click="onSearchModeToggle" v-cloak>
-                    <span v-if="advanceQueryMode" title="<@message "search.basic-help"/>"><@message "search-basic-mode"/></span>
-                    <span v-else title="<@message "search.advanced-help"/>"><@message "search-advanced-mode"/></span>
-                  </a>
                   <#if showCopyQuery>
                     <div class="btn-group ml-2">
                       <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><@message "global.copy-query"/></button>
