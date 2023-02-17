@@ -173,7 +173,7 @@
           sorted.push({title: name, width: percentage + '%'});
         });
 
-        return [{title: "<@message "variable"/>", width: '25%'}, {title: '<@message "percentage-complete-column-title"/>', width: '5%'}].concat(sorted);
+        return [{title: "<@message "variable"/>", width: '25%'}, {title: '<@message "percentage-complete-column-title"/>', width: '10%'}].concat(sorted);
       }
 
       $('#harmonizedTable').show();
