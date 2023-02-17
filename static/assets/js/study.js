@@ -19,7 +19,7 @@ class MlstrStudyService extends MlstrEntityService {
    * @param onfailure
    */
   __getNetworks(studyId, start, length, lang, onsuccess, onfailure) {
-    let url = `/ws/networks/_rql?query=network(limit(${start},${length}),and(exists(Mica_network.id),in(Mica_network.studyIds,(${studyId}))),sort(-numberOfStudies),fields((studyIds,acronym.*,name.*,description.*))),locale(${lang||'en'})`;
+    let url = `/ws/networks/_rql?query=network(limit(${start},${length}),and(exists(Mica_network.id),in(Mica_network.studyIds,(${studyId}))),sort(-numberOfStudies),fields((studyIds,acronym.*,name.*,description.*))),locale(${lang || 'en'})`;
     this.__getResource(url, onsuccess, onfailure);
   }
 
@@ -87,12 +87,12 @@ class MlstrStudyService extends MlstrEntityService {
       ajax: getNetworksCallback
     };
 
-    $(`#${studyId}-networks`).DataTable({...mlstrDataTablesDefaultOpts, ...tableOptions});
+    $(`#${studyId}-networks`).DataTable({ ...mlstrDataTablesDefaultOpts, ...tableOptions });
   }
 
   createDatasetsTable(studyId, lang, isHarmonization, sortKey) {
 
-    const addCollectedDatasetColumns = (dataset, row) => {
+    const addCollectedDatasetColumns = (dataset, row, /*model*/) => {
       const datasetType = `${dataset.variableType.toLowerCase()}-dataset`;
       const dceName = this.__getDceFromStudySummary(dataset['obiba.mica.CollectedDatasetDto.type'].studyTable, lang);
       const dceId = dataset['obiba.mica.CollectedDatasetDto.type'].studyTable.populationId + '-' + dataset['obiba.mica.CollectedDatasetDto.type'].studyTable.dataCollectionEventId;
@@ -111,8 +111,7 @@ class MlstrStudyService extends MlstrEntityService {
       return 0;
     };
 
-    const addHarmonizationProtocolColumns = (dataset, row) => {
-      const model = JSON.parse(dataset.content) || {};
+    const addHarmonizationProtocolColumns = (dataset, row, model) => {
       let quantitative = model.qualitativeQuantitative ? Mica.tr['harmonization-protocol.qualitative-quantitative.enum.' + model.qualitativeQuantitative] : '-';
       let prospective = model.qualitativeQuantitative ? Mica.tr['harmonization-protocol.prospective-retrospective.enum.' + model.prospectiveRetrospective] : '-';
       let participants = model.participants ? model.participants.toLocaleString() : '-';
@@ -124,7 +123,7 @@ class MlstrStudyService extends MlstrEntityService {
       row.push(participants);
     }
 
-    const addDatasetSpecificColumns = isHarmonization ?  addHarmonizationProtocolColumns : addCollectedDatasetColumns;
+    const addDatasetSpecificColumns = isHarmonization ? addHarmonizationProtocolColumns : addCollectedDatasetColumns;
 
     const getDatasetsCallback = (data, callback) => {
       this.__getDatasets(studyId, data.start, data.length, lang, sortKey, (response) => {
@@ -136,6 +135,7 @@ class MlstrStudyService extends MlstrEntityService {
             $(`#${studyId}-datasets-card`).removeClass('d-none');
             let rows = [];
             datasets.forEach(dataset => {
+              const model = JSON.parse(dataset.content) || {};
               const datasetType = `${dataset.variableType.toLowerCase()}-dataset`;
               const studyClassName = 'collected-dataset' === datasetType ? 'individual-study' : 'harmonization-study';
 
@@ -146,7 +146,7 @@ class MlstrStudyService extends MlstrEntityService {
               const variables = dataset['obiba.mica.CountStatsDto.datasetCountStats'] ? dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables : '';
 
               row.push(`<a href="${url}">${LocalizedValues.forLang(dataset.name, lang)}</a>`);
-              addDatasetSpecificColumns(dataset, row.model);
+              addDatasetSpecificColumns(dataset, row, model);
               row.push((!('hide_var' in model) || true === model['hide_var']) ? `<a href=${searchUrl}>${variables}</a>` : '-');
               rows.push(row);
             });
@@ -164,7 +164,7 @@ class MlstrStudyService extends MlstrEntityService {
       serverSide: true,
       ajax: getDatasetsCallback
     };
-    $(`#${studyId}-datasets`).DataTable({...mlstrDataTablesDefaultOpts, ...tableOptions});
+    $(`#${studyId}-datasets`).DataTable({ ...mlstrDataTablesDefaultOpts, ...tableOptions });
   }
 
   createStudiesTables(studyId, lang, showVariables) {
