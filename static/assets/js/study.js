@@ -147,7 +147,7 @@ class MlstrStudyService extends MlstrEntityService {
 
               row.push(`<a href="${url}">${LocalizedValues.forLang(dataset.name, lang)}</a>`);
               addDatasetSpecificColumns(dataset, row, model);
-              row.push((!('hide_var' in model) || true === model['hide_var']) ? `<a href=${searchUrl}>${variables}</a>` : '-');
+              row.push((!('hide_var' in model) || false === model['hide_var']) ? `<a href=${searchUrl}>${variables}</a>` : '-');
               rows.push(row);
             });
             callback({
