@@ -160,17 +160,17 @@
         const percentage = 74 / (columns.length);
         originalWeights = columns.map(col => col.weight);
         columns.sort((a, b) => a.weight - b.weight);
-        const sorted = columns.map(study => {
-          let name = StringLocalizer.localize(study.studySummary.acronym);
-          if (study.studySummary.published) {
-            name = '<a href="${contextPath}' + '/study/' + study.studyId + '">'+name+'</a>';
-          }
+        let sorted = [];
+        columns.forEach(study => {
+          const studyTableName = StringLocalizer.localize(study.name);
+          const dceId = study.dceId || study.studyId +':.:.';
+          const dceStats = {};
+          const percComplete = dceStats.percentage || 0;
 
-          if (study.name) {
-            name = name + ' ' + StringLocalizer.localize(study.name);
-          }
+          let name = MlstrStudyTablePopoverFactory.create(study, studyTableName);
 
-          return {title: name, width: percentage + '%'};
+
+          sorted.push({title: name, width: percentage + '%'});
         });
 
         return [{title: "<@message "variable"/>", width: '25%'}, {title: '<@message "percentage-complete-column-title"/>', width: '5%'}].concat(sorted);
