@@ -146,8 +146,8 @@ class MlstrStudyService extends MlstrEntityService {
               const variables = dataset['obiba.mica.CountStatsDto.datasetCountStats'] ? dataset['obiba.mica.CountStatsDto.datasetCountStats'].variables : '';
 
               row.push(`<a href="${url}">${LocalizedValues.forLang(dataset.name, lang)}</a>`);
-              addDatasetSpecificColumns(dataset, row);
-              row.push(`<a href=${searchUrl}>${variables}</a>`);
+              addDatasetSpecificColumns(dataset, row.model);
+              row.push((!('hide_var' in model) || true === model['hide_var']) ? `<a href=${searchUrl}>${variables}</a>` : '-');
               rows.push(row);
             });
             callback({
