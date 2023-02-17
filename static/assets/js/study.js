@@ -118,7 +118,7 @@ class MlstrStudyService extends MlstrEntityService {
       row.push(quantitative)
       row.push(prospective)
       if ('obiba.mica.HarmonizedDatasetDto.type' in dataset) {
-        row.push(countProtocolStudies(dataset['obiba.mica.HarmonizedDatasetDto.type']));
+        row.push((!('hide_var' in model) || false === model['hide_var']) ? countProtocolStudies(dataset['obiba.mica.HarmonizedDatasetDto.type']) : '-');
       }
       row.push(participants);
     }
