@@ -180,10 +180,12 @@
     "collected-datasets": "<@message "collected-datasets"/>",
     "harmonized-dataset": "<@message "harmonized-dataset"/>",
     "harmonized-datasets": "<@message "harmonized-datasets"/>",
+    "dataset.harmonized-table": "<@message "dataset.harmonized-table"/>",
     "collected-variable": "<@message "collected-variable"/>",
     "collected-variables": "<@message "client.label.study-variables"/>",
     "harmonized-variable": "<@message "harmonized-variable"/>",
     "harmonized-variables": "<@message "harmonized-variables"/>",
+    "dataset.harmonized-tables.title": "<@message "dataset.harmonized-tables.title"/>",
     "number-participants": "<@message "number-participants"/>",
     "cohort_study": "<@message "study_taxonomy.vocabulary.methods-design.term.cohort_study.title"/>",
     "case_control": "<@message "study_taxonomy.vocabulary.methods-design.term.case_control.title"/>",
@@ -203,7 +205,58 @@
     "undetermined": "<@message "harmonization-status-undetermined"/>",
     "impossible": "<@message "harmonization-status-impossible"/>",
     "partial": "<@message "harmonization-status-partial"/>",
-    "na": "<@message "harmonization-status-na"/>"
+    "na": "<@message "harmonization-status-na"/>",
+
+     "rc-id_creation": "<@message "mlstr_harmo.vocabulary.rule_category.term.id_creation.title"/>",
+    "rc-id_creation-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.id_creation.description"/>",
+
+    "rc-direct_mapping": "<@message "mlstr_harmo.vocabulary.rule_category.term.direct_mapping.title"/>",
+    "rc-direct_mapping-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.direct_mapping.description"/>",
+
+    "rc-recode": "<@message "mlstr_harmo.vocabulary.rule_category.term.recode.title"/>",
+    "rc-recode-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.recode.description"/>",
+
+    "rc-case_when": "<@message "mlstr_harmo.vocabulary.rule_category.term.case_when.title"/>",
+    "rc-case_when-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.case_when.description"/>",
+
+    "rc-operation": "<@message "mlstr_harmo.vocabulary.rule_category.term.operation.title"/>",
+    "rc-operation-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.operation.description"/>",
+
+    "rc-paste": "<@message "mlstr_harmo.vocabulary.rule_category.term.paste.title"/>",
+    "rc-paste-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.paste.description"/>",
+
+    "rc-other": "<@message "mlstr_harmo.vocabulary.rule_category.term.other.title"/>",
+    "rc-other-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.other.description"/>",
+
+    "rc-undetermined": "<@message "mlstr_harmo.vocabulary.rule_category.term.undetermined.title"/>",
+    "rc-undetermined-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.undetermined.description"/>",
+
+    "rc-impossible": "<@message "mlstr_harmo.vocabulary.rule_category.term.impossible.title"/>",
+    "rc-impossible-description": "<@message "mlstr_harmo.vocabulary.rule_category.term.impossible.description"/>",
+
+    "sd-identical": "<@message "mlstr_harmo.vocabulary.status_detail.term.identical.title"/>",
+    "sd-identical-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.identical.description"/>",
+
+    "sd-compatible": "<@message "mlstr_harmo.vocabulary.status_detail.term.compatible.title"/>",
+    "sd-compatible-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.compatible.description"/>",
+
+    "sd-proximate": "<@message "mlstr_harmo.vocabulary.status_detail.term.proximate.title"/>",
+    "proximate-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.proximate.description"/>",
+
+    "sd-tentative": "<@message "mlstr_harmo.vocabulary.status_detail.term.tentative.title"/>",
+    "sd-tentative-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.tentative.description"/>",
+
+    "sd-incompatible": "<@message "mlstr_harmo.vocabulary.status_detail.term.incompatible.title"/>",
+    "sd-incompatible-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.incompatible.description"/>",
+
+    "sd-unavailable": "<@message "mlstr_harmo.vocabulary.status_detail.term.unavailable.title"/>",
+    "sd-unavailable-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.unavailable.description"/>",
+
+    "sd-undetermined": "<@message "mlstr_harmo.vocabulary.status_detail.term.undetermined.title"/>",
+    "sd-undetermined-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.undetermined.description"/>",
+
+    "sd-unknown": "<@message "mlstr_harmo.vocabulary.status_detail.term.unknown.title"/>",
+    "sd-unknown-description": "<@message "mlstr_harmo.vocabulary.status_detail.term.unknown.description"/>",
   };
 
   const DefaultMica = {

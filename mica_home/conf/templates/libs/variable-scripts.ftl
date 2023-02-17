@@ -40,6 +40,7 @@
       }
     },
     tr: {
+      ...DefaultMica.tr,
       "chi-squared-test": "<@message "chi-squared-test"/>",
       "n-total": "<@message "n-total"/>",
       "min": "<@message "min"/>",

@@ -331,6 +331,7 @@ const makeHarmonizedVariablesTable = function() {
             '</tr>')
       }
       $('#harmonizedVariables').show();
+      $('[data-toggle="popover"]').popover();
     } else {
       $('#noHarmonizedVariables').show();
     }
