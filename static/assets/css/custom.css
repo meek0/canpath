@@ -339,3 +339,20 @@ footer.main-footer h6, footer.main-footer .h6 {
 .can_path_footer {
   background-color: #f8f8f8;
 }
+
+#tab_lists #results-tabContent #vosr-studies-result thead tr:nth-child(1) th:nth-child(n+5),
+#tab_lists #results-tabContent #vosr-studies-result thead tr:last-child th:nth-child(n+6),
+#tab_lists #results-tabContent #vosr-studies-result tbody tr td:nth-child(n+10), 
+#tab_lists #results-tabContent #vosr-datasets-result thead tr th:nth-child(n+4),
+#tab_lists #results-tabContent #vosr-datasets-result tbody tr td:nth-child(n+4),
+#tab_coverage #vosr-coverage-result thead tr:last-child th:nth-child(n+2), 
+#tab_coverage #vosr-coverage-result tbody tr td:nth-child(n+2) {
+  text-align: right;
+}
+
+#vosr-coverage-result .badge.badge-primary {
+  font-size: 100%;
+  color: #000;
+  background-color: initial;
+  padding: 0;
+}
