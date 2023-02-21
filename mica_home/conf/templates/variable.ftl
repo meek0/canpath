@@ -5,15 +5,23 @@
 <#include "models/dce.ftl">
 <#include "models/files.ftl">
 
-<#if type == "Harmonized" || type == "Dataschema">
+<#if type == "Dataschema">
   <#assign variableCartId = (variable.datasetId + ":" + variable.name + ":Dataschema")/>
   <#assign datasetsUrl = "harmonized-datasets"/>
   <#assign datasetsType = "harmonized-datasets"/>
+  <#assign datasetType = "harmonized-datasets"/>
   <#assign studyType = "harmonization-study"/>
+<#elseif type == "Harmonized">
+  <#assign variableCartId = (variable.datasetId + ":" + variable.name + ":Dataschema")/>
+  <#assign datasetsUrl = "harmonized-datasets"/>
+  <#assign datasetsType = "harmonized-datasets"/>
+  <#assign datasetType = "harmonized-datasets"/>
+  <#assign studyType = "harmonized-study"/>
 <#else>
   <#assign variableCartId = variable.id/>
   <#assign datasetsType = "collected-datasets"/>
   <#assign datasetsUrl = "collected-datasets"/>
+  <#assign datasetType = "collected-dataset"/>
   <#assign studyType = "individual-study"/>
 </#if>
 
