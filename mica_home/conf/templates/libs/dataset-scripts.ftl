@@ -173,7 +173,7 @@
           sorted.push({title: name, width: percentage + '%'});
         });
 
-        return [{title: "<@message "variable"/>", width: '25%'}, {title: '<@message "percentage-complete-column-title"/>', width: '10%'}].concat(sorted);
+        return [{title: "<@message "variable"/>", width: '25%'}, {title: "<@message "percentage-complete-column-title"/>", width: '10%'}].concat(sorted);
       }
 
       $('#harmonizedTable').show();
@@ -279,7 +279,7 @@
         setTimeout(() => {
           let percentColumn = document.querySelector('#harmonizedTable thead th:nth-child(2)');
           if (percentColumn) {
-            percentColumn.title = '<@message "percentage-complete-column-info"/>';
+            percentColumn.title = "<@message "percentage-complete-column-info"/>";
             percentColumn.classList.add('text-muted', 'font-weight-normal');
           }
         }, 500);

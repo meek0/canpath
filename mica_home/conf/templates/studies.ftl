@@ -207,7 +207,7 @@
   }
 
   const sortOptionsTranslations = {
-    'weight': '<@message "global.sort-weight"/>'
+    'weight': "<@message "global.sort-weight"/>"
   };
 
   ObibaStudiesApp.build("#studies-app", "${title}", "${.lang}", sortOptionsTranslations, "weight");

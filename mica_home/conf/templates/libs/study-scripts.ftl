@@ -361,32 +361,32 @@
       row.className = 'row';
 
       if (member.title) {
-        createModalRowItems(row, '<@message "contact.title"/>', member.title);
+        createModalRowItems(row, "<@message "contact.title"/>", member.title);
       }
 
-      createModalRowItems(row, '<@message "contact.name"/>', [(member.firstName || ''), member.lastName].join(' ').trim());
+      createModalRowItems(row, "<@message "contact.name"/>", [(member.firstName || ''), member.lastName].join(' ').trim());
 
       if (member.email) {
-        createModalRowItems(row, '<@message "contact.email"/>', member.email);
+        createModalRowItems(row, "<@message "contact.email"/>", member.email);
       }
 
       if (member.phone) {
-        createModalRowItems(row, '<@message "contact.phone"/>', member.phone);
+        createModalRowItems(row, "<@message "contact.phone"/>", member.phone);
       }
 
       if (member.institution) {
         if (member.institution.name) {
-          createModalRowItems(row, '<@message "contact.institution"/>', StringLocalizer.localize((member.institution || {}).name));
+          createModalRowItems(row, "<@message "contact.institution"/>", StringLocalizer.localize((member.institution || {}).name));
         }
 
         if (member.institution.department) {
-          createModalRowItems(row, '<@message "contact.department"/>', StringLocalizer.localize((member.institution || {}).department));
+          createModalRowItems(row, "<@message "contact.department"/>", StringLocalizer.localize((member.institution || {}).department));
         }
 
         if (member.institution.address && (member.institution.address.street || member.institution.address.city)) {
           let address = [StringLocalizer.localize(member.institution.address.street || ''), StringLocalizer.localize(member.institution.address.city || ''), (member.institution.address.zip || ''), (member.institution.address.countryIso || '')].filter(e => e.length > 0);
 
-          createModalRowItems(row, '<@message "address.label"/>', address.join(' '));
+          createModalRowItems(row, "<@message "address.label"/>", address.join(' '));
         }
       }
 
@@ -400,8 +400,8 @@
       modalFooterCloseButton.type = 'button';
       modalFooterCloseButton.className = 'btn btn-info';
       modalFooterCloseButton.setAttribute('data-dismiss', 'modal');
-      modalFooterCloseButton.innerHTML = '<@message "close"/>';
-      modalFooter.appendChild(modalFooterCloseButton);
+      modalFooterCloseButton.innerHTML = "<@message "close"/>';
+      modalFoot"r.appendChild(modalFooterCloseButton);
       modalContent.appendChild(modalFooter);
 
       modalDialog.appendChild(modalContent);
