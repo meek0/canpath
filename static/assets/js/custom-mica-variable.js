@@ -85,25 +85,30 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
 
       const padStringWithZeros = (s) => !isNaN(s) ? '0'.repeat(10 - s.length) + s : s;
 
-      if (Mica.nature === 'CATEGORICAL' && Mica.valueType !== 'text') {
-        // frequencies chart
-        const chartData = customMakeVariableFrequenciesChartSettings(data.frequencies, Mica.backgroundColors, {
-          'NOT_NULL': Mica.tr['not-empty-values'],
-          'N/A': Mica.tr['empty-values']
-        });
+      if (Mica.nature === 'CATEGORICAL') {
+        if (Mica.valueType !== 'text') {
+          $('#categoricalSummary .table-responsive').css({"min-height": "36em", "max-height": "36em"});
 
-        const layout = {
-          showlegend: false,
-          margin: {
-            b: 10,
-            t: 10
+          // frequencies chart
+          const chartData = customMakeVariableFrequenciesChartSettings(data.frequencies, Mica.backgroundColors, {
+            'NOT_NULL': Mica.tr['not-empty-values'],
+            'N/A': Mica.tr['empty-values']
+          });
+
+          const layout = {
+            showlegend: false,
+            margin: {
+              b: 10,
+              t: 10
+            }
+          }
+
+          if (frequencyChartElem.length) {
+            Plotly.newPlot("frequencyChart", chartData, layout, {responsive: true, displaylogo: false, modeBarButtonsToRemove: ['select2d', 'lasso2d', 'pan', 'zoom', 'autoscale', 'zoomin', 'zoomout', 'resetscale']});
+            frequencyChartElem.show();
           }
         }
 
-        if (frequencyChartElem.length) {
-          Plotly.newPlot("frequencyChart", chartData, layout, {responsive: true, displaylogo: false, modeBarButtonsToRemove: ['select2d', 'lasso2d', 'pan', 'zoom', 'autoscale', 'zoomin', 'zoomout', 'resetscale']});
-          frequencyChartElem.show();
-        }
       }
 
       $('#frequencyTotal').html(numberFormatter.format(data.total));
