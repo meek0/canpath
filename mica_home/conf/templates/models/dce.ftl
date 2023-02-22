@@ -38,7 +38,8 @@
             <tr>
               <th>#</th>
               <th class="w-25"><@message "name"/></th>
-              <th class="w-50"><@message "description"/></th>
+              <th class="w-25"><@message "study_taxonomy.vocabulary.populations-dataCollectionEvents-dataSources.title"/></th>
+              <th class="w-25"><@message "study_taxonomy.vocabulary.populations-dataCollectionEvents-bioSamples.title"/></th>
               <th style="width: 12em !important;"><@message "study.start"/></th>
               <th style="width: 12em !important;"><@message "study.end"/></th>
             </tr>
@@ -52,8 +53,39 @@
                   <a href="#" data-toggle="modal" data-target="#modal-${dceId}">
                       ${localize(dce.name)}
                   </a>
+                </td>                
+                <td>
+                  <#if dce.model.dataSources?? && dce.model.dataSources?size != 0>
+                    <ul class="list-unstyled">
+                        <#list dce.model.dataSources as item>
+                          <li>
+                              <#assign txt = "study_taxonomy.vocabulary.populations-dataCollectionEvents-dataSources.term." + item + ".title"/>
+                              <@message txt/>
+                              <#if item == "others" && dce.model.otherDataSources??>
+                                : ${localize(dce.model.otherDataSources)}
+                              </#if>
+                          </li>
+                        </#list>
+                    </ul>
+                  </#if>
                 </td>
-                <td class="marked"><template>${localize(dce.description)?trim?truncate(150, "...")}</template></td>
+                <td>
+                  <#if dce.model.bioSamples?? && dce.model.bioSamples?size != 0>
+                    <ul class="list-unstyled">
+                        <#list dce.model.bioSamples as item>
+                          <li>
+                              <#assign txt = "study_taxonomy.vocabulary.populations-dataCollectionEvents-bioSamples.term." + item + ".title"/>
+                              <@message txt/>
+                              <#if item == "tissues" && dce.model.tissueTypes??>
+                                : ${localize(dce.model.tissueTypes)}
+                              <#elseif item == "others" && dce.model.otherBioSamples??>
+                                : ${localize(dce.model.otherBioSamples)}
+                              </#if>
+                          </li>
+                        </#list>
+                    </ul>
+                  </#if>
+                </td>
                 <td><#if dce.start?? && dce.start.yearMonth??>${dateAsYearMonthName(dce.start.yearMonth)}</#if></td>
                 <td><#if dce.end?? && dce.end.yearMonth??>${dateAsYearMonthName(dce.end.yearMonth)}</#if></td>
               </tr>
