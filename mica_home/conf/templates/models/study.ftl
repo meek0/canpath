@@ -96,7 +96,7 @@
             <#if type == "Individual">
               <@message "datasets"/>
             <#else>
-              <@message "protocols"/>
+              <@message "harmonized-datasets"/>
             </#if>
           </h3>
         </div>
