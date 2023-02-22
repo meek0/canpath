@@ -113,10 +113,15 @@
                       </#if>
 
                       <dt class="col-sm-4">
-                          <@message "client.label.dataset.number-of-variables"/>
+                        <@message "client.label.dataset.number-of-variables"/>
                       </dt>
                       <dd class="col-sm-8">
-                        <span id="dataset-${dataset.id}-variables-count"></span>
+                        <#if !(dataset.model.hide_var)?? || !dataset.model.hide_var>
+                          <span id="dataset-${dataset.id}-variables-count"></span>
+                        <#else>
+                          -
+                        </#if>
+
                       </dd>
 
                     </dl>
