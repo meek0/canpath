@@ -400,7 +400,7 @@
       modalFooterCloseButton.type = 'button';
       modalFooterCloseButton.className = 'btn btn-info';
       modalFooterCloseButton.setAttribute('data-dismiss', 'modal');
-      modalFooterCloseButton.innerHTML = "<@message "close"/>';
+      modalFooterCloseButton.innerHTML = "<@message "close"/>";
       modalFoot"r.appendChild(modalFooterCloseButton);
       modalContent.appendChild(modalFooter);
 
