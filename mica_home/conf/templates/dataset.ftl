@@ -144,7 +144,7 @@
           </#if>
 
           <!-- Variables classifications -->
-          <#if datasetVariablesClassificationsTaxonomies?? && datasetVariablesClassificationsTaxonomies?size gt 0>
+          <#if datasetVariablesClassificationsTaxonomies?? && datasetVariablesClassificationsTaxonomies?size gt 0 && (!(dataset.model.hide_var)?? || !dataset.model.hide_var)>
               <@variablesClassifications dataset=dataset/>
           </#if>
         </#if>
