@@ -132,7 +132,6 @@
 </#macro>
 
 <#macro individualStudyList datasetId>
-  <div id="loading-individual-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
   <div id="${datasetId}-individual-studies-card" class="row d-none">
     <div class="col-lg-12">
       <div class="card card-info card-outline">
@@ -141,6 +140,7 @@
         </div>
         <div class="card-body">
           <div class="tab-content">
+            <div id="loading-individual-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
             <table id="${datasetId}-individual-studies" class="table table-striped">
               <thead>
               <tr>
@@ -163,7 +163,6 @@
 </#macro>
 
 <#macro harmonizationStudyList datasetId>
-  <div id="loading-harmonization-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
   <div id="${datasetId}-harmonization-studies-card" class="row d-none">
     <div class="col-lg-12">
       <div class="card card-info card-outline">
@@ -172,6 +171,7 @@
         </div>
         <div class="card-body">
           <div class="tab-content">
+            <div id="loading-harmonization-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
             <table id="${datasetId}-harmonization-studies" class="table table-striped">
               <thead>
               <tr>

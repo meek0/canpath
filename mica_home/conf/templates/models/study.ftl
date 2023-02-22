@@ -2,7 +2,6 @@
 <#include "../libs/study.ftl">
 
 <#macro networkList studyId>
-  <div id="loading-networks-summary" class="spinner-border spinner-border-sm" role="status"></div>
   <div id="${studyId}-networks-card" class="row d-none">
     <div class="col-lg-12">
       <div class="card card-info card-outline">
@@ -11,6 +10,7 @@
         </div>
         <div class="card-body">
           <div class="tab-content">
+            <div id="loading-networks-summary" class="spinner-border spinner-border-sm" role="status"></div>
             <table id="${studyId}-networks" class="table table-striped">
               <thead>
               <tr>
@@ -28,7 +28,6 @@
 </#macro>
 
 <#macro individualStudyList studyId>
-  <div id="loading-individual-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
   <div id="${studyId}-individual-studies-card" class="row d-none">
     <div class="col-lg-12">
       <div class="card card-info card-outline">
@@ -37,6 +36,7 @@
         </div>
         <div class="card-body">
           <div class="tab-content">
+            <div id="loading-individual-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
             <table id="${studyId}-individual-studies" class="table table-striped">
               <thead>
               <tr>
@@ -59,7 +59,6 @@
 </#macro>
 
 <#macro harmonizationStudyList studyId>
-  <div id="loading-harmonization-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
   <div id="${studyId}-harmonization-studies-card" class="row d-none">
     <div class="col-lg-12">
       <div class="card card-info card-outline">
@@ -68,6 +67,7 @@
         </div>
         <div class="card-body">
           <div class="tab-content">
+            <div id="loading-harmonization-studies-summary" class="spinner-border spinner-border-sm" role="status"></div>
             <table id="${studyId}-harmonization-studies" class="table table-striped">
               <thead>
               <tr>
@@ -87,7 +87,6 @@
 </#macro>
 
 <#macro datasetList studyId type>
-  <div id="loading-datasets-summary" class="spinner-border spinner-border-sm" role="status"></div>
   <div id="${studyId}-datasets-card" class="row d-none">
     <div class="col-lg-12">
       <div class="card card-info card-outline">
@@ -102,6 +101,7 @@
         </div>
         <div class="card-body">
           <div class="tab-content">
+            <div id="loading-datasets-summary" class="spinner-border spinner-border-sm" role="status"></div>
             <table id="${studyId}-datasets" class="table table-striped">
               <thead>
               <tr>
