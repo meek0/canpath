@@ -53,8 +53,9 @@ class MlstrStudyService extends MlstrEntityService {
 
   createNetworksTable(studyId, lang) {
     const getNetworksCallback = (data, callback) => {
+      $('#loading-networks-summary').removeClass('d-none');
       this.__getNetworks(studyId, data.start, data.length, lang, (response) => {
-        $('#loading-networks-summary').hide();
+        $('#loading-networks-summary').addClass('d-none');
         if (response.networkResultDto && response.networkResultDto['obiba.mica.NetworkResultDto.result']) {
           const total = response.networkResultDto.totalHits;
           const networks = response.networkResultDto['obiba.mica.NetworkResultDto.result'].networks || [];
@@ -126,8 +127,9 @@ class MlstrStudyService extends MlstrEntityService {
     const addDatasetSpecificColumns = isHarmonization ? addHarmonizationProtocolColumns : addCollectedDatasetColumns;
 
     const getDatasetsCallback = (data, callback) => {
+      $('#loading-datasets-summary').removeClass('d-none');
       this.__getDatasets(studyId, data.start, data.length, lang, sortKey, (response) => {
-        $('#loading-datasets-summary').hide();
+        $('#loading-datasets-summary').addClass('d-none');
         if (response.datasetResultDto && response.datasetResultDto['obiba.mica.DatasetResultDto.result']) {
           const total = response.datasetResultDto.totalHits;
           const datasets = response.datasetResultDto['obiba.mica.DatasetResultDto.result'].datasets || [];
