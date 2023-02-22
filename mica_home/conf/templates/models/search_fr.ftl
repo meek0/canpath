@@ -7,7 +7,7 @@
         Pour consulter des données filtrées selon plusieurs variables, veuillez <a href="/contact">contacter le Bureau d’accès</a> pour obtenir de l’aide.
       </p>
       <div>
-        Débuter la recherche en sélectionnant une facette.
+        Débuter la recherche en sélectionnant un attribut.
         <#if !user??>
           Pour enregistrer vos résultats de recherche, veuillez vous <a href="/signin?redirect=/search">connecter</a> ou vous <a href="signup">enregistrer</a>.
         </#if>

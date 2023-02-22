@@ -7,7 +7,7 @@
         To view data filtered by multiple variables, please <a href="/contact">contact the Access Office</a> for assistance.
       </p>
       <div>
-        Start searching by selecting a facet.
+        Start searching by selecting an attribute.
         <#if !user??>
           To save your search results, please <a href="/signin?redirect=/search">log in</a> or <a href="signup">register</a>.
         </#if>
