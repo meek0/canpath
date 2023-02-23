@@ -59,7 +59,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
       backgroundColor: backgroundColors,
     };
     frequencies.forEach(frequency => {
-      if (frequency.count>0) {
+      if (frequency.count > 0) {
         labels.push(tr[frequency.label] ? tr[frequency.label] : frequency.label);
         dataset.data.push(frequency.count);
       }
@@ -213,7 +213,20 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
     }
   };
 
-  const renderStatistics = function(data) {
+  const renderStatistics = function (data) {
+    let missingTotals = "";
+    if (data.frequencies) {
+      missingTotals = data.frequencies
+        .filter(f => true === f.missing)
+        .map(f => {
+          return `
+          <div class="col">
+            ${numberFormatter.format(f.count)}<p class="text-muted">(${numberFormatter.format((100 * f.count / data.total).toFixed(2))}%)</p>
+          </div>
+          `
+        })
+        .join('')
+    }
     if (data.statistics) {
       const summary = data.statistics;
 
@@ -224,6 +237,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
           <td>${summary.n === 0 ? '-' : numberFormatter.format(summary.mean.toFixed(2))}</td>
           <td>${summary.n === 0 ? '-' : numberFormatter.format(summary.stdDeviation.toFixed(2))}</td>
           <td>${data.n === 0 ? '-' : numberFormatter.format(data.n)}<p class="text-muted">(${numberFormatter.format((100 * data.n / data.total).toFixed(2))}%)</p></td>
+          <td><div class="row">${missingTotals.length === 0 ? '-' : missingTotals}</div></td>
           <td>${data.total === 0 ? '-' : numberFormatter.format(data.total)}</td>
         </tr>
       `);
