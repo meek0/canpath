@@ -216,13 +216,18 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
   const renderStatistics = function (data) {
     let missingTotals = "";
     if (data.frequencies) {
-      missingTotals = data.frequencies
-        .filter(f => true === f.missing)
-        .map(f => {
-          return `
-          <div class="col">
+      const missings = data.frequencies.filter(f => true === f.missing);
+      if (missings.length > 0) {
+        const missingValueHeaders = '<tr>' + `${'<th></th>'.repeat(5)}` + missings.map( f => `<th>${f.value}</th>`).join('') + '<th></th></tr>';
+        $('#continuousSummary #missings-column').attr('colspan', `${missings.length}`);
+        $('#continuousSummary thead').append(missingValueHeaders);
+      }
+
+      missingTotals = missings.map(f => {
+        return `
+          <td>
             ${numberFormatter.format(f.count)}<p class="text-muted">(${numberFormatter.format((100 * f.count / data.total).toFixed(2))}%)</p>
-          </div>
+          </td>
           `
         })
         .join('')
@@ -236,8 +241,8 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
           <td>${summary.n === 0 ? '-' : numberFormatter.format(summary.max.toFixed(2))}</td>
           <td>${summary.n === 0 ? '-' : numberFormatter.format(summary.mean.toFixed(2))}</td>
           <td>${summary.n === 0 ? '-' : numberFormatter.format(summary.stdDeviation.toFixed(2))}</td>
-          <td>${data.n === 0 ? '-' : numberFormatter.format(data.n)}<p class="text-muted">(${numberFormatter.format((100 * data.n / data.total).toFixed(2))}%)</p></td>
-          <td><div class="row">${missingTotals.length === 0 ? '-' : missingTotals}</div></td>
+          <td>${data.n === 0 ? '-' : numberFormatter.format(data.n)}<p class="text-muted text-small">(${numberFormatter.format((100 * data.n / data.total).toFixed(2))}%)</p></td>
+          ${missingTotals.length === 0 ? '-' : missingTotals} // adds TDs
           <td>${data.total === 0 ? '-' : numberFormatter.format(data.total)}</td>
         </tr>
       `);

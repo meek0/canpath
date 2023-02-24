@@ -47,7 +47,7 @@
               <th><@message "mean"/></th>
               <th><@message "stdDev"/></th>
               <th><@message "n-with-values"/></th>
-              <th><@message "n-missings"/></th>
+              <th id="missings-column" class="text-center"><@message "n-missings" /></th>
               <th><@message "total"/></th>
             </tr>
             </thead>
