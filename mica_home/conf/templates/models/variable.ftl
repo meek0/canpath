@@ -37,7 +37,7 @@
       <div class="col-xs-12 col-lg-6">
         <div id="frequencyChart"></div>
 
-        <div id="continuousSummary" class="table-responsive">
+        <div id="continuousSummary" class="table-responsive" style="display: none;">
           <span><@message "continuous-summary-title"/></span>
           <table class="table border">
             <thead>
@@ -47,7 +47,7 @@
               <th><@message "mean"/></th>
               <th><@message "stdDev"/></th>
               <th><@message "n-with-values"/></th>
-              <th id="missings-column" class="text-center"><@message "n-missings" /></th>
+              <th id="missings-column"><@message "n-missings" /></th>
               <th><@message "total"/></th>
             </tr>
             </thead>
