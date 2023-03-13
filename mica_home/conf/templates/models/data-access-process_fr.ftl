@@ -93,7 +93,7 @@
         <div id="collapseOne" class="collapse" data-parent="#accessProcessAccordion">
           <div class="card-body">
             <p>
-              Tous les formulaires de demande d'accès remplis et soumis et la documentation connexe sont examinés par le comité d'accès indépendant selon les critères suivants :
+              Touts les formulaires de demande d'accès remplis et soumis et la documentation connexe sont examinés par le comité d'accès indépendant selon les critères suivants :
             </p>
 
             <ul>

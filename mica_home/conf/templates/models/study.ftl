@@ -297,21 +297,6 @@
       <div class="card-body pb-0">
         <div class="tab-content">
           <dl class="row striped">
-            <#if study.model.methods.design??>
-                <dt class="col-sm-4">
-                  <span title="<@message "study_taxonomy.vocabulary.methods-design.description"/>">
-                    <@message "study_taxonomy.vocabulary.methods-design.title"/>
-                  </span>
-                </dt>
-                <dd class="col-sm-8">
-                    <#assign text = "study_taxonomy.vocabulary.methods-design.term." + study.model.methods.design + ".title"/>
-                    <@message text/>
-                    <#if study.model.methods.design == "other" && study.model.methods.otherDesign??>
-                      : ${localize(study.model.methods.otherDesign)}
-                    </#if>
-                </dd>
-            </#if>
-
             <#if study.model.startYear??>
               <dt class="col-sm-4">
                   <@message "study.start-year"/>
