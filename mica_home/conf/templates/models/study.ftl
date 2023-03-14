@@ -223,7 +223,7 @@
                   <@message "website"/>
               </dt>
               <dd class="col-sm-8">
-                <a href="${study.model.website}" target="_blank">${localize(study.acronym)}</a>
+                <a href="${study.model.website}" target="_blank">${study.model.website}</a>
               </dd>
             </#if>
 
