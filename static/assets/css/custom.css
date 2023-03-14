@@ -356,3 +356,7 @@ footer.main-footer h6, footer.main-footer .h6 {
   background-color: initial;
   padding: 0;
 }
+
+#search-application #sidebar a:hover {
+  color: #002554;
+}
