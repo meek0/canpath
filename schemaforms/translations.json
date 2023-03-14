@@ -42,7 +42,6 @@
       "name-help": "Official study name",
       "acronym-help": "Acronym of the study",
       "objectives-help": "What are the principal objectives of the study?",
-      "design": "Design",
       "recruitment-target": "Recruitment target",
       "access": {
         "data": "Data",
@@ -65,7 +64,9 @@
       "delete-conflict-message": "Found conflicts when trying to delete study. Remove dependencies and try again.",
       "add-member": "Add {{type}}",
       "member-list": "List of {{type}}",
-      "revision": { "update-comment": "Add a comment to describe the changes." }
+      "revision": {
+        "update-comment": "Add a comment to describe the changes."
+      }
     },
     "contact": {
       "dataAccessCommitteeMember": "Access Committee Member",
@@ -82,8 +83,12 @@
       },
       "no_var": "Hide Variables information of current Dataset",
       "harmonization-study-table": {
-        "title": { "weight": "Weight" },
-        "description": { "weight": "Weight used for sorting purposes." }
+        "title": {
+          "weight": "Weight"
+        },
+        "description": {
+          "weight": "Weight used for sorting purposes."
+        }
       }
     },
     "population": {
@@ -112,7 +117,9 @@
         "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) were added to saved list {{arg3}}.</u></a>"
       },
       "add": {
-        "button": { "set-label": "Add to Saved List" },
+        "button": {
+          "set-label": "Add to Saved List"
+        },
         "modal": {
           "create-new": "Create a new saved list",
           "to-existing": "Add to an existing saved list"
@@ -126,10 +133,11 @@
     "search": {
       "coverage-buckets": {
         "study": "Data",
-        "dce": "Data Collection Event (DCE)",
         "dataschema": "Harmonization Dataset"
       },
-      "study": { "label": "Data" },
+      "study": {
+        "label": "Data"
+      },
       "variable": {
         "dataschema": "DataSchema",
         "study": "Study",
@@ -137,7 +145,9 @@
       }
     },
     "variable-classifications": "Variable classifications",
-    "access": { "help": "Grant <code>Read</code> access to the publication." },
+    "access": {
+      "help": "Grant <code>Read</code> access to the publication."
+    },
     "select-items": "Select All",
     "other-settings": "Other Settings",
     "new-data-access-request": "New Access Request",
@@ -217,17 +227,27 @@
             "access-data-only": "This proposal is a request for access to data only"
           }
         },
-        "III": { "title": "SECTION 3: Funding and Scientific Review" },
-        "IV": { "title": "SECTION 4: Data and Biosamples" },
-        "V": { "title": "SECTION 5: Return of Data" },
-        "VI": { "title": "SECTION 6: Security" },
+        "III": {
+          "title": "SECTION 3: Funding and Scientific Review"
+        },
+        "IV": {
+          "title": "SECTION 4: Data and Biosamples"
+        },
+        "V": {
+          "title": "SECTION 5: Return of Data"
+        },
+        "VI": {
+          "title": "SECTION 6: Security"
+        },
         "member-name": "Name of Research Team Member"
       },
       "custom": {
         "100-word-limit-error": "The 100 words limit has been exceeded.",
         "500-word-limit-error": "The 500 words limit has been exceeded.",
         "I": {
-          "C": { "project-time-table-help": "Research Project Time Table" },
+          "C": {
+            "project-time-table-help": "Research Project Time Table"
+          },
           "D": {
             "1": {
               "info": "<p class='help-block'>Please provide details for all members of the Research Team working with the Principal Applicant who would have access to the requested Research Data and/or Biosamples in order to work on the research project (e.g. co-investigators, collaborators, research assistants, study coordinators, lab technicians and students).</p><p class='help-block'><strong>Ensure that there are no dicrepancies between the information in this section and the REB application. Ensure that the researcher's name and title match the REB application</strong>. While only one <em>Data and Biosample Access Application Form</em> is required, any authorized personnel with access to Research Data and/or Biosamples that is affiliated with an institution other than that of the Principal Applicant is required to provide information on their Authorized Institutional Legal Representative(s), and have them and/or their Institution sign a separate Access Agreement.</p>",
@@ -360,11 +380,9 @@
         "enthropometric-measures": "",
         "envAssStudy": "Environment Association",
         "ethics-approval": "Has this study been approved by a research ethics board or a comparable decisional committee that has been formally designated to approve and/or monitor research involving humans with the aim of protecting the rights and welfare of the research participants?",
-        "ethics-approval-reb": "Please ensure that the REB protocol is not missing important information relevant to the application. It must align directly with the research noted in this application form, i.e., not an \"umbrella\" REB protocol.",
         "exclusion-criteria": "Exclusion criteria",
         "family-diseases": "Family history of diseases",
         "for-case-control-studies": "For case-control studies",
-        "more-for-case-control-studies": "Clearly state case-control matching criteria.",
         "fundamentalStudy": "",
         "geneInteractionStudy": "",
         "genealogicalStudy": "",
@@ -411,7 +429,10 @@
         "pst-plasma": "PST: plasma (µL)",
         "research-project-role": "Role in the Research Project",
         "research-staff-other": "This Co-Applicant has members of the Research Team from their primary institution to carry out this research project.",
-        "response": { "affirmative": "Yes", "negative": "No" },
+        "response": {
+          "affirmative": "Yes",
+          "negative": "No"
+        },
         "riskScore": "Risk score or index development",
         "self-reported-anthropometric": "Self-reported anthropometric measurements (height, weight, waist and hip circumferences)",
         "sleep": "Sleep",
@@ -461,7 +482,9 @@
         "dataLinkage": "Data linkage",
         "additionalParams": "Any additional parameters required",
         "aggreement-F": "I must also either store my analysis code or send a copy of it to CanPath in case of potential needs to reproduce my variables or findings at a later date.",
-        "preferred-delivery-year": "Preferred Delivery Year"
+        "preferred-delivery-year": "Preferred Delivery Year",
+        "ethics-approval-reb": "Please ensure that the REB protocol is not missing important information relevant to the application. It must align directly with the research noted in this application form, i.e., not an \"umbrella\" REB protocol.",
+        "more-for-case-control-studies": "Clearly state case-control matching criteria."
       },
       "cutom": {
         "return": "All biosample analysis data is to be accompanied by the corresponding methodology source, in the form of a statement defining what quality control steps were taken and whether they were met or not."
@@ -493,8 +516,8 @@
       },
       "funding": {
         "no-cost-extension": "If your project end date is beyond the project funding date, is there a possibility of a no-cost extension?",
-        "no-cost-extension-explaination": "Please explain future funding plans",
         "notice": "<p class=\"help-block\">* <em>Please note that the Access Application will not be reviewed until funding has been secured</em>.</p>",
+        "no-cost-extension-explaination": "Please explain future funding plans",
         "reb-expiry-date": "REB expiry date:"
       },
       "ethics-approval": {
@@ -529,22 +552,22 @@
           "regionalDatasets": ""
         },
         "dsBlHealthRiskFactorQuestionnaire": "Baseline Health and Risk Factor Questionnaire",
-        "dsBlHealthRiskFactorQuestionnaireAdditionalDiseases": "Baseline Health and Risk Factor Questionnaire &mdash; Additional Diseases",
         "dsBlMentalHealth": "Baseline Mental Health",
         "dsBlPhysicalMeasures": "Baseline Physical Measures",
-        "dsBlBiologicalSampleCollectionProcessing": "Baseline Biological Sample &mdash; Collection and Processing",
-        "dsBlBiologicalSampleInterpretation": "Baseline Biological Sample &mdash; Interpretation",
         "dsFuHealthRiskFactorQustionnaire": "Follow-Up 1 Health and Risk Factor Questionnaire",
         "dsFuCovid19Questionnaire": "Follow-up COVID-19 Questionnaire",
+        "dsGenotypeData": "Genotype Data",
+        "dsEnvironmentalExposureData": "Environmental Exposure Data",
+        "dsRegionalDatasets": "Regional Datasets (e.g. Residential History questionnaire)",
+        "variables-file": "Individual Variables",
+        "dsBlHealthRiskFactorQuestionnaireAdditionalDiseases": "Baseline Health and Risk Factor Questionnaire &mdash; Additional Diseases",
+        "dsBlBiologicalSampleCollectionProcessing": "Baseline Biological Sample &mdash; Collection and Processing",
+        "dsBlBiologicalSampleInterpretation": "Baseline Biological Sample &mdash; Interpretation",
         "dsCovid192020Questionnaire": "COVID-19 2020 Questionnaire",
         "dsCovid19AntibodyBlQuestionnaire": "COVID-19 Antibody Baseline Questionnaire",
         "dsCovid19AntibodyTestBlQuestionnaireCollectionProcessing": "COVID-19 Antibody Test Baseline &mdash; Collection and Processing",
         "dsCovid19AntibodyTestBlQuestionnaireSerologyResults": "COVID-19 Antibody Test Baseline &mdash; Serology results",
-        "dsGenotypeData": "Genotype Data",
-        "dsEnvironmentalExposureData": "Environmental Exposure Data",
         "dsCANUEData": "Canadian Urban Environment Health Research Consortium (CANUE) Data",
-        "dsRegionalDatasets": "Regional Datasets (e.g. Residential History questionnaire)",
-        "variables-file": "Individual Variables",
         "dsCAHHM": "Canadian Alliance for Healthy Hearts and Minds (CAHHM)"
       },
       "data-linkage": {
@@ -576,6 +599,18 @@
       "members": {
         "info": "<p class=\"help-block\">Please include a full postal address and a valid institutional e-mail address for each Authorized Institutional Legal Representative.</p>",
         "has-member": "I have Research Team Members from an institution other than that of the Principal Applicant"
+      },
+      "research-abstract": {
+        "title": "Scientific Abstract",
+        "info": "Please provide a clear scientific description of the research project, its specific hypotheses and methodology. Be sure to explain how the CanCOLD Research Data and/or Biosamples would be used, and how the project meets CanCOLD's research objectives. Word limit is 500"
+      },
+      "research-objectives": {
+        "title": "Research objectives",
+        "info": "Please provide the objectives of your substudy in bullet form."
+      },
+      "summary": {
+        "title": "Lay Summary of Project",
+        "info": "Please provide a short description of the project for the general public. Scientific jargon and acronyms should be avoided as much as possible. Word limit is 300."
       }
     },
     "network-config": {
@@ -651,8 +686,13 @@
       "bio-samples": "Collected Biological Samples",
       "bio-samples-chart-title": "Distribution of studies by biological samples"
     },
-    "research-project": { "data-access-request": "Access Request" },
-    "userProfile": { "Title": "Titre", "locale": "Language" },
+    "research-project": {
+      "data-access-request": "Access Request"
+    },
+    "userProfile": {
+      "Title": "Titre",
+      "locale": "Language"
+    },
     "Country": "Country",
     "Position": "Position",
     "Title": "Title",
@@ -731,7 +771,9 @@
     },
     "study-dataset": "Study Dataset",
     "study-datasets": "Study Datasets",
-    "taxonomy-config": { "all-criteria": "All Criteria" },
+    "taxonomy-config": {
+      "all-criteria": "All Criteria"
+    },
     "toto": "",
     "data-access-amendment": {
       "custom": {
@@ -758,12 +800,16 @@
     "data": "",
     "data-access-feasibility": {
       "form-title": "LETTER OF SUPPORT AND COST ESTIMATE",
-      "grant-submission": { "title": "A. Grant Submission Details" },
+      "grant-submission": {
+        "title": "A. Grant Submission Details"
+      },
       "granting-agency": "Name of granting agency",
       "grant-competition": "Name of grant competition",
       "grant-date": "Grant submission due date",
       "grant-title": "Title of grant being submitted",
-      "applicant-info": { "title": "B. Principal Applicant Information" },
+      "applicant-info": {
+        "title": "B. Principal Applicant Information"
+      },
       "pi": "Name",
       "career": {
         "title": "Career",
@@ -780,14 +826,20 @@
       "pi-phone": "Contact phone number",
       "pi-address": "Mailing address",
       "pi-address-help": "Note: The Letter of Support will be addressed to the Principal Applicant at the address noted above.",
-      "project-info": { "title": "C. Research Project Overview" },
+      "project-info": {
+        "title": "C. Research Project Overview"
+      },
       "project-objectives": "Project background and objectives (max. 250 words)",
-      "data": { "title": "D. CanPath Data Sought" },
+      "data": {
+        "title": "D. CanPath Data Sought"
+      },
       "datasets": "Specify dataset(s) and type of data",
       "datasets-help": "See <a href='https://portal.canpath.ca/search#lists?type=datasets' target='_blank'>the list of datasets</a> for data availability.",
       "selection-criteria": "Selection criteria for CanPath participants on whom data is sought",
       "study-design": "Proposed methods for analyzing CanPath data",
-      "biosamples": { "title": "E. CanPath Biosamples Sought" },
+      "biosamples": {
+        "title": "E. CanPath Biosamples Sought"
+      },
       "biosamples-type": "Specify type, number, and volume",
       "biosamples-type-help": "See <a href='https://portal.canpath.ca/page/samples' target='_blank'>Biological Samples</a> for details.",
       "biosamples-selection-criteria": "Selection criteria for CanPath participants on whom biosamples are sought",
@@ -800,6 +852,13 @@
       "data-linkage-help": "Specify dataset(s), type of data, and their source",
       "form-subtitle": "CanPath Request for Letter of Support and Cost Estimate Form",
       "intro": "<p class='mt-3'>Please note:</p><ul><li>Provision of a draft Letter of Support is strongly recommended</li><li>10 business days are required to provide a Letter of Support</li></ul>"
+    },
+    "relevant-papers": {
+      "add-button": "Add Relevant Paper",
+      "empty": "No marker paper.",
+      "info": "Article Information",
+      "pubmed-id": "Pubmed ID",
+      "title": "Relevant Papers"
     }
   },
   "fr": {
@@ -863,9 +922,15 @@
       }
     },
     "contact": {
-      "add": { "investigator": "Ajouter un chercheur" },
-      "list": { "investigator": "Liste des chercheurs" },
-      "label-plurial": { "investigator": "Chercheurs" },
+      "add": {
+        "investigator": "Ajouter un chercheur"
+      },
+      "list": {
+        "investigator": "Liste des chercheurs"
+      },
+      "label-plurial": {
+        "investigator": "Chercheurs"
+      },
       "dataAccessCommitteeMember": "Membre du comité d'accès",
       "label": "Contact"
     },
@@ -880,11 +945,18 @@
       },
       "no_var": "Hide Variables information of current Dataset",
       "harmonization-study-table": {
-        "title": { "weight": "Ordre" },
-        "description": { "weight": "Poids utilisé à des fins de tri." }
+        "title": {
+          "weight": "Ordre"
+        },
+        "description": {
+          "weight": "Poids utilisé à des fins de tri."
+        }
       }
     },
-    "population": { "ageMin": "Age minimum", "ageMax": "Age maximum" },
+    "population": {
+      "ageMin": "Age minimum",
+      "ageMax": "Age maximum"
+    },
     "network": {
       "general-info": "Information générale",
       "add-member": "Ajouter {{type}}",
@@ -904,7 +976,9 @@
         "variables-added": "<a href='{{arg0}}?id={{arg1}}' target='_self'><u>{{arg2}} variable(s) ont été ajoutées à la liste enregistrée {{arg3}}.</u></a>"
       },
       "add": {
-        "button": { "set-label": "Ajouter à une liste enregistrée" },
+        "button": {
+          "set-label": "Ajouter à une liste enregistrée"
+        },
         "modal": {
           "create-new": "Créer une nouvelle liste enregistrée",
           "to-existing": "Ajouter à une liste enregistrée existante"
@@ -918,11 +992,12 @@
     "search": {
       "coverage-buckets": {
         "study": "Données",
-        "dce": "Événement de collecte de données (ECD)",
         "dataschema": "Ensemble de données Harmonisé",
         "dataset": "Ensemble de données d'étude"
       },
-      "study": { "label": "Données" },
+      "study": {
+        "label": "Données"
+      },
       "variable": {
         "dataschema": "Schéma de données",
         "study": "Étude",
@@ -997,8 +1072,12 @@
       "add": "Ajouter une demande d'accès",
       "edit": "Éditer une demande d'accès",
       "documents-help": "Sélectionner un ou plusieurs documents à joindre à la demande d'accès.",
-      "histories": { "approved": "Approuvée" },
-      "delete-dialog": { "title": "Supprimer la demande d'accès" },
+      "histories": {
+        "approved": "Approuvée"
+      },
+      "delete-dialog": {
+        "title": "Supprimer la demande d'accès"
+      },
       "validation": {
         "success": "Votre formulaire est complet et prêt à être soumis.",
         "error": "Votre formulaire de demande est incomplet, veuillez corriger les erreurs."
@@ -1054,10 +1133,18 @@
             "access-data-only": "Cette proposition est une demande d'accès aux données uniquement."
           }
         },
-        "III": { "title": "SECTION 3 : Financement et examen scientifique" },
-        "IV": { "title": "SECTION 4: Data and Biosamples" },
-        "V": { "title": "Retour des données" },
-        "VI": { "title": "SECTION 6: Sécurité" },
+        "III": {
+          "title": "SECTION 3 : Financement et examen scientifique"
+        },
+        "IV": {
+          "title": "SECTION 4: Data and Biosamples"
+        },
+        "V": {
+          "title": "Retour des données"
+        },
+        "VI": {
+          "title": "SECTION 6: Sécurité"
+        },
         "member-name": "Name of Research Team Member"
       },
       "custom": {
@@ -1200,11 +1287,9 @@
         "enthropometric-measures": "Mesures anthropométriques",
         "envAssStudy": "Étude d'association environnementale",
         "ethics-approval": "Ce projet a été approuvé par un comité d'examen institutionnel ou un comité décisionnel qui a été officiellement désigné pour approuver et/ou superviser la recherche portant sur des sujets humains dans le but de protéger les droits et le bien-être des participants à la recherche.",
-        "ethics-approval-reb": "Veuillez vous assurer que le protocole du REB ne manque pas d'informations importantes relatives à la demande. Il doit s'aligner directement sur la recherche mentionnée dans ce formulaire de demande, c'est-à-dire qu'il ne doit pas s'agir d'un protocole REB \"général \".",
         "exclusion-criteria": "Critères d'exclusion",
         "family-diseases": "Histoire familiale de maladies",
         "for-case-control-studies": "Pour les études cas-témoins",
-        "more-for-case-control-studies": "Énoncez clairement les critères d'appariement cas-témoins.",
         "fundamentalStudy": "Étude en recherche fondamentale (e.g. in vitro)",
         "geneInteractionStudy": "Étude d'intéraction gène-gène ou gène-environnement",
         "genealogicalStudy": "Étude généalogique",
@@ -1251,7 +1336,10 @@
         "pst-plasma": "PST: plasma (µL)",
         "research-project-role": "Rôle dans le projet de recherche",
         "research-staff-other": "Ce co-demandeur a des membres de l'Équipe de recherche de son institution principale pour réaliser ce projet de recherche.",
-        "response": { "affirmative": "Oui", "negative": "Non" },
+        "response": {
+          "affirmative": "Oui",
+          "negative": "Non"
+        },
         "riskScore": "Développement de score de risque ou d'index",
         "self-reported-anthropometric": "Mesures anthropométriques auto-rapportées (taille, poids, circonférences taille et hanches)",
         "sleep": "Sommeil",
@@ -1301,7 +1389,9 @@
         "dataLinkage": "Jumelage de données",
         "additionalParams": "Tout autre paramètres requis",
         "aggreement-F": "Je dois également stocker mon code d'analyse ou en envoyer une copie à CanPath en cas de besoin éventuel de reproduire mes variables ou mes résultats à une date ultérieure.",
-        "preferred-delivery-year": "Année de livraison souhaitée"
+        "preferred-delivery-year": "Année de livraison souhaitée",
+        "ethics-approval-reb": "Veuillez vous assurer que le protocole du REB ne manque pas d'informations importantes relatives à la demande. Il doit s'aligner directement sur la recherche mentionnée dans ce formulaire de demande, c'est-à-dire qu'il ne doit pas s'agir d'un protocole REB \"général \".",
+        "more-for-case-control-studies": "Énoncez clairement les critères d'appariement cas-témoins."
       },
       "cutom": {
         "return": "Toutes les données d'analyse d'un échantillon biologique doivent mentionner la source de la méthodologie utilisée dans une déclaration définissant les mesures de contrôle de la qualité qui ont été prises et en précisant si elles ont été satisfaites ou non."
@@ -1333,8 +1423,8 @@
       },
       "funding": {
         "no-cost-extension": "Si la date de fin de votre projet dépasse la date de financement du projet, y a-t-il une possibilité de prolongation sans frais?",
-        "no-cost-extension-explaination": "Veuillez expliquer les futurs plans de financement",
         "notice": "<p class=\"help-block\">* <em>Veuillez noter que la demande d'accès ne sera pas examinée tant que le financement n'aura pas été obtenu</em>.</p>",
+        "no-cost-extension-explaination": "Veuillez expliquer les futurs plans de financement",
         "reb-expiry-date": "Date d'expiration du REB:"
       },
       "ethics-approval": {
@@ -1369,22 +1459,22 @@
           "regionalDatasets": "Ensembles de données régionales (p. ex. questionnaire sur les antécédents résidentiels)"
         },
         "dsBlHealthRiskFactorQuestionnaire": "Collecte initiale questionnaire sur la santé et les facteurs de risque",
-        "dsBlHealthRiskFactorQuestionnaireAdditionalDiseases": "Collecte initiale questionnaire sur la santé et les facteurs de risque - maladies additionnelles",
         "dsBlMentalHealth": "Collecte initiale santé mentale",
         "dsBlPhysicalMeasures": "Collecte initiale mesures physiques",
-        "dsBlBiologicalSampleCollectionProcessing": "Collecte initiale d’échantillon biologiques &mdash; Collecte et processus de traitement",
-        "dsBlBiologicalSampleInterpretation": "Collecte initiale d’échantillon biologiques &mdash; Interprétation",
         "dsFuHealthRiskFactorQustionnaire": "Collecte de suivi 1 questionnaire sur la santé et les facteurs de risque",
         "dsFuCovid19Questionnaire": "Collecte de suivi questionnaire Covid-19",
+        "dsGenotypeData": "Données sur les génotypes",
+        "dsEnvironmentalExposureData": "Données d'exposition environnementale",
+        "dsRegionalDatasets": "Ensembles de données régionales (p. ex. questionnaire sur les antécédents résidentiels)",
+        "variables-file": "Variables individuelles",
+        "dsBlHealthRiskFactorQuestionnaireAdditionalDiseases": "Collecte initiale questionnaire sur la santé et les facteurs de risque - maladies additionnelles",
+        "dsBlBiologicalSampleCollectionProcessing": "Collecte initiale d’échantillon biologiques &mdash; Collecte et processus de traitement",
+        "dsBlBiologicalSampleInterpretation": "Collecte initiale d’échantillon biologiques &mdash; Interprétation",
         "dsCovid192020Questionnaire": "Questionnaire Covid-19 2020",
         "dsCovid19AntibodyBlQuestionnaire": "Questionnaire sur la présence d'anticorps COVID-19 collecte initiale",
         "dsCovid19AntibodyTestBlQuestionnaireCollectionProcessing": "Test d'anticorps COVID-19 collecte initiale &mdash; Collecte et processus de traitement",
         "dsCovid19AntibodyTestBlQuestionnaireSerologyResults": "Test d'anticorps COVID-19 collecte initiale &mdash; Résultats sérologiques",
-        "dsGenotypeData": "Données sur les génotypes",
-        "dsEnvironmentalExposureData": "Données d'exposition environnementale",
         "dsCANUEData": "Données du Consortium canadien de recherche sur la santé environnementale en milieu urbain (CANUE)",
-        "dsRegionalDatasets": "Ensembles de données régionales (p. ex. questionnaire sur les antécédents résidentiels)",
-        "variables-file": "Variables individuelles",
         "dsCAHHM": "Alliance Canadienne Cœurs et Cerveaux Sains (CAHHM)"
       },
       "data-linkage": {
@@ -1416,6 +1506,18 @@
       "members": {
         "info": "<p class=\"help-block\">Please include a full postal address and a valid institutional e-mail address for each Authorized Institutional Legal Representative.</p>",
         "has-member": "J'ai des membres de l'équipe de recherche d'une institution autre que celle du demandeur principal."
+      },
+      "research-abstract": {
+        "title": "Scientific Abstract",
+        "info": "Please provide a clear scientific description of the research project, its specific hypotheses and methodology. Be sure to explain how the CanCOLD Research Data and/or Biosamples would be used, and how the project meets CanCOLD's research objectives. Word limit is 500"
+      },
+      "research-objectives": {
+        "title": "Research objectives",
+        "info": "Please provide the objectives of your substudy in bullet form."
+      },
+      "summary": {
+        "title": "Lay Summary of Project",
+        "info": "Please provide a short description of the project for the general public. Scientific jargon and acronyms should be avoided as much as possible. Word limit is 300."
       }
     },
     "network-config": {
@@ -1506,7 +1608,9 @@
         "info": "Le formulaire de projet de recherche peut être spécifié à la fois en termes de structure de données (schéma) et d'affichage des données et validation (définition). Voir <a href='https://github.com/Textalk/angular-schema-form/blob/master/docs/index.md' target='_blank'>documentation du schema form</a> pour plus de détails."
       }
     },
-    "research-project": { "data-access-request": "Demande d'accès" },
+    "research-project": {
+      "data-access-request": "Demande d'accès"
+    },
     "client": {
       "label": {
         "dataschema-variables": "Variables harmonisées",
@@ -1602,7 +1706,9 @@
     },
     "study-dataset": "Ensemble de données d'étude",
     "study-datasets": "Ensembles de données d'étude",
-    "userProfile": { "locale": "Language" },
+    "userProfile": {
+      "locale": "Language"
+    },
     "data": "",
     "data-access-feasibility": {
       "form-title": "LETTRE DE SUPPORT ET ESTIMATION DE COÛT",
@@ -1613,7 +1719,9 @@
       "grant-competition": "Nom de l'appel à projets",
       "grant-date": "Date limite de soumission de la demande de financement",
       "grant-title": "Titre de la demande de financement soumise",
-      "applicant-info": { "title": "B. Information sur le demandeur" },
+      "applicant-info": {
+        "title": "B. Information sur le demandeur"
+      },
       "pi": "Nom",
       "career": {
         "title": "Carrière",
@@ -1630,9 +1738,13 @@
       "pi-phone": "Numéro de téléphone du contact",
       "pi-address": "Adresse postale",
       "pi-address-help": "Note: la Lettre de support sera envoyée au demandeur à l'adresse indiquée ci-dessus.",
-      "project-info": { "title": "C. Présentation du projet de recherche" },
+      "project-info": {
+        "title": "C. Présentation du projet de recherche"
+      },
       "project-objectives": "Contexte et objectifs du projet (max. 250 mots)",
-      "data": { "title": "D. Données de CanPath demandées" },
+      "data": {
+        "title": "D. Données de CanPath demandées"
+      },
       "datasets": "Préciser les ensembles de données et le type de données",
       "datasets-help": "Voir <a href='https://portal.canpath.ca/search#lists?type=datasets' target='_blank'>la liste des ensembles de données</a> pour la disponibilité des données.",
       "selection-criteria": "Critère de sélection des participants de CanPath pour lesquels des données sont demandées",
@@ -1652,6 +1764,13 @@
       "data-linkage-help": "Préciser quel(s) ensembles de données, le type de données et leur origine",
       "form-subtitle": "Formulaire CanPath de demande de lettre de support et d'estimation de coût",
       "intro": "<p class='mt-3'>Veuillez noter:</p><ul><li>La fourniture d'une ébauche de lettre de soutien est fortement recommandée</li><li>10 jours ouvrables sont nécessaires pour fournir une lettre de soutien</li></ul>"
+    },
+    "relevant-papers": {
+      "add-button": "Add Relevant Paper",
+      "empty": "No marker paper.",
+      "info": "Article Information",
+      "pubmed-id": "Pubmed ID",
+      "title": "Relevant Papers"
     }
   }
 }
