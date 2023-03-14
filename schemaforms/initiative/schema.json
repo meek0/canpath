@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "additionalInformation": {
+      "format": "obibaSimpleMde",
+      "type": "object",
+      "title": "t(global.additional-information)"
+    },
+    "startYear": {
+      "type": "integer",
+      "title": "t(study.start-year)"
+    },
+    "weight": {
+      "type": "integer",
+      "title": "t(global.weight)"
+    },
+    "endYear": {
+      "type": "integer",
+      "title": "t(study.end-year)"
+    },
+    "relevantPapers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "info": {
+            "type": "string",
+            "title": "t(relevant-papers.info)"
+          },
+          "pubmedId": {
+            "type": "string",
+            "title": "t(relevant-papers.pubmed-id)"
+          }
+        }
+      }
+    }
+  },
+  "required": []
+}

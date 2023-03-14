@@ -1,0 +1,38 @@
+[
+  {
+    "htmlClass": "row",
+    "type": "section",
+    "items": [
+      {
+        "htmlClass": "col-xs-6",
+        "type": "section",
+        "items": [
+          "weight"
+        ]
+      }
+    ]
+  },
+  "startYear",
+  "endYear",
+  {
+    "key": "relevantPapers",
+    "title": "t(relevant-papers.title)",
+    "add": "t(relevant-papers.add-button)",
+    "startEmpty": true,
+    "style": {
+      "add": "btn-success"
+    },
+    "items": [
+      {
+        "key": "relevantPapers[].info",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "relevantPapers[].pubmedId",
+        "required": true
+      }
+    ]
+  },
+  "additionalInformation"
+]

@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "properties": {
+    "participantsInclusion": {
+      "format": "localizedString",
+      "description": "t(harmonization-protocol.participants-inclusion-help)",
+      "type": "object",
+      "title": "t(harmonization-protocol.participants-inclusion)"
+    },
+    "additionalInformation": {
+      "format": "obibaSimpleMde",
+      "type": "object",
+      "title": "t(global.additional-information)"
+    },
+    "informationContent": {
+      "format": "obibaSimpleMde",
+      "description": "t(harmonization-protocol.information-content-help)",
+      "type": "object",
+      "title": "t(harmonization-protocol.information-content)"
+    },
+    "hide_var": {
+      "type": "boolean",
+      "title": "t(dataset.no_var)"
+    },
+    "infrastructure": {
+      "format": "localizedString",
+      "description": "t(harmonization-protocol.infrastructure-help)",
+      "type": "object",
+      "title": "t(harmonization-protocol.infrastructure)"
+    },
+    "procedures": {
+      "format": "localizedString",
+      "description": "t(harmonization-protocol.procedures-help)",
+      "type": "object",
+      "title": "t(harmonization-protocol.procedures)"
+    },
+    "weight": {
+      "title": "t(dataset.harmonization-study-table.title.weight)",
+      "type": "integer"
+    },
+    "qualitativeQuantitative": {
+      "description": "t(harmonization-protocol.qualitative-quantitative.help)",
+      "type": "string",
+      "title": "t(harmonization-protocol.qualitative-quantitative.title)",
+      "enum": [
+        "qualitative",
+        "quantitative"
+      ]
+    },
+    "prospectiveRetrospective": {
+      "description": "t(harmonization-protocol.prospective-retrospective.help)",
+      "type": "string",
+      "title": "t(harmonization-protocol.prospective-retrospective.title)",
+      "enum": [
+        "prospective",
+        "retrospective"
+      ]
+    },
+    "version": {
+      "description": "t(harmonization-protocol.version-help)",
+      "type": "string",
+      "title": "t(harmonization-protocol.version)"
+    },
+    "participants": {
+      "type": "integer",
+      "title": "t(harmonization-protocol.participants)"
+    }
+  },
+  "required": []
+}

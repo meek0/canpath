@@ -1,0 +1,42 @@
+[
+  {
+    "description": "t(dataset.harmonization-study-table.description.weight)",
+    "key": "weight"
+  },
+  "hide_var",
+  "version",
+  "participants",
+  {
+    "type": "radios",
+    "titleMap": [
+      {
+        "name": "t(harmonization-protocol.qualitative-quantitative.enum.qualitative)",
+        "value": "qualitative"
+      },
+      {
+        "name": "t(harmonization-protocol.qualitative-quantitative.enum.quantitative)",
+        "value": "quantitative"
+      }
+    ],
+    "key": "qualitativeQuantitative"
+  },
+  {
+    "type": "radios",
+    "titleMap": [
+      {
+        "name": "t(harmonization-protocol.prospective-retrospective.enum.prospective)",
+        "value": "prospective"
+      },
+      {
+        "name": "t(harmonization-protocol.prospective-retrospective.enum.retrospective)",
+        "value": "retrospective"
+      }
+    ],
+    "key": "prospectiveRetrospective"
+  },
+  "informationContent",
+  "procedures",
+  "participantsInclusion",
+  "infrastructure",
+  "additionalInformation"
+]
