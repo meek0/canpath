@@ -124,7 +124,7 @@
                         </div>
                       </div>
                       <div class="card-footer py-1">
-                        <div class="row pt-1 row-cols-4">
+                        <div class="row pt-1 row-cols-2">
                           <template v-if="hasStats(study)">
                             <a v-if="study.model && study.model.methods" href="javascript:void(0)" style="cursor: initial;" class="btn btn-sm col text-left">
                               <span class="h6 pb-0 mb-0 d-block text-muted">{{study.model.methods.design | translate}}</span>
@@ -134,7 +134,11 @@
                               <span class="h6 pb-0 mb-0 d-block text-muted">{{study.model.numberOfParticipants.participant.number | localize-number}}</span>
                               <span class="text-muted"><small><@message "numberOfParticipants.label"/></small></span>
                             </a>
-                            <dataset-stat-item
+                            <a v-if="study.model && study.model.numberOfParticipants && study.model.numberOfParticipants.sample && study.model.numberOfParticipants.sample.number" href="javascript:void(0)" style="cursor: initial;" class="btn btn-sm col text-left">
+                              <span class="h6 pb-0 mb-0 d-block text-muted">{{study.model.numberOfParticipants.sample.number | localize-number}}</span>
+                              <span class="text-muted"><small><@message "numberOfParticipants-sample-label"/></small></span>
+                            </a>                            
+                            <#--  <dataset-stat-item
                                     v-bind:type="study.studyResourcePath"
                                     v-bind:stats="study['obiba.mica.CountStatsDto.studyCountStats']">
                             </dataset-stat-item>
@@ -142,7 +146,7 @@
                                     v-bind:url="variablesUrl(study)"
                                     v-bind:type="study.studyResourcePath"
                                     v-bind:stats="study['obiba.mica.CountStatsDto.studyCountStats']">
-                            </variable-stat-item>
+                            </variable-stat-item>  -->
                           </template>
                           <template v-else>
                             <!-- HACK used 'studiesWithVariables' with opacity ZERO to have the same height as the longest stat item -->
