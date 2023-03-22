@@ -1,7 +1,7 @@
 <#include "../libs/search.ftl">
 
 <#macro searchInfo>
-  <div id="search-info" class="alert alert-info alert-dismissible mb-4 fade show" style="display: none">
+  <div id="search-info" class="alert alert-info bg-callout alert-dismissible mb-4 fade show" style="display: none">
     <div>
       <p>
         To view data filtered by multiple variables, please <a href="/contact">contact the Access Office</a> for assistance.
