@@ -126,10 +126,6 @@
                       <div class="card-footer py-1">
                         <div class="row pt-1 row-cols-2">
                           <template v-if="hasStats(study)">
-                            <a v-if="study.model && study.model.methods" href="javascript:void(0)" style="cursor: initial;" class="btn btn-sm col text-left">
-                              <span class="h6 pb-0 mb-0 d-block text-muted">{{study.model.methods.design | translate}}</span>
-                              <span class="text-muted"><small><@message "study.design"/></small></span>
-                            </a>
                             <a v-if="study.model && study.model.numberOfParticipants" href="javascript:void(0)" style="cursor: initial;" class="btn btn-sm col text-left">
                               <span class="h6 pb-0 mb-0 d-block text-muted">{{study.model.numberOfParticipants.participant.number | localize-number}}</span>
                               <span class="text-muted"><small><@message "numberOfParticipants.label"/></small></span>
