@@ -238,18 +238,22 @@
               <#if type == "Harmonized">
                 <div class="card card-${harmoAnnotations.statusClass} card-outline">
                   <div class="card-header">
-                    <h3 class="card-title"><@message "harmonization"/>
-                        <#if harmoAnnotations.hasStatus()>
-                          <span class=" badge badge-${harmoAnnotations.statusClass}">
-                      ${localize(harmoAnnotations.statusValueTitle, harmoAnnotations.statusValue!"-")}
-                    </span>
-                        </#if>
-                    </h3>
+                    <h3 class="card-title"><@message "harmonization-processing-elements"/></h3>
                   </div>
                   <div class="card-body">
+                      <#if harmoAnnotations.hasStatus()>
+                        <p>
+                          <h5 class="d-inline"><@message "status"/>: </h5>
+                          <span>${localize(harmoAnnotations.statusValueTitle, harmoAnnotations.statusValue!"-")}</span>
+                        </p>                        
+                      </#if>
+
                       <#if !harmoAnnotations.hasStatusDetail() && !harmoAnnotations.hasAlgorithm() && !harmoAnnotations.hasComment()>
                         <span class="text-muted"><@message "no-harmonization-description"/></span>
                       <#else>
+                        <p>
+                          <h5 class="d-inline"><@message "status-detail"/>: </h5>
+                        </p>
                         <dl>
                             <#if harmoAnnotations.hasStatusDetail()>
                               <dt title="${localize(harmoAnnotations.statusDetailDescription)}">
@@ -261,12 +265,12 @@
                             </#if>
 
                             <#if harmoAnnotations.hasAlgorithm()>
-                              <dt title="${localize(harmoAnnotations.algorithmDescription)}">
-                                  ${localize(harmoAnnotations.algorithmTitle, "Algorithm")}
-                              </dt>
+                              <dt title="${localize(harmoAnnotations.algorithmDescription)}">&nbsp;</dt>
                               <dd class="py-2 bg-light">
                                 <span class="marked mt-3"><template>${localize(harmoAnnotations.algorithmValue!"")}</template></span>
                               </dd>
+                            <#else>
+                              <p><@message "harmonization-algorithm-missing"/></p>
                             </#if>
 
                             <#if harmoAnnotations.hasComment()>
