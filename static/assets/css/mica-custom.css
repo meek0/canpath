@@ -40,6 +40,17 @@
   display: none;
 }
 
+#taxonomy-modal .panel-vocabulary-title::after,
+#harmonizedTable thead th:nth-child(2)::after {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  margin-left: 0.25em;
+  content: "\f05a";
+  opacity: 0.6;
+}
+
 #studies-card, #individual-studies-card, #harmonization-studies-card, #projects-card {
   box-shadow: none;
   margin-top: 2em;
