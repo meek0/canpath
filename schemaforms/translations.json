@@ -131,9 +131,14 @@
       }
     },
     "search": {
+      "coverage-with-zeros": "Subdomains in all harmonization protocols",
+      "coverage-without-zeros": "Subdomains in at least one harmonization protocol",
       "coverage-buckets": {
         "study": "Data",
         "dataschema": "Harmonization Dataset"
+      },
+      "coverage-select": {
+        "full": "Harmonization protocols with at least one subdomain"
       },
       "study": {
         "label": "Data"
@@ -990,10 +995,15 @@
       }
     },
     "search": {
+      "coverage-with-zeros": "Sous-domaines dans tous les protocoles d'harmonisation",
+      "coverage-without-zeros": "Sous-domaines dans au moins un protocole d'harmonisation",
       "coverage-buckets": {
         "study": "Données",
         "dataschema": "Ensemble de données Harmonisé",
         "dataset": "Ensemble de données d'étude"
+      },
+      "coverage-select": {
+        "full": "Protocoles d'harmonisation avec au moins un sous-domaine"
       },
       "study": {
         "label": "Données"
