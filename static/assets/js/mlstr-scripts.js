@@ -239,7 +239,7 @@ class MlstrVariableService {
 class MlstrStudyTablePopoverFactory {
 
   static create(study, studyTableName) {
-    const title = localizedString(study.studySummary.acronym) + ' ' + studyTableName;
+    const title = studyTableName;
     let colName = title;
 
     if (study.description) {
