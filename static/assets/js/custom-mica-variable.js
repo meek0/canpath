@@ -347,7 +347,7 @@ const makeHarmonizedVariablesTable = function() {
           harmonizedVariablesTableBody.append('<tr>' +
             '<td title=""><a href="' + Mica.contextPath + '/variable/' + harmonizedVariable.resolver.id + '">' + harmonizedVariable.resolver.name + '</a></td>' +
             '<td>' + studyAnchor(baseStudyTable.studySummary) + '</td>' +
-            '<td>' + MlstrStudyTablePopoverFactory.create(baseStudyTable, studyTableName) +
+            '<td>' + MlstrStudyTablePopoverFactory.create(baseStudyTable, studyTableName) + "</td>" +
             '<td title="' + Mica.tr[localizedString(status)] + '"><i class=" ' + iconClass + '"></i></td>' +
             '<td>' + makeStatusDetail(statusDetail, false) + '</td>' +
             '<td>' + makeRuleCategoryPopover(ruleCategory) + '</td>' +
