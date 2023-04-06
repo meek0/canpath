@@ -55,6 +55,10 @@
   white-space: nowrap !important;
 }
 
+#harmonizedTable tbody td:nth-child(n+2) {
+  text-align: center !important;
+}
+
 #studies-card, #individual-studies-card, #harmonization-studies-card, #projects-card {
   box-shadow: none;
   margin-top: 2em;
