@@ -1,5 +1,5 @@
 <#macro samplesModel>
-    <h5 class="mt-5 mb-3">La collecte d'échantillons biologiques de CanPath</h5>
+    <h5 class="mt-5 mb-3 border-bottom" style="border-bottom-width: thick !important">La collecte d'échantillons biologiques de CanPath</h5>
     <div class="row">
       <table class="table table-striped col-xs-12 col-lg-6">
         <thead>
