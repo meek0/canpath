@@ -196,11 +196,11 @@
       <p><@message "harmonization-table-legend-title"/></p>
     </#if>
     <ul id="harmonization-legend" class="list-unstyled">
-      <li><i class="fas fa-check fa-fw text-success"></i><span class="pl-2"><small><@message "harmonization-complete"/></small></span></li>
-      <li><i class="fas fa-adjust fa-fw text-partial"></i><span class="pl-2"><small><@message "harmonization-partial"/></small></span></li>
-      <li><i class="fas fa-times fa-fw text-danger"></i><span class="pl-2"><small><@message "harmonization-impossible"/></small></span></li>
-      <li><i class="fas fa-minus fa-fw text-black"></i><span class="pl-2"><small><@message "harmonization-na"/></small></span></li>
-      <li><i class="fas fa-question fa-fw text-warning"></i><span class="pl-2"><small><@message "harmonization-undetermined"/></small></span></li>
+      <li><i class="fas fa-check fa-fw text-success"></i><span class="pl-2"><@message "harmonization-complete"/></span></li>
+      <li><i class="fas fa-adjust fa-fw text-partial"></i><span class="pl-2"><@message "harmonization-partial"/></span></li>
+      <li><i class="fas fa-times fa-fw text-danger"></i><span class="pl-2"><@message "harmonization-impossible"/></span></li>
+      <li><i class="fas fa-minus fa-fw text-black"></i><span class="pl-2"><@message "harmonization-na"/></span></li>
+      <li><i class="fas fa-question fa-fw text-warning"></i><span class="pl-2"><@message "harmonization-undetermined"/></span></li>
     </ul>
   </div>
 </#macro>
