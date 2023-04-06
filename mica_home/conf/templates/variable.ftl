@@ -245,7 +245,7 @@
                         <p>
                           <h5 class="d-inline"><@message "status"/>: </h5>
                           <span>${localize(harmoAnnotations.statusValueTitle, harmoAnnotations.statusValue!"-")}</span>
-                        </p>                        
+                        </p>
                       </#if>
 
                       <#if !harmoAnnotations.hasStatusDetail() && !harmoAnnotations.hasAlgorithm() && !harmoAnnotations.hasComment()>
@@ -303,7 +303,7 @@
                       <thead>
                         <tr>
                           <th><@message "variable"/></th>
-                          <th><@message "study"/></th>
+                          <th><@message "harmonized-study"/></th>
                           <th><@message "dataset.harmonized-table"/></th>
                           <th><@message "status"/></th>
                           <th><@message "status-detail"/></th>
