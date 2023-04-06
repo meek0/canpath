@@ -52,6 +52,7 @@
 }
 
 #harmonizedTable thead th:nth-child(n+2) {
+  text-align: center !important;
   white-space: nowrap !important;
 }
 
