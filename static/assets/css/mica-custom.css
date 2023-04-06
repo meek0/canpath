@@ -51,6 +51,10 @@
   opacity: 0.6;
 }
 
+#harmonizedTable thead th:nth-child(n+2) {
+  white-space: nowrap !important;
+}
+
 #studies-card, #individual-studies-card, #harmonization-studies-card, #projects-card {
   box-shadow: none;
   margin-top: 2em;
