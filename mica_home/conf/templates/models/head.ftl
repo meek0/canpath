@@ -29,7 +29,7 @@
 </#function>
 
 <#macro relevantPapers entity>
-    <div class="card card-success card-outline w-100">
+    <div class="card card-info card-outline w-100">
         <div class="card-header">
             <h3 class="card-title"><@message "relevant-papers.title"/></h3>
         </div>
