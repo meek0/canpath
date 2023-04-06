@@ -27,3 +27,25 @@
     </#if>
     <#return notEmpty>
 </#function>
+
+<#macro relevantPapers entity>
+    <div class="card card-success card-outline w-100">
+        <div class="card-header">
+            <h3 class="card-title"><@message "relevant-papers.title"/></h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+
+            <#list entity.model.relevantPapers as paper>
+
+<#--                <p class="<#if paper?has_next>mb-4</#if>">-->
+                <p>
+                    ${paper.info}
+                    <#if (paper.pubmedId)?has_content>
+                        <a class="d-block mt-1" href="http://www.ncbi.nlm.nih.gov/pubmed/${paper.pubmedId}" target="_blank">PUBMED ${paper.pubmedId}</a>
+                    </#if>
+                </p>
+            </#list>
+        </div>
+    </div>
+</#macro>

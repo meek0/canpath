@@ -93,23 +93,34 @@
                 <@generalDesing study/>
             </div>
           <#elseif type == "Harmonization">
-            <#if localizedStringNotEmpty(study.model.additionalInformation)>
-              <div class="col-sm-12 col-md d-flex align-items-stretch">
-                <div class="card card-info card-outline w-100">
-                  <div class="card-header">
-                    <h3 class="card-title">
-                        <@message "global.additional-information"/>
-                    </h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <div class="marked">
-                      <template>${localize(study.model.additionalInformation)}</template>
-                    </div>
+            <#if localizedStringNotEmpty(study.model.additionalInformation) || arrayNotEmpty(study.model.relevantPapers)>
+                <div class="col-sm-12 col-md d-flex align-items-stretch">
+                  <div class="row d-flex align-items-stretch">
+                    <#if localizedStringNotEmpty(study.model.additionalInformation)>
+                      <div class="col-12 d-flex align-items-stretch">
+                        <div class="card card-success card-outline w-100">
+                          <div class="card-header">
+                            <h3 class="card-title">
+                                <@message "global.additional-information"/>
+                            </h3>
+                          </div>
+                          <!-- /.card-header -->
+                          <div class="card-body">
+                            <div class="marked">
+                              <template>${localize(study.model.additionalInformation)}</template>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </#if>
+                    <#if arrayNotEmpty(study.model.relevantPapers)>
+                      <div class="col-12 d-flex align-items-stretch">
+                          <@relevantPapers study/>
+                      </div>
+                    </#if>
                   </div>
                 </div>
-              </div>
-            </#if>
+              </#if>
           </#if>
         </div>
 
@@ -233,7 +244,7 @@
     "harmonization-protocol.participants": "<@message "harmonization-protocol.participants"/>"
   }
 
-  
+
 
   const mlstrStudyService = MlstrStudyService.newInstance();
 
