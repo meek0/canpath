@@ -1,6 +1,7 @@
 <#macro samplesModel>
   <h5 class="mt-5 mb-3">The CanPath Biosamples Collection</h5>
-  <p>
+
+  <div class="row">
     <table class="table table-striped col-xs-12 col-lg-6">
       <thead>
         <tr>
@@ -31,7 +32,11 @@
         </tr>
       </tbody>
     </table>
-  </p>
+  </div>
+
+
+
+
   <h5 class="mt-5 mb-3 border-bottom" style="border-bottom-width: thick !important">Overview of Available Biological Samples</h5>
   <p>Biological samples were donated near the time of enrollment or during a subsequent sample collection campaign. Biological samples available for access include serum, plasma, DNA, red blood cells, cryo-preserved whole blood, and urine samples. When participant donated a sample to CanPath, a sample donation questionnaire about the physical state of the participant at the time of donation that may influence markers in the blood and/or urine was administered. The time since last meal was recorded at the time of blood donation.  Urine samples were collected at a random time of day. If a participant was unable to provide a blood sample due to medical or geographical reasons, a saliva sample or blood spot was sought whenever possible.</p>
   <h5 class="mt-5 mb-3 border-bottom" style="border-bottom-width: thick !important">Biological Sample Collection</h5>

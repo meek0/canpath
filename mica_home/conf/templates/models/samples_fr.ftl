@@ -1,6 +1,6 @@
 <#macro samplesModel>
     <h5 class="mt-5 mb-3">La collecte d'échantillons biologiques de CanPath</h5>
-    <p>
+    <div class="row">
       <table class="table table-striped col-xs-12 col-lg-6">
         <thead>
           <tr>
@@ -31,7 +31,7 @@
           </tr>
         </tbody>
       </table>
-    </p>
+    </div>
     <h5 class="mt-5 mb-3 border-bottom" style="border-bottom-width: thick !important">Aperçu des échantillons biologiques disponibles</h5>
     <p>Les dons d'échantillons biologiques ont été fournis peu après l'inscription ou lors de campagnes de collecte d'échantillons subséquentes. Les échantillons biologiques disponibles comprennent le sérum, le plasma, l'ADN, les globules rouges, le sang entier cryoconservé et les échantillons d'urine. L'heure depuis le dernier repas a été consignée au moment du don de sang. Les échantillons d'urine sont collectés à différents moments dans la journée. Si un participant était dans l'impossibilité de fournir un échantillon sanguin pour des raisons médicales ou géographiques, il a été tenté, dans la mesure du possible, d'obtenir un échantillon de salive ou une goutte de sang.</p>
     <h5 class="mt-5 mb-3 border-bottom" style="border-bottom-width: thick !important">Collecte des échantillons biologiques</h5>
