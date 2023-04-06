@@ -224,3 +224,8 @@ dl.striped > dt, dl.striped > dd {
 .accordion .card-header > button[aria-expanded="true"]:after {
   content: "\f068";
 }
+
+#tab_coverage #vosr-coverage-result thead tr:last-child th:nth-child(n+2),
+#tab_coverage #vosr-coverage-result tbody tr td:nth-child(n+2) {
+  text-align: left;
+}
