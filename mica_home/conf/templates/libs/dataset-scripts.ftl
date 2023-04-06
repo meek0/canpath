@@ -228,7 +228,7 @@
                 }, 0);
 
                 var denominator = variableHarmonization.harmonizedVariables.reduce((acc, curr) => {
-                  acc = acc + (curr.status.length > 0 && !excludeStatusList.includes(curr.status) ? 1 : 0);
+                  acc = acc + (curr.status && curr.status.length > 0 && !excludeStatusList.includes(curr.status) ? 1 : 0);
                   return acc;
                 }, 0);
 
