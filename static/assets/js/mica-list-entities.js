@@ -884,6 +884,9 @@ class ObibaStudiesApp {
           return MicaService.normalizeUrl(`/${this.searchModeFromStudyType(study.studyResourcePath)}#lists?type=variables&query=study(${studyQuery}),variable(in(Mica_variable.variableType,${variableType}))`)
         },
         hasStats: function(study) {
+          // CanPath Harmonization Initiatives page does not show any stats
+          if (type !== 'individual-studies') return false;
+          
           const countStats = study['obiba.mica.CountStatsDto.studyCountStats'];
           const datasetStats = type === 'individual-studies' ? countStats.studyDatasets : countStats.harmonizationDatasets
           let hasModelStats = study.model
