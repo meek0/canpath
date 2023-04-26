@@ -10,6 +10,7 @@ docker_compose_file=docker-compose.yml
 network=canpath_default
 
 MICA_SERVE=~/projects/mica2/mica-webapp/target/classes
+AGATE_SERVE=~/projects/agate/agate-webapp/target/classes
 
 help:
 	@echo "make up"
@@ -17,6 +18,10 @@ help:
 template:
 	cp -r mica_home/conf/* ${MICA_SERVE} && \
 	cp -r static ${MICA_SERVE}	
+
+template-agate:
+	cp -r agate_home/conf/* ${AGATE_SERVE} && \
+	cp -r static ${AGATE_SERVE}
 
 install: install-mica install-agate
 
