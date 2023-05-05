@@ -361,6 +361,7 @@
       </#if>
       <#if studyTables?? && studyTables?size != 0>
         <#list studyTables as table>
+          <#if table.study?? && table.population??>
           makeFilesVue('#study-${table.study.id}-${table.population.id}-${table.dce.id}-files-app', {
             type: 'individual-study',
             id: '${table.study.id}',
@@ -371,6 +372,7 @@
             locale: '${.lang}',
             contextPath: '${contextPath}'
           });
+          </#if>
         </#list>
       </#if>
     </#if>
