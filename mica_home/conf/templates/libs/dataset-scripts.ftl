@@ -162,7 +162,7 @@
         columns.sort((a, b) => a.weight - b.weight);
         let sorted = [];
         columns.forEach(study => {
-          const studyTableName = StringLocalizer.localize(study.name) || StringLocalizer.localize(study.studySummary.name);
+          const studyTableName = StringLocalizer.localize(study.name) || StringLocalizer.localize(study.studySummary.acronym);
           const dceId = study.dceId || study.studyId +':.:.';
           const dceStats = {};
           const percComplete = dceStats.percentage || 0;
