@@ -251,9 +251,7 @@
                       <#if !harmoAnnotations.hasStatusDetail() && !harmoAnnotations.hasAlgorithm() && !harmoAnnotations.hasComment()>
                         <span class="text-muted"><@message "no-harmonization-description"/></span>
                       <#else>
-                        <p>
-                          <h5 class="d-inline"><@message "status-detail"/>: </h5>
-                        </p>
+                        
                         <dl>
                             <#if harmoAnnotations.hasStatusDetail()>
                               <dt title="${localize(harmoAnnotations.statusDetailDescription)}">
