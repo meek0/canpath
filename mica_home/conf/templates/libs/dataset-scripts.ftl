@@ -329,6 +329,7 @@
       </#if>
       <#if studyTables?? && studyTables?size != 0>
         <#list studyTables as table>
+          <#if table.study?? && table.population??>
           makeFilesVue('#study-${table.study.id}-${table.population.id}-files-app', {
             type: 'individual-study',
             id: '${table.study.id}',
@@ -341,6 +342,7 @@
           }, function(file) {
             return !(file.type === 'FOLDER' && file.name === 'data-collection-event');
           });
+          </#if>
         </#list>
       </#if>
     </#if>
