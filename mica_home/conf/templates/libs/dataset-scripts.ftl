@@ -361,7 +361,7 @@
       </#if>
       <#if studyTables?? && studyTables?size != 0>
         <#list studyTables as table>
-          <#if table.study?? && table.population??>
+          <#if table.study?? && table.population?? && table.dce??>
           makeFilesVue('#study-${table.study.id}-${table.population.id}-${table.dce.id}-files-app', {
             type: 'individual-study',
             id: '${table.study.id}',
