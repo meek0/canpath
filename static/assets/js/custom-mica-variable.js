@@ -232,7 +232,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
         })
         .join('')
     }
-    if (data.statistics) {
+    if (Mica.nature === 'CONTINUOUS' && data.statistics) {
       const summary = data.statistics;
 
       $('#continuousSummary tbody').html(`
