@@ -31,15 +31,20 @@
 
 <!-- Search -->
 <#assign defaultSearchState = "#lists?type=variables&query=study(in(Mica_study.className,HarmonizationStudy))"/>
+
 <#assign searchVariableColumns = ["label+description", "valueType", "annotations", "study", "dataset"]/>
+<#assign searchVariableColumnsHarmonization = ["label+description", "valueType", "annotations", "protocol"]/>
 <#assign searchDatasetColumns = ["name", "type", "variables"]/>
+<#assign searchDatasetColumnsHarmonization = ["name", "variables"]/>
+
 <#assign searchStudyListDisplay = false/>
 <#assign searchNetworkListDisplay = false/>
 <#assign searchGraphicsDisplay = false/>
+
 <#assign searchCriteriaMenus = ["variable"]/>
+
 <#assign searchVariableSortFields = ["-studyId","datasetId","index","name"]/>
 <#assign searchDatasetSortFields = ["-harmonizationTable.studyId","harmonizationTable.populationWeight","acronym"]/>
-<#assign searchDatasetColumnsHarmonization = ["name", "initiative", "variables"]/>
 
 
 <!-- Variable -->

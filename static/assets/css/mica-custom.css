@@ -238,3 +238,7 @@ dl.striped > dt, dl.striped > dd {
 #tab_coverage #vosr-coverage-result tbody tr td:nth-child(n+2) {
   text-align: left;
 }
+
+#taxonomy-modal .btn.datasets, #taxonomy-modal .btn.variables {
+  display: none;
+}
