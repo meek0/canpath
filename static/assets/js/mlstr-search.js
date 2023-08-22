@@ -60,28 +60,33 @@ const MINIMUM_STUDY_TAXONOMY = {
 */
 Vue.component('search-criteria', {
   template: `
-  <div class="">
-    <ul v-for="name in criteriaMenu.order"
-        class="nav nav-pills nav-sidebar flex-column" data-widget="treeview"
-        role="menu" data-accordion="false">
-      <li class="nav-item has-treeview menu-open">
-        <a href="#" class="nav-link">
-          <i class="nav-icon" v-bind:class="criteriaMenu.items[name].icon"></i>
-          <p>
-           {{studyTypeSelection && studyTypeSelection.harmonization ? criteriaMenu.items[name].harmoTitle : criteriaMenu.items[name].title}}
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item" :key="menu.name" v-for="menu in criteriaMenu.items[name].menus" v-if="!(studyTypeSelection && studyTypeSelection.harmonization) || !menu.hideHarmo">
-            <a href="#" class="nav-link" data-toggle="modal" data-target="#taxonomy-modal"
-              :title="menu.description | localize-string"
-              @click.prevent="onTaxonomySelection(menu.name, name)"><i class="far fa-circle nav-icon"></i><p>{{ menu.title | localize-string }}</p>
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+<div
+  class="btn-group mb-3 px-2"
+  role="group"
+  v-for="name in criteriaMenu.order"
+>
+  <button
+    type="button"
+    class="btn btn-info btn-sm"
+    :title="studyTypeSelection && studyTypeSelection.harmonization ? criteriaMenu.items[name].harmoTitle : criteriaMenu.items[name].title"
+  >
+    <i class="fa fa-search"></i>
+  </button>
+
+  <button
+    type="button"
+    class="btn btn-info btn-sm"
+    :key="menu.name"
+    :title="menu.description | localize-string"
+    v-for="menu in criteriaMenu.items[name].menus"
+    v-if="!(studyTypeSelection && studyTypeSelection.harmonization) || !menu.hideHarmo"
+    data-toggle="modal"
+    data-target="#taxonomy-modal"
+    @click.prevent="onTaxonomySelection(menu.name, name)"
+  >
+    {{ menu.title | localize-string }}
+  </button>
+</div>
   `,
   props: {
     studyTypeSelection: Object

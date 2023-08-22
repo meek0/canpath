@@ -33,11 +33,12 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <nav id="sidebar" class="col-xs-12 col-sm-12 col-lg-2 sidebar sidebar-light-primary mt-0">
+          <div class="col">
             <search-criteria :study-type-selection="currentStudyTypeSelection"></search-criteria>
-          </nav>
-
-          <div class="col-xs-12 col-sm-12 col-lg-10">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-lg-12">
             <div id="query-builder" class="card card-info card-outline" v-if="!noQueries">
               <div class="card-header d-flex align-items-center py-2">
                 <h3 class="card-title"><@message "query"/></h3>
