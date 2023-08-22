@@ -129,7 +129,11 @@
 
         <!-- Files -->
         <#if showStudyFiles>
-            <@studyFilesBrowser study=study/>
+          <div class="row">
+            <div class="col-lg-12">
+              <@studyFilesBrowser study=study/>
+            </div>
+          </div>
         </#if>
 
         <#if study.populations?? && study.populations?size != 0>
