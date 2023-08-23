@@ -61,7 +61,7 @@ const MINIMUM_STUDY_TAXONOMY = {
 Vue.component('search-criteria', {
   template: `
 <div
-  class="btn-group mb-3"
+  class="btn-group my-3"
   role="group"
   v-for="name in criteriaMenu.order"
 >
