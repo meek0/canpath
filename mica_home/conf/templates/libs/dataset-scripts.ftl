@@ -1,6 +1,7 @@
 <!-- ChartJS -->
 <script src="${adminLTEPath}/plugins/chart.js/Chart.min.js"></script>
 <script src="${assetsPath}/js/mica-charts.js"></script>
+<script src="${assetsPath}/libs/node_modules/plotly.js-dist-min/plotly.min.js"></script>
 
 <!-- Files -->
 <script src="${assetsPath}/libs/node_modules/vue/dist/vue.js"></script>
@@ -26,67 +27,7 @@
   };
   </#if>
 
-  const makeVariablesClassificationsChartSettingsMlstr = function(datasetId, chartData, chartDataset) {
-    const names = chartData.vocabularies.map(v => v.name);
-    const labels = chartData.vocabularies.map(v => v.label);
-
-    const datasets = [];
-    Object.keys(chartData.itemCounts).filter(k => k === chartDataset.key).forEach(k => {
-      const dataset = {
-        label: chartDataset.label,
-        data: names.map(n => {
-          return chartData.itemCounts[k][n] ? chartData.itemCounts[k][n] : 0;
-        }),
-        borderColor: chartDataset.borderColor,
-        backgroundColor: chartDataset.backgroundColor
-      };
-      datasets.push(dataset);
-    });
-
-    return {
-      type: 'horizontalBar',
-      data: {
-        labels: labels,
-        datasets: datasets
-      },
-      options: {
-        onClick: (event, chartElement) => {
-          const index =  chartElement[0]._index;
-          const vocabularyData = chartData.vocabularies[index];
-          if (vocabularyData) {
-            const searchUrl = "${contextPath}/search#lists?query=variable(and(exists("+vocabularyData.taxonomy+"."+vocabularyData.name+"),in(Mica_variable.datasetId,"+encodeURIComponent(datasetId)+")))&type=variables";
-            window.location.assign(searchUrl);
-          }
-        },
-        scales: {
-          xAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: "<@message "client.label.dataset.number-of-variables"/>",
-            }
-          }]
-        },
-        indexAxis: 'y',
-        // Elements options apply to all of the options unless overridden in a dataset
-        // In this case, we are setting the border of each horizontal bar to be 2px wide
-        elements: {
-          rectangle: {
-            borderWidth: 2,
-          }
-        },
-        responsive: true,
-        legend: {
-          display: false,
-        },
-        title: {
-          display: false,
-          text: chartData.title
-        }
-      }
-    };
-  };
-
-  const renderVariablesClassifications = function(datasetId) {
+  const renderVariablesClassifications = function() {
     $('#loadingClassifications').hide();
     const chartsElem = $('#chartsContainer');
     chartsElem.children().remove();
@@ -94,16 +35,41 @@
       Mica.variablesCoverage.forEach(chartData => {
         chartsElem.append('<h5 class="text-center">' + chartData.title + '</h5>');
         chartsElem.append('<p class="text-center">' + chartData.subtitle + '</p>');
-        chartsElem.append('<canvas class="mb-4"></canvas>');
-        const chartCanvas = $('#chartsContainer canvas:last-child').get(0).getContext('2d');
-        new Chart(chartCanvas, makeVariablesClassificationsChartSettingsMlstr(datasetId, chartData, {
+        chartsElem.append('<div id="bar-graph-' + chartData.taxonomy + '" class="mb-4"></div>');
+
+        const chartConfig = makeVariablesClassificationsChartSettings(chartData, {
           key: '${dataset.id}',
           label: "<@message "variables"/>",
           borderColor: '${barChartBorderColor}',
-          backgroundColor: '${barChartBackgroundColor}'
-        }));
+          backgroundColor: '${barChartBackgroundColor}',
+          useColorsArray: false
+        });
+
+        chartConfig.layout.modebar = {remove: ['select2d', 'lasso2d', 'pan', 'zoom', 'autoscale', 'zoomin', 'zoomout', 'resetscale']};
+        chartConfig.layout.margin = {
+          t: 0,
+          b: 50
+        };
+        chartConfig.layout.xaxis = {title: "<@message "client.label.dataset.number-of-variables"/>"};
+        chartConfig.layout.font = {size: 12, family: "Gothic A1"};
+
+        Plotly.newPlot("bar-graph-" + chartData.taxonomy, chartConfig.data, chartConfig.layout, {responsive: true, displaylogo: false});
       });
       $('#classificationsContainer').show();
+
+      Mica.variablesCoverage.forEach(chartData => {
+        let contentLength = Math.max(Mica.variablesCoverage.filter(c => c.taxonomy === chartData.taxonomy)[0].vocabularies.length, 7);
+        let contentWidth = $('#classificationsContainer #bar-graph-' + chartData.taxonomy).width();
+
+        Plotly.relayout("bar-graph-" + chartData.taxonomy, {width: contentWidth, height: (2*1.42857)*12*contentLength});
+
+        document.getElementById('bar-graph-' + chartData.taxonomy).on('plotly_click', function (data) {
+          let point = data.points[0];
+          let foundVocabulary =  chartData.vocabularies.find(v => v.label === point.label);
+          const searchUrl = "${contextPath}/search#lists?query=variable(and(exists("+chartData.taxonomy+"."+foundVocabulary.name+"),in(Mica_variable.datasetId,"+encodeURIComponent("${dataset.id}")+")))&type=variables";
+          window.location.assign(searchUrl);
+        });
+      });
     } else {
       $('#noVariablesClassifications').show();
     }
@@ -112,38 +78,6 @@
   const excludeStatusList = ['na', 'undetermined'];
 
   $(function () {
-    function prepareDatasetVariablesClassificationsData(chart) {
-      const itemCounts = {};
-      let vocabularies = [];
-      chart.data.forEach(vocabularyData => {
-        const title = vocabularyData.items[0].title;
-        const vocabulary = {
-          taxonomy: chart.taxonomy,
-          name: vocabularyData.vocabulary,
-          label: title
-        };
-        vocabularyData.items.filter(item => item.key !== '').forEach(item => {
-          if (!itemCounts[item.key]) {
-            itemCounts[item.key] = {};
-          }
-          if (!itemCounts._all) {
-            itemCounts._all = {};
-          }
-          itemCounts[item.key][vocabularyData.vocabulary] = item.value;
-          itemCounts._all[vocabularyData.vocabulary] =
-            (itemCounts._all[vocabularyData.vocabulary] ? itemCounts._all[vocabularyData.vocabulary] : 0) + item.value;
-        });
-        vocabularies.push(vocabulary);
-      });
-
-      return {
-        vocabularies: vocabularies,
-        itemCounts: itemCounts,
-        title: chart.title,
-        subtitle: chart.subtitle
-      };
-    }
-
     QueryService.getCounts('datasets', {query: "dataset(in(Mica_dataset.id,${dataset.id}))"}, function (stats) {
       $('#network-hits').text(numberFormatter.format(stats.networkResultDto.totalHits));
       $('#study-hits').text(numberFormatter.format(stats.studyResultDto.totalHits));
@@ -379,11 +313,11 @@
 
     <#if datasetVariablesClassificationsTaxonomies?? && datasetVariablesClassificationsTaxonomies?size gt 0>
       const taxonomies = ['${datasetVariablesClassificationsTaxonomies?join("', '")}'];
-      DatasetService.getVariablesCoverage('${dataset.id}', taxonomies, '${.lang}', function(data) {
+      DatasetService.getVariablesCoverage('${dataset.id}', taxonomies, '${.lang}', function(data, vocabulariesColorsMapFunc) {
         if (data && data.charts) {
-          Mica.variablesCoverage = data.charts.map(chart => prepareDatasetVariablesClassificationsData(chart));
+          Mica.variablesCoverage = data.charts.map(chart => prepareVariablesClassificationsData(chart, vocabulariesColorsMapFunc(['${colors?join("', '")}'])));
         }
-        renderVariablesClassifications('${dataset.id}');
+        renderVariablesClassifications();
       }, function(response) {
 
       });
