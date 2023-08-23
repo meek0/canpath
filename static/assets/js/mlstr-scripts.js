@@ -99,7 +99,6 @@ class MlstrEntityService {
         let row = [];
         row.push(study.studySummary.published ? `<a href=/study/${summary.id}>${acronym}</a>` : acronym);
         row.push(LocalizedValues.forLang(summary.name, lang));
-        row.push(this.__ensureDesign(study.studySummary.published ? summary.design : null, taxonomyTitleFinder));
         row.push(this.__ensureTargetNumber(study.studySummary.published ? summary.targetNumber : null));
         row.push(this.__ensureCountries(study.studySummary.published ? summary.countries : null, taxonomyTitleFinder));
         if (showVariables) {

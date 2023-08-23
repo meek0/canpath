@@ -146,7 +146,6 @@
               <tr>
                 <th><@message "acronym"/></th>
                 <th><@message "name"/></th>
-                <th><@message "study-design"/></th>
                 <th><@message "participants"/></th>
                 <th style="width: 10% !important;"><@message "countries"/></th>
                 <#if harmonizationDatasetStudyTableShowVariables>
