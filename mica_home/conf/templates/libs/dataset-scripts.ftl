@@ -42,7 +42,7 @@
           label: "<@message "variables"/>",
           borderColor: '${barChartBorderColor}',
           backgroundColor: '${barChartBackgroundColor}',
-          useColorsArray: false
+          useColorsArray: ${useColorsArrayForClassificationsChart?c}
         });
 
         chartConfig.layout.modebar = {remove: ['select2d', 'lasso2d', 'pan', 'zoom', 'autoscale', 'zoomin', 'zoomout', 'resetscale']};
