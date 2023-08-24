@@ -195,22 +195,6 @@
       <div class="tab-content">
         <dl class="row striped mt-0 mb-1">
           <#if study.model??>
-            <#if type == "Harmonization">
-                <#if study.model.startYear?? || study.model.endYear??>
-                    <dt class="col-sm-4">
-                        <@message "study.start-end-year"/>
-                    </dt>
-                    <dd class="col-sm-8">
-                      <#if study.model.startYear??>
-                        ${study.model.startYear?c}
-                      </#if>
-                        -
-                      <#if study.model.endYear??>
-                        ${study.model.endYear?c}
-                      </#if>
-                    </dd>
-                </#if>
-            </#if>
             <#if study.model.website?? && study.model.website?has_content>
               <dt class="col-sm-4">
                   <@message "website"/>

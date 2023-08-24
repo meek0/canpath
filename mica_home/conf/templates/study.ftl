@@ -61,9 +61,24 @@
             <div class="card card-info card-outline">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-lg-12">
+                  <div class="col-lg">
                     <h3 class="mb-4">${localize(study.name)}</h3>
                   </div>
+                  <#if study.model?? && type == "Harmonization && (study.model.startYear?? || study.model.endYear??)">
+                    <div class="col-lg">
+                      <h3 class="mb-4 text-right">
+                        <#if study.model.startYear??>
+                          ${study.model.startYear?c}
+                        </#if>
+                        -
+                        <#if study.model.endYear??>
+                          ${study.model.endYear?c}
+                        <#else>
+                          <@message "date-present"/>
+                        </#if>
+                      </h3>
+                    </div>
+                  </#if>
                 </div>
                 <div class="row">
                   <#if study.logo??>
