@@ -149,7 +149,7 @@
       <!-- Individual study -->
         <#if type == "Individual">
           <div class="row d-flex align-items-stretch">
-            <#if (study.model.access)??>
+            <#if study.model.access?? && study.model.access?is_enumerable>
             <div class="col-sm-12 col-md d-flex align-items-stretch">
               <@studyAccess study=study/>
             </div>
