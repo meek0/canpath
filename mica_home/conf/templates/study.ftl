@@ -85,9 +85,11 @@
         </div>
 
         <div class="row d-flex align-items-stretch">
-          <div class="col-sm-12 col-md d-flex align-items-stretch">
-            <@studyOverview study=study type=type/>
-          </div>
+          <#if study.model?? && (study.memberships.investigator?? || study.memberships.contact??)>
+            <div class="col-sm-12 col-md d-flex align-items-stretch">
+              <@studyOverview study=study type=type/>
+            </div>
+          </#if>
           <#if study.model.methods??>
             <div class="col-sm-12 col-md d-flex align-items-stretch">
                 <@generalDesing study/>

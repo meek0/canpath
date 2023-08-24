@@ -194,12 +194,6 @@
     <div class="card-body pb-0">
       <div class="tab-content">
         <dl class="row striped mt-0 mb-1">
-          <dt class="col-sm-4">
-              <@message "acronym"/>
-          </dt>
-          <dd class="col-sm-8">
-              ${localize(study.acronym)}
-          </dd>
           <#if study.model??>
             <#if type == "Harmonization">
                 <#if study.model.startYear?? || study.model.endYear??>
