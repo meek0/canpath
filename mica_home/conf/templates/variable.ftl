@@ -242,26 +242,26 @@
                   </div>
                   <div class="card-body">
                       <#if harmoAnnotations.hasStatus()>
-                        <p>
+                      <div class="row">
+                        <div class="col-lg-6 col-xs-12">
                           <h5 class="d-inline"><@message "status"/>: </h5>
                           <span>${localize(harmoAnnotations.statusValueTitle, harmoAnnotations.statusValue!"-")}</span>
-                        </p>
+                        </div>
+
+                        <#if harmoAnnotations.hasStatusDetail()>
+                          <div class="col-lg-6 col-xs 12">
+                            <h5 class="d-inline">${localize(harmoAnnotations.statusDetailTitle, "Status detail")}: </h5>
+                            <span>${localize(harmoAnnotations.statusDetailValueTitle, harmoAnnotations.statusDetailValue!"-")}</span>
+                          </div>
+                        </#if>
+                      </div>
                       </#if>
 
                       <#if !harmoAnnotations.hasStatusDetail() && !harmoAnnotations.hasAlgorithm() && !harmoAnnotations.hasComment()>
                         <span class="text-muted"><@message "no-harmonization-description"/></span>
                       <#else>
-                        
-                        <dl>
-                            <#if harmoAnnotations.hasStatusDetail()>
-                              <dt title="${localize(harmoAnnotations.statusDetailDescription)}">
-                                  ${localize(harmoAnnotations.statusDetailTitle, "Status detail")}
-                              </dt>
-                              <dd title="${localize(harmoAnnotations.statusDetailValueDescription)}">
-                                  ${localize(harmoAnnotations.statusDetailValueTitle, harmoAnnotations.statusDetailValue!"-")}
-                              </dd>
-                            </#if>
 
+                        <dl>
                             <#if harmoAnnotations.hasAlgorithm()>
                               <dt title="${localize(harmoAnnotations.algorithmDescription)}">&nbsp;</dt>
                               <dd class="py-2 bg-light">
