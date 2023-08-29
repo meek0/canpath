@@ -356,6 +356,7 @@ footer.main-footer h6, footer.main-footer .h6 {
 
 #vosr-coverage-result .badge.badge-primary {
   font-size: 100%;
+  color: #17a2b8;
   background-color: initial;
   padding: 0;
 }
