@@ -312,15 +312,42 @@
     </#if>
 
     <#if datasetVariablesClassificationsTaxonomies?? && datasetVariablesClassificationsTaxonomies?size gt 0>
-      const taxonomies = ['${datasetVariablesClassificationsTaxonomies?join("', '")}'];
-      DatasetService.getVariablesCoverage('${dataset.id}', taxonomies, '${.lang}', function(data, vocabulariesColorsMapFunc) {
-        if (data && data.charts) {
-          Mica.variablesCoverage = data.charts.map(chart => prepareVariablesClassificationsData(chart, vocabulariesColorsMapFunc(['${colors?join("', '")}'])));
-        }
-        renderVariablesClassifications();
-      }, function(response) {
+      function vocabulariesColorsMapFunc(variableTaxonomies, colors) {
+        let colorsMap = {};
 
+        if (Array.isArray(variableTaxonomies) && Array.isArray(colors)) {
+          let filteredVariableTaxonomies = variableTaxonomies.filter(taxo => taxo.name !== 'Mica_variable');
+          filteredVariableTaxonomies.forEach(taxo => {
+            let index = 0;
+
+            colorsMap[taxo.name] = {};
+
+            taxo.vocabularies.forEach(voc => {
+              colorsMap[taxo.name][voc.name] = colors[index % colors.length];
+              index = index + 1;
+            });
+          });
+        }
+
+        return colorsMap;
+      }
+
+      const taxonomies = ['${datasetVariablesClassificationsTaxonomies?join("', '")}'];
+
+      axios.get(MicaService.normalizeUrl('/ws/taxonomies/_filter?target=variable')).then(function (taxonomiesRes) {
+
+        let colorsMap = vocabulariesColorsMapFunc(taxonomiesRes.data, ['${colors?join("', '")}']);
+
+        DatasetService.getVariablesCoverage('${dataset.id}', taxonomies, '${.lang}', function(data) {
+          if (data && data.charts) {
+            Mica.variablesCoverage = data.charts.map(chart => prepareVariablesClassificationsData(chart, colorsMap[taxonomies[0]]));
+          }
+          renderVariablesClassifications();
+        }, function(response) {
+
+        });
       });
+
     </#if>
   });
 </script>
