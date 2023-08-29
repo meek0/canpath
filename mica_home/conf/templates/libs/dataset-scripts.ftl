@@ -341,6 +341,7 @@
         DatasetService.getVariablesCoverage('${dataset.id}', taxonomies, '${.lang}', function(data) {
           if (data && data.charts) {
             Mica.variablesCoverage = data.charts.map(chart => prepareVariablesClassificationsData(chart, colorsMap[taxonomies[0]]));
+            Mica.variablesCoverage.forEach(i => i.taxonomy = taxonomies[0]);
           }
           renderVariablesClassifications();
         }, function(response) {
