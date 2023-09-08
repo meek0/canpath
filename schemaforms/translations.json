@@ -3,6 +3,7 @@
     "global": {
       "close-panel": "Display Results",
       "harmonization-study": "Data",
+      "included-individual-studies": "Participating Studies",
       "weight": "Weight"
     },
     "config": {
@@ -42,6 +43,7 @@
       "name-help": "Official study name",
       "acronym-help": "Acronym of the study",
       "objectives-help": "What are the principal objectives of the study?",
+      "design": "Design",
       "recruitment-target": "Recruitment target",
       "access": {
         "data": "Data",
@@ -76,6 +78,10 @@
       "general-info": "General Information",
       "study-tables": {
         "info": "The study tables define implementations of the Data Schema variables. The data summaries will be extracted from the corresponding Opal tables."
+      },
+      "harmonized-table": "Study-Specific Dataset",
+      "harmonized-tables": {
+        "title": "Study-Specific Datasets"
       },
       "data-schema": {
         "title": "Data Schema",
@@ -381,7 +387,7 @@
         "dna": "DNA (µg) (may be extracted from blood or saliva)",
         "edta-plasma": "EDTA: plasma (µL)",
         "edta-rbc": "EDTA: RBC (µL)",
-        "end-date": "Funding End Date",
+        "end-date": "Project End Date",
         "enthropometric-measures": "",
         "envAssStudy": "Environment Association",
         "ethics-approval": "Has this study been approved by a research ethics board or a comparable decisional committee that has been formally designated to approve and/or monitor research involving humans with the aim of protecting the rights and welfare of the research participants?",
@@ -443,7 +449,7 @@
         "sleep": "Sleep",
         "socio-characteristics": "",
         "sst-serum": "SST: serum (µL)",
-        "start-date": "Funding Start Date",
+        "start-date": "Project Start Date",
         "status-request": "Status of the request",
         "stratification": "Stratification or grouping",
         "summary": {
@@ -871,6 +877,7 @@
       "close-panel": "Afficher les résultats",
       "individual-studies": "Études individuelles",
       "harmonization-study": "Données",
+      "included-individual-studies": "Études participantes",
       "weight": ""
     },
     "config": {
@@ -943,6 +950,10 @@
       "general-info": "Informations générales",
       "study-tables": {
         "info": "Les tables d'étude définissent les implémentations des variables du schéma de données. Les sommaires de données seront extraites des tables Opal correspondantes."
+      },
+      "harmonized-table": "Ensemble de données spécifique à l'étude",
+      "harmonized-tables": {
+        "title": "Ensembles de données spécifiques à l'étude"
       },
       "data-schema": {
         "title": "Schéma de données",
@@ -1293,7 +1304,7 @@
         "dna": "ADN (µg) (pouvant être extrait du sang ou de la salive)",
         "edta-plasma": "EDTA: plasma (µL)",
         "edta-rbc": "EDTA: RBC (µL)",
-        "end-date": "Date de fin",
+        "end-date": "Date de fin du projet",
         "enthropometric-measures": "Mesures anthropométriques",
         "envAssStudy": "Étude d'association environnementale",
         "ethics-approval": "Ce projet a été approuvé par un comité d'examen institutionnel ou un comité décisionnel qui a été officiellement désigné pour approuver et/ou superviser la recherche portant sur des sujets humains dans le but de protéger les droits et le bien-être des participants à la recherche.",
@@ -1355,7 +1366,7 @@
         "sleep": "Sommeil",
         "socio-characteristics": "Caractéristiques sociodémographiques et économiques (état civil, structure familiale & du ménage, éducation, langue, ethnicité, résidence, statut d'emploi, revenu)",
         "sst-serum": "SST: sérum (µL)",
-        "start-date": "Date de début",
+        "start-date": "Date de début du projet",
         "status-request": "Statut de la requête",
         "stratification": "Stratification ou regroupement",
         "summary": {
