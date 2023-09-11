@@ -106,11 +106,14 @@
     <#if opalTable?? && opalTable.name??>
       <#assign title = (variable.name + " [" + localize(opalTable.name) + "]")/>
     </#if>
+
+    <div class="d-none">
     <@header titlePrefix=(type?lower_case + "-variable") title="variable" subtitle=""/>
     <!-- /.content-header -->
+    </div>
 
     <!-- Main content -->
-    <div class="content">
+    <div class="content pt-4">
       <div class="container">
 
         <div class="row d-flex align-items-stretch">

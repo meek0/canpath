@@ -39,11 +39,13 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <div class="d-none">
     <@header titlePrefix=(type?lower_case + "-dataset") title=localize(dataset.acronym) subtitle=localize(dataset.name) breadcrumb=[["..", "home"], ["${contextPath}/datasets", "datasets"], [localize(dataset.acronym)]]/>
     <!-- /.content-header -->
+    </div>
 
     <!-- Main content -->
-    <div class="content">
+    <div class="content pt-4">
       <div class="container">
 
         <#if draft>
