@@ -9,7 +9,7 @@
     <a id="lang-fr" href="#" onclick="agatejs.changeLanguage('fr')" class="nav-link pl-1" href="#">Français</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<#if .lang == "fr">https://canpath.ca/fr/nouvelles-evenements/<#else>https://www.canpath.ca/news-events</#if>"><@message "news-events"/></a>
+    <a class="nav-link" href="<#if .lang == "fr">https://canpath.ca/fr/nouvelles-evenements/<#else>https://www.canpath.ca/news-events</#if>" target="_blank"><@message "news-events"/></a>
   </li>
 </#macro>
 
