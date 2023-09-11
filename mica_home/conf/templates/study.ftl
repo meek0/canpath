@@ -43,11 +43,14 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+
+    <div class="d-none">
     <@header titlePrefix=(type?lower_case + "-study") title=localize(study.acronym) subtitle=localize(study.name) breadcrumb=[["..", "home"], ["${contextPath}/studies", "studies"], [localize(study.acronym)]]/>
     <!-- /.content-header -->
+    </div>
 
     <!-- Main content -->
-    <div class="content">
+    <div class="content pt-4">
       <div class="container">
 
         <#if draft>
@@ -115,7 +118,7 @@
                   <div class="row d-flex align-items-stretch">
                     <#if localizedStringNotEmpty(study.model.additionalInformation)>
                       <div class="col-12 d-flex align-items-stretch">
-                        <div class="card card-success card-outline w-100">
+                        <div class="card card-info card-outline w-100">
                           <div class="card-header">
                             <h3 class="card-title">
                                 <@message "global.additional-information"/>
