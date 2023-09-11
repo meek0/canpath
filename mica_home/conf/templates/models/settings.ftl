@@ -70,7 +70,7 @@
 <#assign dataAccessInstructionsEnabled = false/>
 
 <!-- Based on the 4 main colors: #c5dc6e, #da291c, #ffcd00, #4698cb -->
-<#assign colors = ["4698cb","ed7b0e","cd00ff","a3b366","ffcd00","6ec5dc","d55631","d1c033","da291c","c5dc6e","d08345","75a699"]/>
+<#assign colors = ["4698cb","ed7b0e","7F53A7","a3b366","ffcd00","6ec5dc","d55631","d1c033","da291c","c5dc6e","d08345","75a699"]/>
 
 <#assign barChartBackgroundColor = "rgb(70, 152, 203)"/>
 <#assign barChartBorderColor = "#4698cb"/>
