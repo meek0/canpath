@@ -257,6 +257,10 @@ dl.striped>dd {
   display: none;
 }
 
+#list-page #studyClassNameChoice, #cart-page #studyClassNameChoice {
+  display: none;
+}
+
 /*
   HACK Until we create SCSS files
 

@@ -31,6 +31,7 @@
 
 <!-- Search -->
 <#assign defaultSearchState = "#lists?type=variables&query=study(in(Mica_study.className,HarmonizationStudy))"/>
+<#assign defaultSearchMode = "HarmonizationStudy"/>
 
 <#assign searchVariableColumns = ["label+description", "valueType", "annotations", "study", "dataset"]/>
 <#assign searchVariableColumnsHarmonization = ["label+description", "valueType", "annotations", "protocol"]/>
