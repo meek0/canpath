@@ -19,7 +19,7 @@
           <table class="table table-striped border">
             <thead>
               <tr>
-                <th><@message "values"/></th>
+                <th style="width: 40%;"><@message "values"/></th>
                 <th><@message "frequencies"/></th>
               </tr>
             </thead>
