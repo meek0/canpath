@@ -67,7 +67,7 @@
                   <div class="col-lg">
                     <h3 class="mb-4">${localize(study.name)}</h3>
                   </div>
-                  <#if study.model?? && type == "Harmonization && (study.model.startYear?? || study.model.endYear??)">
+                  <#if (study.model?? && type == "Harmonization") && (study.model.startYear?? || study.model.endYear??)>
                     <div class="col-lg">
                       <h3 class="mb-4 text-right">
                         <#if study.model.startYear??>
