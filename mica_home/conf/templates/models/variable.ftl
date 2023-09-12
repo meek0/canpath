@@ -14,7 +14,7 @@
 
   <div>
     <div class="row d-flex align-items-center">
-      <div id="categoricalSummary" style="display: none" class="col-xs-12 col-lg-12">
+      <div id="categoricalSummary" style="display: none" class="col-xs-12 offset-lg-2 col-lg-8">
         <div class="table-responsive">
           <table class="table table-striped border">
             <thead>
@@ -67,6 +67,21 @@
 
   <div id="noSummary" style="display: none">
     <span class="text-muted"><@message "no-variable-summary"/></span>
+  </div>
+</#macro>
+
+<#macro harmonizationTableLegend showMessage=true>
+  <div class="pb-2">
+    <#if showMessage>
+      <p><@message "harmonization-table-legend-title"/></p>
+    </#if>
+    <ul id="harmonization-legend" class="list-unstyled">
+      <li><i class="fas fa-check fa-fw text-success"></i><span class="pl-2"><@message "harmonization-complete"/></span></li>
+      <li><i class="fas fa-adjust fa-fw text-partial"></i><span class="pl-2"><@message "harmonization-partial"/></span></li>
+      <li><i class="fas fa-times fa-fw text-danger"></i><span class="pl-2"><@message "harmonization-impossible"/></span></li>
+      <li><i class="fas fa-minus fa-fw text-black"></i><span class="pl-2"><@message "harmonization-na"/></span></li>
+      <li><i class="fas fa-question fa-fw text-warning"></i><span class="pl-2"><@message "harmonization-undetermined"/></span></li>
+    </ul>
   </div>
 </#macro>
 
