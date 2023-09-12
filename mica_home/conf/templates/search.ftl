@@ -168,37 +168,38 @@
                     </p>
 
                     <div class="my-3" v-cloak>
-                      <ul class="nav nav-pills" id="results-tab" role="tablist">
-                          <#if searchVariableListDisplay>
-                            <li class="nav-item variables">
-                              <a class="nav-link active" id="variables-tab" data-toggle="pill" href="#variables" role="tab" @click="onSelectResult('variables', 'variable')"
-                                 aria-controls="variables" aria-selected="true"><@message "variables"/> <span id="variable-count" class="pl-1">{{counts.variables}}</span></a>
-                            </li>
-                          </#if>
-                        <#if searchDatasetListDisplay>
-                          <li class="nav-item datasets">
-                            <a class="nav-link" id="datasets-tab" data-toggle="pill" href="#datasets" role="tab" @click="onSelectResult('datasets', 'dataset')"
-                               aria-controls="datasets" aria-selected="false">{{currentStudyTypeSelection && currentStudyTypeSelection.harmonization ? "<@message "protocols"/>" : "<@message "datasets"/>"}} <span id="dataset-count" class="pl-1">{{counts.datasets}}</span></a>
-                          </li>
-                        </#if>
-                        <#if searchStudyListDisplay>
-                          <li class="nav-item studies">
-                            <a class="nav-link" id="studies-tab" data-toggle="pill" href="#studies" role="tab" @click="onSelectResult('studies', 'study')"
-                                aria-controls="studies" aria-selected="false">{{currentStudyTypeSelection && currentStudyTypeSelection.harmonization ? "<@message "initiatives"/>" : "<@message "studies"/>"}} <span id="study-count" class="pl-1">{{counts.studies}}</span></a>
-                          </li>
-                        </#if>
-                        <#if searchNetworkListDisplay>
-                          <li class="nav-item networks">
-                            <a class="nav-link" id="networks-tab" data-toggle="pill" href="#networks" role="tab" @click="onSelectResult('networks', 'network')"
-                               aria-controls="networks" aria-selected="false"><@message "networks"/> <span id="network-count" class="pl-1">{{counts.networks}}</span></a>
-                          </li>
-                        </#if>
-                      </ul>
-                    </div>
 
-                    <div id="paging-sorting-container" class="mt-2">
                       <div class="row">
-                        <div class="col d-flex align-items-center justify-content-end">
+                        <div class="col">
+                          <ul class="nav nav-pills" id="results-tab" role="tablist">
+                              <#if searchVariableListDisplay>
+                                <li class="nav-item variables">
+                                  <a class="nav-link active" id="variables-tab" data-toggle="pill" href="#variables" role="tab" @click="onSelectResult('variables', 'variable')"
+                                    aria-controls="variables" aria-selected="true"><@message "variables"/> <span id="variable-count" class="pl-1">{{counts.variables}}</span></a>
+                                </li>
+                              </#if>
+                            <#if searchDatasetListDisplay>
+                              <li class="nav-item datasets">
+                                <a class="nav-link" id="datasets-tab" data-toggle="pill" href="#datasets" role="tab" @click="onSelectResult('datasets', 'dataset')"
+                                  aria-controls="datasets" aria-selected="false">{{currentStudyTypeSelection && currentStudyTypeSelection.harmonization ? "<@message "protocols"/>" : "<@message "datasets"/>"}} <span id="dataset-count" class="pl-1">{{counts.datasets}}</span></a>
+                              </li>
+                            </#if>
+                            <#if searchStudyListDisplay>
+                              <li class="nav-item studies">
+                                <a class="nav-link" id="studies-tab" data-toggle="pill" href="#studies" role="tab" @click="onSelectResult('studies', 'study')"
+                                    aria-controls="studies" aria-selected="false">{{currentStudyTypeSelection && currentStudyTypeSelection.harmonization ? "<@message "initiatives"/>" : "<@message "studies"/>"}} <span id="study-count" class="pl-1">{{counts.studies}}</span></a>
+                              </li>
+                            </#if>
+                            <#if searchNetworkListDisplay>
+                              <li class="nav-item networks">
+                                <a class="nav-link" id="networks-tab" data-toggle="pill" href="#networks" role="tab" @click="onSelectResult('networks', 'network')"
+                                  aria-controls="networks" aria-selected="false"><@message "networks"/> <span id="network-count" class="pl-1">{{counts.networks}}</span></a>
+                              </li>
+                            </#if>
+                          </ul>
+                        </div>
+
+                        <div id="paging-sorting-container" class="col d-flex align-items-center justify-content-end">
                           <div class="d-inline-flex">
                             <span class="ml-2 mr-2">
                               <select class="custom-select" id="obiba-page-size-selector-top"></select>
@@ -209,6 +210,7 @@
                           </div>
                         </div>
                       </div>
+
                     </div>
 
                     <div class="mt-3">
