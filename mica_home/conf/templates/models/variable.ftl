@@ -73,7 +73,7 @@
 <#macro harmonizationTableLegend showMessage=true>
   <div class="pb-2">
     <#if showMessage>
-      <p><@message "harmonization-table-legend-title"/></p>
+      <p><@message "variable-harmonization-table-legend-title"/></p>
     </#if>
     <ul id="harmonization-legend" class="list-unstyled">
       <li><i class="fas fa-check fa-fw text-success"></i><span class="pl-2"><@message "harmonization-complete"/></span></li>
