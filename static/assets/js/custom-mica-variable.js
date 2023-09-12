@@ -87,7 +87,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
 
       if (Mica.nature === 'CATEGORICAL') {
         if (Mica.valueType !== 'text') {
-          // $('#categoricalSummary .table-responsive').css({"max-height": "36em"});
+          $('#categoricalSummary .table-responsive').css({"max-height": "36em"});
 
           // frequencies chart
           const chartData = customMakeVariableFrequenciesChartSettings(data.frequencies, Mica.backgroundColors, {
