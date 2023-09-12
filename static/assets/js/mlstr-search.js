@@ -853,7 +853,7 @@ class TableFixedHeaderUtility {
 
         // result
         $(`.nav-tabs #${payload.display}-tab`).tab('show');
-        $(`.nav-tabs #${payload.type}-tab`).tab('show');
+        $(`.nav-pills #${payload.type}-tab`).tab('show');
 
         if (payload.bucket) {
           this.selectedBucket = TARGET_ID_BUCKET_MAP[payload.bucket];
