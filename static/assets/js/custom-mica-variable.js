@@ -122,7 +122,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
 
       data.frequencies.forEach(frequency => {
         // % over not empty values
-        let pctValues = data.n === 0 ? 0 : totalValues * 100;
+        let pctValues = data.n === 0 ? 0 : (frequency.count / totalValues) * 100;
         pctValues = numberFormatter.format(pctValues.toFixed(2));
 
         let pctMissings = data.n === data.total ? 0 : (frequency.count / totalMissing) * 100;
