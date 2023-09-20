@@ -116,12 +116,16 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
       // frequencies table
       let frequencyRows = '';
       let missingRows = '';
+
+      let totalValues = data.frequencies.filter(ite => !ite.missing).reduce((acc, val) => acc + val.count, 0);
+      let totalMissing = data.frequencies.filter(ite => ite.missing).reduce((acc, val) => acc + val.count, 0);
+
       data.frequencies.forEach(frequency => {
         // % over not empty values
-        let pctValues = data.n === 0 ? 0 : (frequency.count / data.n) * 100;
+        let pctValues = data.n === 0 ? 0 : totalValues * 100;
         pctValues = numberFormatter.format(pctValues.toFixed(2));
 
-        let pctMissings = data.n === data.total ? 0 : (frequency.count / (data.total - data.n)) * 100;
+        let pctMissings = data.n === data.total ? 0 : (frequency.count / totalMissing) * 100;
         pctMissings = numberFormatter.format(pctMissings.toFixed(2));
 
         let pctTotal = data.total === 0 ? 0 : (frequency.count / data.total) * 100;

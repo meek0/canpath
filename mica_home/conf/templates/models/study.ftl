@@ -274,23 +274,6 @@
       <div class="card-body pb-0">
         <div class="tab-content">
           <dl class="row striped">
-            <#if study.model.startYear??>
-              <dt class="col-sm-4">
-                  <@message "study.start-year"/>
-              </dt>
-              <dd class="col-sm-8">
-                  ${study.model.startYear?c}
-              </dd>
-            </#if>
-
-            <#if study.model.endYear??>
-              <dt class="col-sm-4">
-                  <@message "study.end-year"/>
-              </dt>
-              <dd class="col-sm-8">
-                  ${study.model.endYear?c}
-              </dd>
-            </#if>
 
               <#if study.model.methods.followUpInfo??>
                 <dt class="col-sm-4">

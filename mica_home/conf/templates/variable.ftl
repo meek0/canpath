@@ -267,7 +267,7 @@
                         <dl>
                             <#if harmoAnnotations.hasAlgorithm()>
                               <dt title="${localize(harmoAnnotations.algorithmDescription)}">&nbsp;</dt>
-                              <dd class="py-2 bg-light">
+                              <dd class="py-2">
                                 <span class="marked mt-3"><template>${localize(harmoAnnotations.algorithmValue!"")}</template></span>
                               </dd>
                             <#else>
