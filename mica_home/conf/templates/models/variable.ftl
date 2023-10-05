@@ -14,7 +14,7 @@
 
   <div>
     <div class="row d-flex align-items-center">
-      <div id="categoricalSummary" style="display: none" class="col-xs-12 col-lg">
+      <div id="categoricalSummary" style="display: none" class="col-xs-6 col-lg">
         <div class="table-responsive">
           <table class="table table-striped border">
             <thead>
@@ -33,6 +33,10 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div class="col-xs-6 col-lg-6">
+        <div id="frequencyChart"></div>
       </div>
     </div>
 
@@ -55,12 +59,6 @@
             <tbody></tbody>
           </table>
         </div>
-      </div>
-    </div>
-
-    <div class="row d-flex align-items-center">
-      <div class="col-xs-12 offset-lg-2 col-lg-8">
-        <div id="frequencyChart"></div>
       </div>
     </div>
   </div>
