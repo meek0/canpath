@@ -64,7 +64,7 @@
             <div class="card card-info card-outline">
               <div class="card-body">
                 <div class="row">
-                  <div class="col card-text">
+                  <div class="col card-text border-right border-light">
                     <h3 class="mb-4">${localize(study.name)}</h3>
                     <div class="marked">
                       <template>${localize(study.objectives)}</template>
@@ -72,7 +72,7 @@
                   </div>
 
                   <#if study.logo??>
-                    <div class="col-2 align-self-center">
+                    <div class="col-2 align-self-center text-center">
                       <img id="document-logo" class="img-fluid" style="width: 12em" alt="${localize(study.acronym)} logo" src="${contextPath}/ws${draftImageUrlFragment}${forLogoLink}/${study.id}/file/${study.logo.id}/_download"/>
                     </div>
                   </#if>
