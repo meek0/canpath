@@ -110,16 +110,16 @@
                               <#if variablesCartEnabled>
                                   <#if listsEnabled>
                                     <div class="btn-group" v-if="isVariablesToolsVisible">
-                                      <button id="cart-add-variables" type="button" class="btn btn-sm btn-success" @click="onAddToCart" title="<@message "sets.cart.add-variables-to-cart"/>">
+                                      <button id="cart-add-variables" type="button" class="btn btn-sm btn-info" @click="onAddToCart" title="<@message "sets.cart.add-variables-to-cart"/>">
                                         <i class="fas fa-cart-plus"></i> <@message "sets.cart.add-to-cart"/></button>
-                                      <button type="button" class="btn btn-sm btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+                                      <button type="button" class="btn btn-sm btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
                                       <div ref="listsDropdownMenu" class="dropdown-menu dropdown-menu-right" style="min-width: 24em;">
                                         <form class="px-3 py-3" v-if="numberOfSetsRemaining > 0">
                                           <div class="form-group mb-0">
                                             <div class="input-group">
                                               <input type="text" class="form-control" placeholder="<@message "sets.add.modal.create-new"/>" v-model="newVariableSetName" @keyup.enter.prevent.stop="onAddToSet()">
                                               <div class="input-group-append">
-                                                <button v-bind:class="{ disabled: !newVariableSetName }" class="btn btn-success" type="button" @click="onAddToSet()">
+                                                <button v-bind:class="{ disabled: !newVariableSetName }" class="btn btn-info" type="button" @click="onAddToSet()">
                                                   <i class="fa fa-plus"></i> <@message "global.add"/>
                                                 </button>
                                               </div>
@@ -134,20 +134,20 @@
                                       </div>
                                     </div>
                                   <#else>
-                                    <button id="cart-add-variables" type="button" class="btn btn-sm btn-success" v-if="isVariablesToolsVisible" @click="onAddToCart" title="<@message "sets.cart.add-variables-to-cart"/>">
+                                    <button id="cart-add-variables" type="button" class="btn btn-sm btn-info" v-if="isVariablesToolsVisible" @click="onAddToCart" title="<@message "sets.cart.add-variables-to-cart"/>">
                                       <i class="fas fa-cart-plus"></i> <@message "sets.cart.add-to-cart"/></button>
                                   </#if>
                               </#if>
                               <#if studiesCartEnabled>
-                                <button id="cart-add-studies" type="button" class="btn btn-sm btn-success ml-2" v-if="isStudiesToolsVisible" @click="onAddToCart" title="<@message "sets.cart.add-studies-to-cart"/>">
+                                <button id="cart-add-studies" type="button" class="btn btn-sm btn-info ml-2" v-if="isStudiesToolsVisible" @click="onAddToCart" title="<@message "sets.cart.add-studies-to-cart"/>">
                                   <i class="fas fa-cart-plus"></i> <@message "sets.cart.add-to-cart"/></button>
                               </#if>
                               <#if networksCartEnabled>
-                                <button id="cart-add-networks" type="button" class="btn btn-sm btn-success ml-2" v-if="isNetworksToolsVisible" @click="onAddToCart" title="<@message "sets.cart.add-networks-to-cart"/>">
+                                <button id="cart-add-networks" type="button" class="btn btn-sm btn-info ml-2" v-if="isNetworksToolsVisible" @click="onAddToCart" title="<@message "sets.cart.add-networks-to-cart"/>">
                                   <i class="fas fa-cart-plus"></i> <@message "sets.cart.add-to-cart"/></button>
                               </#if>
                           <#else>
-                            <a href="${contextPath}/signin?redirect=${contextPath}/search" class="btn btn-sm btn-success" title="<@message "sets.cart.signin-to-add-to-cart"/>">
+                            <a href="${contextPath}/signin?redirect=${contextPath}/search" class="btn btn-sm btn-info" title="<@message "sets.cart.signin-to-add-to-cart"/>">
                               <i class="fas fa-cart-plus"></i> <@message "sets.cart.add-to-cart"/></a>
                           </#if>
                       </#if>

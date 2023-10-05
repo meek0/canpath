@@ -260,6 +260,16 @@ p a {
   background-color: #4698CB !important;
 }
 
+.alert-info {
+  color: #fff;
+  background: #17a2b8;
+  border-color: #148ea1;
+}
+
+#search-info.bg-callout {
+  background-color: #17a2b8 !important;
+}
+
 /*
  * Content
  */
