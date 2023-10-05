@@ -14,7 +14,7 @@
 
   <div>
     <div class="row d-flex align-items-center">
-      <div id="categoricalSummary" style="display: none" class="col-xs-6 col-lg">
+      <div id="categoricalSummary" style="display: none" class="col-xs col-lg">
         <div class="table-responsive">
           <table class="table table-striped border">
             <thead>
