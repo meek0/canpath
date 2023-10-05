@@ -47,7 +47,7 @@ const makeSummary = function(showHarmonizedVariableSummarySelector) {
       $('#categoricalSummary').hide();
     }
 
-    if (!data.frequencies && !data.statistics) {
+    if ((!data.frequencies && !data.statistics) || (Mica.nature === 'CONTINUOUS' && !data.statistics)) {
       $('#noSummary').show();
     }
   };
