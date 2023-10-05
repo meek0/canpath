@@ -64,37 +64,18 @@
             <div class="card card-info card-outline">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-lg">
-                    <h3 class="mb-4">${localize(study.name)}</h3>
-                  </div>
-                  <#if study.model?? && (study.model.startYear?? || study.model.endYear??)>
-                    <div class="col-lg">
-                      <h3 class="mb-4 text-right">
-                        <#if study.model.startYear??>
-                          ${study.model.startYear?c}
-                        </#if>
-                        -
-                        <#if study.model.endYear??>
-                          ${study.model.endYear?c}
-                        <#else>
-                          <@message "date-present"/>
-                        </#if>
-                      </h3>
-                    </div>
-                  </#if>
-                </div>
-                <div class="row">
-                  <#if study.logo??>
-                    <div class="col-2">
-                      <img id="document-logo" class="img-fluid" style="width: 12em" alt="${localize(study.acronym)} logo" src="${contextPath}/ws${draftImageUrlFragment}${forLogoLink}/${study.id}/file/${study.logo.id}/_download"/>
-                    </div>
-                  </#if>
-
                   <div class="col card-text">
+                    <h3 class="mb-4">${localize(study.name)}</h3>
                     <div class="marked">
                       <template>${localize(study.objectives)}</template>
                     </div>
                   </div>
+
+                  <#if study.logo??>
+                    <div class="col-2 align-self-center">
+                      <img id="document-logo" class="img-fluid" style="width: 12em" alt="${localize(study.acronym)} logo" src="${contextPath}/ws${draftImageUrlFragment}${forLogoLink}/${study.id}/file/${study.logo.id}/_download"/>
+                    </div>
+                  </#if>
 
                 </div>
               </div>
