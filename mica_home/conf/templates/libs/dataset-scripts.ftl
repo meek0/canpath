@@ -179,7 +179,7 @@
 
                 const explaination = MlstrHarmonizationTablePopoverFactory.create(completeCount, partialCount, impossibleCount, statusDetails);
 
-                row.push('<button type="button" class="btn btn-xs btn-link text-muted" data-toggle="popover" data-container="#harmo-status-popover" data-trigger="hover" title="Status Distribution" data-content="' + explaination + '">' + Math.round(completeCount * 100 / Math.max(1, denominator)) + '%</button>');
+                row.push('<button type="button" class="btn btn-xs btn-link text-muted" data-toggle="popover" data-container="#harmo-status-popover" data-trigger="hover" title="<@message "harmonization-status-distribution"/>" data-content="' + explaination + '">' + Math.round(completeCount * 100 / Math.max(1, denominator)) + '%</button>');
 
                 variableHarmonization.harmonizedVariables
                   .forEach((harmonizedVariable, index) => harmonizedVariable.weight = originalWeights[index]);
