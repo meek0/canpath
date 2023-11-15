@@ -324,6 +324,14 @@ dl.striped>dd {
   padding-right: 7.5px;
 }
 
+.popover-row {
+  white-space: nowrap !important;
+}
+
+.popover-body p {
+  margin-bottom: 0 !important;
+}
+
 #harmo-status-popover .popover {
   width: 30rem;
   max-width: none;
