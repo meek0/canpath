@@ -89,20 +89,30 @@
 
     <#if type == "Harmonized">
       let originalWeights = [];
-      function getStudySummaries(dataset) {
+      function getStudySummaries(dataset, percentageCompleteMap) {
         let columns = (dataset.studyTable || []).concat(dataset.harmonizationStudyTable || []);
         const percentage = 74 / (columns.length);
         originalWeights = columns.map(col => col.weight);
         columns.sort((a, b) => a.weight - b.weight);
         let sorted = [];
         columns.forEach(study => {
+          const emptyPercentageCompleMap = {complete: 0, partial: 0, impossible: 0};
           const studyTableName = StringLocalizer.localize(study.name) || StringLocalizer.localize(study.studySummary.acronym);
           const dceId = study.dceId || study.studyId +':.:.';
-          const dceStats = {};
+          const tableUid = study.tableUid;
+          const dceStats = tableUid ? percentageCompleteMap[tableUid] || emptyPercentageCompleMap : emptyPercentageCompleMap;
           const percComplete = dceStats.percentage || 0;
+
+          const explaination =
+            '<span class=\'row\'>' +
+            '<span class=\'col-4 popover-row\'><i class=\'fas fa-check fa-fw text-success\'></i><span class=\'pl-2\'>' + dceStats.complete + '</span></span>' +
+            '<span class=\'col-4 popover-row\'><i class=\'fas fa-adjust fa-fw text-partial\'></i><span class=\'pl-2\'>' + dceStats.partial + '</span></span>' +
+            '<span class=\'col-4 popover-row\'><i class=\'fas fa-times fa-fw text-danger\'></i><span class=\'pl-2\'>' + dceStats.impossible + '</span></span>' +
+            '</span>';
 
           let name = MlstrStudyTablePopoverFactory.create(study, studyTableName);
 
+          name += '<p class="py-0"><button type="button" class="btn btn-xs btn-link text-muted" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="<@message "status-distribution"/>" data-content="' + explaination + '">' + percComplete + '%</button></p>';
 
           sorted.push({title: name, width: percentage + '%'});
         });
@@ -179,7 +189,7 @@
 
                 const explaination = MlstrHarmonizationTablePopoverFactory.create(completeCount, partialCount, impossibleCount, statusDetails);
 
-                row.push('<button type="button" class="btn btn-xs btn-link text-muted" data-toggle="popover" data-container="#harmo-status-popover" data-trigger="hover" title="<@message "harmonization-status-distribution"/>" data-content="' + explaination + '">' + Math.round(completeCount * 100 / Math.max(1, denominator)) + '%</button>');
+                row.push('<button type="button" class="btn btn-xs btn-link text-muted" data-toggle="popover" data-container="#harmo-status-popover" data-trigger="hover" title="<@message "status-distribution"/>" data-content="' + explaination + '">' + Math.round(completeCount * 100 / Math.max(1, denominator)) + '%</button>');
 
                 variableHarmonization.harmonizedVariables
                   .forEach((harmonizedVariable, index) => harmonizedVariable.weight = originalWeights[index]);
@@ -217,27 +227,51 @@
         dom: "<'row'<'col-sm-5'i><'col-sm-7'f>><'row'<'table-responsive'tr>><'row'<'col-sm-3'l><'col-sm-9'p>>"
       };
 
-      DatasetService.getHarmonizedVariables('${dataset.id}', null, 0, 1, function(response) {
-        const columns = getStudySummaries(response);
-        dataTableOpts.columns = columns;
-        $("#harmonizedTable").DataTable(dataTableOpts);
+      function processAggregations(aggregations) {
+        const completeStatusList = ['complete'];
 
-        setTimeout(() => {
-          let percentColumn = document.querySelector('#harmonizedTable thead th:nth-child(2)');
-          if (percentColumn) {
-            percentColumn.title = "<@message "percentage-complete-column-info"/>";
-            percentColumn.classList.add('text-muted', 'font-weight-normal');
+        let result = {};
+        Object.keys(aggregations).forEach(key => {
+          let total = Object.keys(aggregations[key]).reduce((acc, val) => acc + aggregations[key][val], 0);
+          let complete = aggregations[key]["complete"] || 0;
+
+          result[key] = {
+            percentage: Math.round(complete / (total || 1) * 100),
+            complete: complete,
+            partial: aggregations[key]["partial"] || 0,
+            impossible: aggregations[key]["impossible"] || 0
           }
-        }, 500);
-      });
+        });
 
+        return result;
+      }
 
-      /*
-      $('#harmonizedTable').on( 'page.dt', function () {
-        var info = table.page.info();
-        console.dir(info);
-      } );
-      */
+      async function getHarmomizationVariables() {
+        let percentageCompleteMap = null;
+
+        try {
+          percentageCompleteMap = await axios.get(MicaService.normalizeUrl("/ws/harmonized-dataset/${dataset.id}/tables/harmonizations")).then(res => res.data);
+        } catch(error) {
+          console.error(error);
+          percentageCompleteMap = {};
+        }
+
+        DatasetService.getHarmonizedVariables('${dataset.id}', null, 0, 1, function(response) {
+          const columns = getStudySummaries(response, processAggregations(percentageCompleteMap || {}));
+          dataTableOpts.columns = columns;
+          $("#harmonizedTable").DataTable(dataTableOpts);
+
+          setTimeout(() => {
+            let percentColumn = document.querySelector('#harmonizedTable thead th:nth-child(2)');
+            if (percentColumn) {
+              percentColumn.title = "<@message "percentage-complete-column-info"/>";
+              percentColumn.classList.add('text-muted', 'font-weight-normal');
+            }
+          }, 500);
+        });
+      }
+
+      getHarmomizationVariables();
     </#if>
 
     <!-- Files -->
