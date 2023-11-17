@@ -106,7 +106,6 @@
           const explaination =
             '<span class=\'row\'>' +
             '<span class=\'col-4 popover-row\'><i class=\'fas fa-check fa-fw text-success\'></i><span class=\'pl-2\'>' + dceStats.complete + '</span></span>' +
-            '<span class=\'col-4 popover-row\'><i class=\'fas fa-adjust fa-fw text-partial\'></i><span class=\'pl-2\'>' + dceStats.partial + '</span></span>' +
             '<span class=\'col-4 popover-row\'><i class=\'fas fa-times fa-fw text-danger\'></i><span class=\'pl-2\'>' + dceStats.impossible + '</span></span>' +
             '</span>';
 
