@@ -325,7 +325,7 @@ class MlstrHarmonizationTablePopoverFactory {
     const template =
       `
 <span class='row'>
-  <span class='col-4'>
+  <span class='col-6'>
     <i class='fas fa-check fa-fw text-success'></i>
       <span class='pl-1'>
         ${Mica.tr['complete']}
@@ -333,14 +333,7 @@ class MlstrHarmonizationTablePopoverFactory {
       </span>
     </span>
   </span>
-  <span class='col-4'>
-    <i class='fas fa-adjust fa-fw text-partial'></i>
-    <span class='pl-1'>
-      ${Mica.tr['partial']}
-      <span class='float-right'>${partialCount}</span>
-    </span>
-  </span>
-  <span class='col-4'>
+  <span class='col-6'>
     <i class='fas fa-times fa-fw text-danger'></i>
     <span class='pl-1'>
       ${Mica.tr['impossible']}

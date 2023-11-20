@@ -105,8 +105,8 @@
 
           const explaination =
             '<span class=\'row\'>' +
-            '<span class=\'col-4 popover-row\'><i class=\'fas fa-check fa-fw text-success\'></i><span class=\'pl-2\'>' + dceStats.complete + '</span></span>' +
-            '<span class=\'col-4 popover-row\'><i class=\'fas fa-times fa-fw text-danger\'></i><span class=\'pl-2\'>' + dceStats.impossible + '</span></span>' +
+            '<span class=\'col-6 popover-row\'><i class=\'fas fa-check fa-fw text-success\'></i><span class=\'pl-2\'>' + dceStats.complete + '</span></span>' +
+            '<span class=\'col-6 popover-row\'><i class=\'fas fa-times fa-fw text-danger\'></i><span class=\'pl-2\'>' + dceStats.impossible + '</span></span>' +
             '</span>';
 
           let name = MlstrStudyTablePopoverFactory.create(study, studyTableName);
