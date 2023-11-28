@@ -68,7 +68,7 @@ Vue.component('search-criteria', {
   <button
     type="button"
     style="pointer-events: none;"
-    class="btn btn-info btn-lg"
+    class="btn btn-info btn"
     :title="studyTypeSelection && studyTypeSelection.harmonization ? criteriaMenu.items[name].harmoTitle : criteriaMenu.items[name].title"
   >
     <i class="fa fa-search"></i>
@@ -76,7 +76,7 @@ Vue.component('search-criteria', {
 
   <button
     type="button"
-    class="btn btn-info btn-lg"
+    class="btn btn-info btn"
     :key="menu.name"
     :title="menu.description | localize-string"
     v-for="menu in criteriaMenu.items[name].menus"
