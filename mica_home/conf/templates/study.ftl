@@ -72,7 +72,7 @@
                   </div>
 
                   <#if study.logo??>
-                    <div class="col-2 align-self-center text-center">
+                    <div class="col-2 text-center">
                       <img id="document-logo" class="img-fluid" style="width: 12em" alt="${localize(study.acronym)} logo" src="${contextPath}/ws${draftImageUrlFragment}${forLogoLink}/${study.id}/file/${study.logo.id}/_download"/>
                     </div>
                   </#if>

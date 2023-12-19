@@ -32,7 +32,6 @@
           155 College St, Suite 532<br>
           Toronto, ON M5T 3M7</p>
         <p><a href="mailto:access@canpath.ca" class="text-decoration-none">access@canpath.ca</a></p>
-        <p>416 978 1458</p>
       </div>
       <!-- End Latest -->
       <!-- Address -->
