@@ -32,7 +32,6 @@
           155 College St, Suite 532<br>
           Toronto, ON M5T 3M7</p>
         <p><a href="mailto:access@canpath.ca" class="text-decoration-none">access@canpath.ca</a></p>
-        <p>416 978 1458</p>
       </div>
       <!-- End Latest -->
       <!-- Address -->
@@ -50,7 +49,7 @@
     <div class="container">
       <div class="row pt-3">
         <div class="col-sm-6">
-          <h5 class="mt-5"><@message "host-info"/></h5>
+          <h5 class="mt-4 pt-2"><@message "host-info"/></h5>
         </div>
         <div class="col-sm-6"><img alt="" src="/assets/images/dlsph-logo.svg" style="width: 100%; height: 90px;"></div>
       </div>
